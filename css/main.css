@@ -136,6 +136,21 @@ html{
     }
 }
 
+.section {
+    padding:30px 0; 
+}
+.section p{
+  font-size:05.em;  
+  text-align: center;
+}
+h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+
+}
 /*Bar*/
 div.welcome{
     color:white;
@@ -215,8 +230,46 @@ margin-bottom:6px;
 background-color: white;
 display:block;
 }
-
-
+/* number of families and students*/
+div.picture{
+    position:relative;
+    height: auto;  
+}
+div.picture::before{
+    background-image:url(../img/uni.jpg);
+    content:'';
+}
+ul.number-families{
+    position: relative;
+    padding: 120px 0;
+    }
+    ul.number-families li {
+        width:50%;
+        float: left;
+        text-align:center;
+        color:white;
+        text-transform: uppercase;
+        font-family: 'Oswald',sans-serif;
+        font-size: 24px;
+    
+    }
+    @media only screen and (min-width:768px){
+        ul.number-families li {
+          width:25%;    
+        }
+    }
+    p.numer{
+    color:#fe4918;
+    font-size: 4em;
+    display:block;
+    margin: 0 0 10px 0;
+    font-family: 'Oswald',sans-serif;
+    }
+    ul{ /*pa borrar los puntitos*/
+        list-style: none;
+        margin:0;
+        padding:0;   
+       }
 
 
 
