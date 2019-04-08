@@ -102,6 +102,174 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*HERE STARTS HOME STAY*/
+
+html{
+    box-sizing: border-box;
+}
+*,*:before,*:after{
+    box-sizing: inherit;  
+  }
+  body{
+    background-color:#f2f2f2; 
+    font-family: 'Open Sans', sans-serif;
+}
+  /*Global things*/
+  .conteiner{
+      width:95%;
+      margin: 0 auto;
+  }
+  @media only screen and (min-width:480px){
+    .conteiner{
+        width: 95%; 
+    }
+}
+@media only screen and (min-width:768px){
+    .conteiner{
+        width: 90%; 
+    }
+}
+@media only screen and (min-width:992px){
+    .conteiner{
+        width: 90%;
+        max-width:1100px;
+    }
+}
+
+.section {
+    padding:30px 0; 
+}
+.section p{
+  font-size:05.em;  
+  text-align: center;
+}
+h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+
+}
+/*Bar*/
+div.welcome{
+    color:white;
+}
+div.welcome a{
+    color: white; /*pa que se pongan los iconos blanquitos*/
+    font-size: 2em;
+    margin-right: 20px; /* pa dar separacion entre las imagenes*/
+}
+div.hero{
+    background-color: #74c75b;
+    padding:20px 0;
+    background-position: top center; 
+    background-size: cover;
+}
+nav.principal-navegation{
+    display: none; 
+}
+nav.principal-navegation a{
+    font-family: 'Oswald', sans-serif;
+    color:white;
+    font-size: 1.3em; 
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .6s ease; 
+    width: 100%;
+    display: block;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+@media only screen and (min-width:768px){
+    nav.principal-navegation{
+        width:67%;
+        float: right;
+        text-align: right;
+        display: block;
+    }
+    nav.principal-navegation a{
+        padding: 10px 10px; 
+        display: inline-block;  
+        width: auto;
+        display: inline-block;
+        text-align: center; 
+        margin: 0 10px 0 0 ; 
+        
+    }
+    nav.principal-navegation a:hover{
+        background-color:white;
+        color:#74c75b;
+        }
+        nav.principal-navegation a:first-child{
+        border: 2px solid white; 
+        color:white; 
+        }
+        nav.principal-navegation a:last-child:hover{
+            color:white; 
+            }
+}
+div.menu-movil{
+    width: 60px;
+    display: block;
+    float: right;
+    text-align: right;
+    margin-top:12px;
+}
+div.menu-movil :hover{
+    cursor: pointer;
+}
+@media only screen and (min-width:768px){
+    div.menu-movil{
+    display: none
+    }
+}
+div.menu-movil span {
+height:8px;
+margin-bottom:6px; 
+background-color: white;
+display:block;
+}
+/* number of families and students*/
+div.picture{
+    position:relative;
+    height: auto;  
+}
+div.picture::before{
+    background-image:url(../img/uni.jpg);
+    content:'';
+}
+ul.number-families{
+    position: relative;
+    padding: 120px 0;
+    }
+    ul.number-families li {
+        width:50%;
+        float: left;
+        text-align:center;
+        color:white;
+        text-transform: uppercase;
+        font-family: 'Oswald',sans-serif;
+        font-size: 24px;
+    
+    }
+    @media only screen and (min-width:768px){
+        ul.number-families li {
+          width:25%;    
+        }
+    }
+    p.numer{
+    color:#fe4918;
+    font-size: 4em;
+    display:block;
+    margin: 0 0 10px 0;
+    font-family: 'Oswald',sans-serif;
+    }
+    ul{ /*pa borrar los puntitos*/
+        list-style: none;
+        margin:0;
+        padding:0;   
+       }
 
 
 
@@ -109,13 +277,7 @@ textarea {
 
 
 
-
-
-
-
-
-
-
+/*HERE FINISH HOME STAY*/
 
  /* ==========================================================================
    Helper classes
