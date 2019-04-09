@@ -230,6 +230,18 @@ margin-bottom:6px;
 background-color: white;
 display:block;
 }
+
+div.jeje{
+position:relative;
+height: auto;
+
+}
+img{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: block;
+}
 /* number of families and students*/
 div.picture{
     position:relative;
@@ -239,6 +251,35 @@ div.picture::before{
     background-image:url(../img/uni.jpg);
     content:'';
 }
+/*** Testimoniales **/
+div.testimoniales {
+    padding-bottom: 20px;
+    }
+    div.testimonial
+    {
+padding: 5px;
+    }
+@media only screen and (min-width:768px){
+div.testimonial{
+    float: left;
+
+    width: 35%;
+}
+}
+blockquote{
+background-color:#f2f2f2;
+border: 1px solid #000;
+position: relative;
+margin: 0 0 10px 0;
+padding-bottom: 8px;
+}
+blockquote p{
+    text-align: left!important;
+    font-size: 1em!important;
+    font-family: 'PT sans', sans-serif;
+    padding: 0 20px 0 65px;
+}
+
 ul.number-families{
     position: relative;
     padding: 120px 0;
