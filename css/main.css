@@ -279,6 +279,43 @@ blockquote p{
     font-family: 'PT sans', sans-serif;
     padding: 0 20px 0 65px;
 }
+blockquote p::before{
+content: '\201c';
+position: absolute;
+left: 13px;
+top:0px;
+font-size: 8rem;
+margin: 0;
+padding: 0;
+line-height: 1;
+color: rgb(14, 116, 14);
+}
+footer.info-testimonial{
+    padding:0;
+}
+footer.info-testimonial img{
+float: left;
+width: 90%;
+border-radius: 5%;
+margin-left: 10px;
+}
+footer.info-testimonial cite{
+text-align: left;
+color: rgb(14, 116, 14);
+text-transform: uppercase;
+font-size: 12px;
+padding-top: 20px;
+width: 66.5%;
+float:right;
+font-weight:bold;
+font-style:normal;
+}
+footer.info-testimonial cite span{
+    color: rgb(3, 56, 3);
+    display: block;
+    text-transform: none;
+    margin-top: 5px;
+}
 
 ul.number-families{
     position: relative;
