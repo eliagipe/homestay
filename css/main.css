@@ -371,7 +371,7 @@ div.picture{
     height: auto;
 }
 div.picture::before{
- background-image: url(../img/family1.jpg);
+ background-image: url(../img/family4.jpg);
 content:'';
 }
 ul.families-students{
