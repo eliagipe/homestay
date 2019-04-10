@@ -362,8 +362,8 @@ footer.info-testimonial cite span{
     background-size: cover;
     background-position: center center;
     background-attachment: fixed; /*efecto en el que imagen se mueve*/
-    -webkit-filter:brightness(.8);
-    filter:brightness(.8);
+    -webkit-filter:brightness(.9);
+    filter:brightness(.9);
 
 }
 div.picture{
