@@ -259,16 +259,16 @@ div.testimoniales {
     {
 padding: 5px;
     }
-@media only screen and (min-width:768px){
-div.testimonial{
-    float: left;
+@media only screen and (min-width:765px){
+div.testimonial
+{float: left;
+width: 35%;
+}
+}
 
-    width: 35%;
-}
-}
 blockquote{
 background-color:#f2f2f2;
-border: 1px solid #000;
+border: 1px solid rgb(3, 37, 5);
 position: relative;
 margin: 0 0 10px 0;
 padding-bottom: 8px;
