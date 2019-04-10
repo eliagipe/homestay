@@ -242,7 +242,7 @@ img{
     margin: auto;
     display: block;
 }
-/* number of families and students*/
+/* number of families and student
 div.picture{
     position:relative;
     height: auto;  
@@ -288,7 +288,7 @@ font-size: 8rem;
 margin: 0;
 padding: 0;
 line-height: 1;
-color: rgb(14, 116, 14);
+color: #74c75b;
 }
 footer.info-testimonial{
     padding:0;
@@ -301,7 +301,7 @@ margin-left: 10px;
 }
 footer.info-testimonial cite{
 text-align: left;
-color: rgb(14, 116, 14);
+color:#2e2e2e;
 text-transform: uppercase;
 font-size: 12px;
 padding-top: 20px;
@@ -337,7 +337,7 @@ ul.number-families{
         }
     }
     p.numer{
-    color:#fe4918;
+    color:rgb(14, 116, 14);;
     font-size: 4em;
     display:block;
     margin: 0 0 10px 0;
@@ -348,6 +348,59 @@ ul.number-families{
         margin:0;
         padding:0;   
        }
+
+        /*footer*/
+
+footer{
+    background-color: #74c75b/* #353535*/;
+    padding-top:40px;
+    margin-top: 20px;
+
+}
+footer .contenedor > div{
+color:white;
+padding:0px 20px;
+font-size:12px;
+}
+
+@media only screen and (min-width:768px){
+    footer .contenedor > div{
+        width:33.3%;
+        float:left;
+    }
+}
+footer h3{
+    color:white;
+    text-transform: uppercase;
+    font-family: 'Oswald',sans-serif;
+    margin-bottom:20px;
+}
+footer h3 span{
+    color:#6d6969;
+}
+footer .ultimos-tweets li{
+    margin-bottom: 10px;
+}
+footer nav.redes-sociales{
+    text-align: left;
+}
+p.copyright{
+    background-color:#2e2e2e;
+    color:white;
+    padding:10px 0; /*10 arriba y abajo, 0 izquierda y derecha*/
+    margin:20 0 0 0;/*20 pixeles arriba y 0 en todos los demas*/
+    text-align: center;
+}
+
+nav.social-networks i {
+color:white;
+font-size: 2em;
+margin-right: 20px;
+}
+
+
+
+
 
 
 
