@@ -376,7 +376,7 @@ div.picture{
     height: auto;
 }
 div.picture::before{
-    background-image: url(../img/family1.jpg);
+ background-image: url(../img/family3.jpg);
 content:'';
 }
 div.picture .conteiner{
@@ -410,12 +410,25 @@ div.number-families ul li{
         float:left;
         width:25%;}
     }
+    .parallax::before{ 
+        width:100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed; /*efecto en el que imagen se mueve*/
+        -webkit-filter:brightness(.8);
+        filter:brightness(.8);
+    
+    }
+    div.container{
+        position:relative;
+        height: auto;
 
-
-
-
-
-
+    }
 
 
         /*footer*/
