@@ -116,11 +116,16 @@
 </div>
 <div class="place">
     <label for="duration">Maximun duration of stay</label>
-    <input type ="text" id="duration"name="duration" placeholder="'one year'"> 
+    <select id="duration"required>
+      <option value="">-Choose--</option>
+      <option value="3">1 to 3 months</option>
+      <option value="6">4 to 6 months</option>
+      <option value="year">7 to 12 months</option>
+    </select>
 </div>
 <div class="place">
     <label for="languages">Languages</label>
-    <input type ="text" id="languages"name="languages" placeholder="English, Spanish'"> 
+    <input type ="text" id="languages"name="languages" placeholder="e.g.'English', 'Spanish'"> 
 </div>  
 <p>Facilities you would like to have included in the price</p>
 <input type="checkbox" name="facilities" value="privat-bathroom" />privat bathroom <br />
