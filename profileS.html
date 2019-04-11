@@ -42,14 +42,12 @@
        </div>
  
        <nav class="principal-navegation"> <!--es pa que no se mezcle con los de redes sociales-->
-        <a href="register.html">My favorits</a>
-         <a href="signin.html">Search match</a>
+        <a href="myfavorits.html">My favorits</a>
+         <a href="search.html">Search match</a>
          <a href="aboutus.html">About Us</a>
          <a href="faq.html">FAQ</a>
          <a href="signin.html">Log Out</a>
       
-         
- 
        </nav>
    </div><!--.contenedor-->
  
@@ -64,23 +62,35 @@
 </header>
 <section class="section contenedor">
     <h2>My Profile</h2>
-    <p>
-     
-We are helping young people find host families since 2019
-
-
-
-We are dedicated to help everyone find a Host!
-
-
-
-If you have any questions then email us at
-
-
-
-Weainthelping@you.dk</p>
-    
-
+    <h3>Add  information about your self</h3>
+      <div class="form">
+      <input type="radio" name="family" value="family" />I want to be a host family<br />
+      <input type="radio" name="student" value="student" />I am a student<br />
+      <form id="register" class="register" action="index.html"method="post">
+        <div id="user-data" class="register box clearix">
+          <div class="place">
+            <label for="name">Name</label>
+            <input type ="text" id="name"name="name" placeholder="Your Name">
+          </div>
+          <div class="place">
+            <label for="lastname">Lastname</label>
+            <input type ="text" id="lastname"name="lastname" placeholder="Your Last Name"> 
+        </div>
+        <div class="place">
+          <label for="email">Email</label>
+          <input type ="text" id="email"name="email" placeholder="your e mail"> 
+          <div class="place">
+                  <label for="pasword">Pasword</label>
+                  <input type ="password" id="pasword"name="pasword" placeholder="Create your pasword"> 
+      </div>
+      <div class="place">
+        <label for="pasword">Pasword</label>
+        <input type ="password" id="pasword"name="pasword" placeholder="Confirm your pasword"> 
+        <a href="register.html" class="button hollow">Submit</a>
+</div>
+      </form>
+    </div>
+    </section>
 
 <footer class="site-footer">
   <div class="conteiner clearfix">
