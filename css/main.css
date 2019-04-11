@@ -366,7 +366,7 @@ footer.info-testimonial cite span{
     margin: 0 0 10px 0;
     font-family: 'Oswald',sans-serif;
     }
-    ul{ /*pa borrar los puntitos*/
+    ul{ /*to delete the dots*/
         list-style: none;
         margin:0;
         padding:0;   
@@ -382,7 +382,7 @@ footer.info-testimonial cite span{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed; /*efecto en el que imagen se mueve*/
+    background-attachment: fixed; /*effect to the imagen*/
     -webkit-filter:brightness(.9);
     filter:brightness(.9);
 
@@ -463,8 +463,8 @@ footer nav.social-networks{
 p.copyright{
     background-color:#5a9c46;
     color:white;
-    padding:10px 0; /*10 arriba y abajo, 0 izquierda y derecha*/
-    margin:20 0 0 0;/*20 pixeles arriba y 0 en todos los demas*/
+    padding:10px 0; /*10 top and bottom, 0 left and right*/
+    margin:20 0 0 0;/*20 px to y 0 in all the others*/
     text-align: center;
 }
 nav.social-networks i {
