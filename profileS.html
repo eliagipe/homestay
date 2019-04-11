@@ -60,9 +60,43 @@
 </div>
 </section>-->
 </header>
-<section class="section contenedor">
+<section class="private information">
     <h2>My Profile</h2>
-    <h3>Add  information about your self</h3>
+    <h3>Add/eddit  information</h3>
+    <p>Here you can add, delete or edit  information about your self</p>
+  
+    <div class="form">
+    <input type="radio" name="gender" value="masculin" />Masculine<br />
+    <input type="radio" name="gender" value="femenin" />Femenine<br />
+    <form id="register" class="register" action="index.html"method="post">
+      <div id="user-data" class="register box clearix">
+        <div class="place">
+          <label for="name">Name</label>
+          <input type ="text" id="name"name="name" placeholder="Your Name">
+        </div>
+        <div class="place">
+          <label for="lastname">Lastname</label>
+          <input type ="text" id="lastname"name="lastname" placeholder="Your Last Name"> 
+      </div>
+      <div class="place">
+        <label for="email">Email</label>
+        <input type ="text" id="email"name="email" placeholder="your e mail"> 
+        <div class="place">
+            <label for="Phone">Phone number</label>
+            <input type ="text" id="Phone"name="Phone" placeholder="your phone number"> 
+            
+        
+      <a href="save.html" class="button hollow">Save</a>
+</div>
+    </form>
+  </div>
+
+</section>
+
+
+<section class="section contenedor">
+    
+    <h3>Add  information about your preferences</h3>
     <div class="form">
     <input type="checkbox" name="Meals" value="Breakfast" />Breakfast<br />
 <input type="checkbox" name="Meals" value="Lunch" />Lunch <br />
