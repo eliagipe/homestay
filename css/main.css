@@ -151,7 +151,7 @@ h2{
     color:rgba(0, 0, 0, 0.534);
 }
     h2::after { /*siempre al usar un after o un before hay que poner contenedor*/
-        content:'\f004';
+        content:'\f004';/*it should be a heart*/
         margin:0 auto;
         height: 30px;
         width:100px;
@@ -474,6 +474,7 @@ nav.social-networks i {
     }
     /*FORMS*/
     div.form{
+          
         text-align: center;
         margin-bottom: 1rem;
         margin-top:1rem;
