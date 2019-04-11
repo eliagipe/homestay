@@ -149,8 +149,24 @@ h2{
     text-transform: uppercase;
     text-align: center;
     color:rgba(0, 0, 0, 0.534);
-
 }
+    h2::after { /*siempre al usar un after o un before hay que poner contenedor*/
+        content:'\f004';
+        margin:0 auto;
+        height: 30px;
+        width:100px;
+        display: block;
+        color:#74c75b;
+    }
+   
+        h3{
+          font-size:1.8em; 
+          color: #74c75b; 
+          font-family: 'PT Sans', sans-serif;
+          margin:0; 
+        }
+
+
 .button{
     background-color: #74c75b;
     padding: 10px 40px;  /*osea, 10 pixeles arriba y 40 por los lados*/
