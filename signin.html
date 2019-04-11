@@ -43,8 +43,7 @@
  
        <nav class="principal-navegation"> <!--es pa que no se mezcle con los de redes sociales-->
          <a href="register.html">Register</a>
-         <a href="#">Sign In</a>
-         <a href="#">Search match</a>
+         <a href="signin.html">Search match</a>
          <a href="index.html">Home</a>
          <a href="faq.html">FAQ</a>
       
@@ -65,6 +64,9 @@
 <section class="section contenedor">
     <h2>Sign In</h2>
     <p>The only thing you need to do for find a match is sign in first</p>
+    <div class="form">
+    <form id="sign-in" class="sign-in" action="index.html"method="post">
+      <div id="data" class="sign-in box clearix">
     <div class="place">
       <label for="email">Email</label>
       <input type ="text" id="email"name="email" placeholder="your e mail"> 
@@ -72,8 +74,11 @@
               <label for="pasword">Pasword</label>
               <input type ="password" id="pasword"name="pasword" placeholder="Create your pasword"> 
               <a href="createP.html">forgot pasword? click here!</a>
-  </div>
-
+              <p>Don't have an account? The registration is going to take less than a minute and be a member is totally free!</p>
+              <a href="register.html" class="button hollow">Register</a>
+            </div>
+          </form>
+        </div>
 
 <footer class="site-footer">
   <div class="conteiner clearfix">
