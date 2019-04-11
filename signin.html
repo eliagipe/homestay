@@ -42,10 +42,9 @@
        </div>
  
        <nav class="principal-navegation"> <!--es pa que no se mezcle con los de redes sociales-->
-        <a href="index.html">Home</a>
-         <a href="#">Sign In</a>
+         <a href="register.html">Register</a>
          <a href="signin.html">Search match</a>
-         <a href="aboutus.html">About Us</a>
+         <a href="index.html">Home</a>
          <a href="faq.html">FAQ</a>
       
          
@@ -62,38 +61,24 @@
 </div>
 </section>-->
 </header>
-<section class="seccion contenedor">
-        <h2>Register as a family or student!</h2>
-        <p>choose if you want to be a family or a student</p>
-        <div class="form">
-        <input type="radio" name="family" value="family" />I want to be a host family<br />
-        <input type="radio" name="student" value="student" />I am a student<br />
-        <form id="register" class="register" action="index.html"method="post">
-          <div id="user-data" class="register box clearix">
-            <div class="place">
-              <label for="name">Name</label>
-              <input type ="text" id="name"name="name" placeholder="Your Name">
+<section class="section contenedor">
+    <h2>Sign In</h2>
+    <p>The only thing you need to do for find a match is sign in first</p>
+    <div class="form">
+    <form id="sign-in" class="sign-in" action="index.html"method="post">
+      <div id="data" class="sign-in box clearix">
+    <div class="place">
+      <label for="email">Email</label>
+      <input type ="text" id="email"name="email" placeholder="your e mail"> 
+      <div class="place">
+              <label for="pasword">Pasword</label>
+              <input type ="password" id="pasword"name="pasword" placeholder="Create your pasword"> 
+              <a href="createP.html">forgot pasword? click here!</a>
+              <p>Don't have an account? The registration is going to take less than a minute and be a member is totally free!</p>
+              <a href="register.html" class="button hollow">Register</a>
             </div>
-            <div class="place">
-              <label for="lastname">Lastname</label>
-              <input type ="text" id="lastname"name="lastname" placeholder="Your Last Name"> 
-          </div>
-          <div class="place">
-            <label for="email">Email</label>
-            <input type ="text" id="email"name="email" placeholder="your e mail"> 
-            <div class="place">
-                    <label for="pasword">Pasword</label>
-                    <input type ="password" id="pasword"name="pasword" placeholder="Create your pasword"> 
+          </form>
         </div>
-        <div class="place">
-          <label for="pasword">Pasword</label>
-          <input type ="password" id="pasword"name="pasword" placeholder="Confirm your pasword"> 
-</div>
-        </form>
-      </div>
-      </section>
-    
-
 
 <footer class="site-footer">
   <div class="conteiner clearfix">
