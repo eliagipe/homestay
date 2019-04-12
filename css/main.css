@@ -183,9 +183,14 @@ h2{
   
   }
   .button.hollow,
-  .button.hollow:hover{
+  .button.hollow{
    background-color:white;
    color:#74c75b; 
+  }
+  .button:hover{
+      background-color:#74c75b;
+      color:white;
+
   }
 div.welcome{
     color:white;
@@ -241,8 +246,11 @@ nav.principal-navegation a{
         color:white; 
         }
         nav.principal-navegation a:last-child:hover{
-            color:white; 
+            color:#74c75b; 
             }
+            nav.principal-navegation a:first-child:hover{
+                color:#74c75b; 
+                }
 }
 div.menu-movil{
     width: 60px;
