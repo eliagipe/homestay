@@ -27,14 +27,11 @@
 
   <!-- Add your site or application content here -->
 
-  <header class="bar">
-    <div class="hero">
-      <div class="header-conteiner">
-        <div class="conteiner clearfix">
-          <!--eso es pa centrar lo que escribamos-->
+  <header class= "bar">
+    <div class= "hero">  
+        <div class="conteiner clearfix"> <!--This is to center what we are going to write-->
           <div class="welcome">
-            <h1>Welcome to HomeStay</h1>
-            <p class="slogan">Together we are stronger <a href="#"><i class="far fa-heart"></i></a></p>
+            <a href="index.html"><img src="img/HomeStay logo.png" alt="Logo"></a>
           </div>
 
           <div class="menu-movil">
@@ -43,106 +40,72 @@
             <span></span>
           </div>
 
-          <nav class="principal-navegation">
-            <!--es pa que no se mezcle con los de redes sociales-->
-            <a href="index.html">Home</a>
+          <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
             <a href="signin.html">Sign In</a>
-            <a href="signin.html">Search match</a>
-            <a href="aboutus.html">About Us</a>
+            <a href="register.html">Register</a>
+            <a href="#">Search match</a>
             <a href="faq.html">FAQ</a>
-
-
-
           </nav>
-        </div>
-        <!--.contenedor-->
-
-      </div>
-      <!--.barra-->
-      <!--barra-->
-    </div>
-    <!--<section class="seccionuni">
-<div jeje>
-<img src="img/uni.jpg" height="300" alt="AAU building image">
-</div>
-</section>-->
+        </div><!--.conteneiner-->
+    </div><!--.bar-->
   </header>
-  <section class="seccion contenedor">
+
+  <section class="section conteiner">
     <h2>Register as a family or student!</h2>
-    <p>
-      <h4>Choose if you want to be registered as a family or a student:</h4>
-    </p> 
-   
-
     <div class="form">
-     <fieldset>
-       
-        <!--input type="radio" name="choose" value="family" /> I want to be a host family<br /-->
-
-        <!--p> <input type="radio" name="choose" value="student" /> I am a student<br /></p-->
+      <div class="place">
         <form id="register" class="register" action="index.html" method="post">
-          <div id="user-data" class="register box clearfix">
-            <div class="place">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name">
-            </div>
-            <div class="place">
-              <label for="lastname">Lastname</label>
-              <input type="text" id="lastname" name="lastname" placeholder="Your Last Name">
-            </div>
-            <div class="place">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your email" required>
-              <div class="place">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Create your password">
-              </div>
-              <div class="place">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Confirm your password">
-                <p> <a href="register.html" class="button hollow">Register as a family</a></p>
-                <p> <a href="register.html" class="button hollow">Register as a student</a></p>
-   
-    </div>
-   
-    </form>
-    </fieldset>
+          <label>Choose if you want to be registered as a family or a student:</label>
+          <input type="radio" name="choose" value="family" /> I want to be a host family<br>
+          <input type="radio" name="choose" value="student" /> I am a student<br />
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name">
+          <label for="lastname">Last name</label>
+          <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create your password">
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Confirm your password">
+          <p> <a href="register.html" class="button hollow">Register</a></p>
+        </form>
+      </div>
     </div>
   </section>
 
 
 
-  <footer class="site-footer">
-    <div class="conteiner clearfix">
-      <div class="footer-informacion">
-        <h3>About <span> HomeStay</span></h3>
-        <!--pa que el gdl este en un color y el Sobre en otro colorsito-->
-        <p>The best website to help match exchange students from AAU with host families.</p>
-      </div>
-      <div class="last-tewts">
-        <h3>Our last <span> tweets</span></h3>
-        <ul>
-          <li>Yet another satisfied student with our webpage!</li>
+<footer class="site-footer">
+  <div class="conteiner clearfix">
+    <div class="footer-informacion">
+      <h3>About <span>  HomeStay</span></h3> <!--pa que el gdl este en un color y el Sobre en otro colorsito-->
+      <p>The best website to help match exchange students from AAU with host families.</p>
+    </div>
+    <div class="last-tewts">
+      <h3>Our last <span> tweets</span></h3>
+      <ul>
+        <li>Yet another satisfied student with our webpage!</li>
           <li>Remember that our Homestay webpage is 100% FREE!</li>
           <li>120 students & 80 families have used our website so far and 89% is still in contact!</li>
-        </ul>
-      </div>
-      <div class="menu">
-        <h3>Social <span> networks:</span></h3>
-        <nav class="social-networks">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter-square"></i></a>
-          <a href="#"><i class="fab fa-pinterest"></i></a>
-          <a href="#"><i class="fab fa-youtube-square"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </nav>
-
-      </div>
+      </ul>
     </div>
-    <p class="copyright">
-      All rights reserved HomeStay 2019.
-    </p>
-  </footer>
+    <div class="menu">
+      <h3>Social <span> networks:</span></h3>
+      <nav class= "social-networks">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-youtube-square"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </nav>
+    </div>
+  </div>
+  <p class="copyright">
+    All rights reserved HomeStay 2019.
+  </p>
+</footer>
 
 
 
