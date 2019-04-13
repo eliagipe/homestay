@@ -239,7 +239,7 @@ nav.principal-navegation a{
         width:67%;
         float: right;
         text-align: right;
-        display: inline-block;
+        display: block;
         margin-top: 30px;
     }
     nav.principal-navegation a{
