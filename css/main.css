@@ -180,12 +180,28 @@ h3{
     border:2px solid #74c75b;
     width: 140px;
 }
+.long-button {
+    background-color: #74c75b;
+    padding: 10px 40px;  /*osea, 10 pixeles arriba y 40 por los lados*/
+    color:white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oswald',sans-serif;
+    text-decoration: none;
+    font-size:1em;
+    margin-top: 20px;
+    display:inline-block;
+    transition: all .3s ease;
+    border:2px solid #74c75b;
+    width: 220px;
+}
 .button.hollow,
-.button.hollow {
+.long-button.hollow {
     background-color:white;
     color:#74c75b; 
 }
-.button:hover{
+.button:hover,
+.long-button:hover {
     background-color:#74c75b;
     color:white;
 
@@ -534,7 +550,20 @@ fieldset{
     border-radius:8px;	
 }
 
-
+/** FAQ **/
+p.faq {
+    text-align: left;
+    margin-left: 40px;
+    font-size: .9em;
+    width: 70%;
+}
+p.faq span {
+    font-weight: bold;
+}
+h5 {
+    margin-left: 40px;
+    font-size: 1em;
+}
 
 
 
