@@ -135,13 +135,13 @@ html{
         max-width:1100px;
     }
 }
-
 .section {
     padding:30px 0; 
 }
 .section p{
-  font-size:05.em;  
+  font-size: 05.em;  
   text-align: center;
+  line-height: 1.5
 }
 h2{
     font-family: 'Oswald', sans-serif;
@@ -150,23 +150,21 @@ h2{
     text-align: center;
     color:rgba(0, 0, 0, 0.534);
 }
-    h2::after { /*siempre al usar un after o un before hay que poner contenedor*/
-        content:'\f004';/*it should be a heart*/
-        margin:0 auto;
-        height: 30px;
-        width:100px;
-        display: block;
-        color:#74c75b;
-    }
-   
-        h3{
-          font-size:1.8em; 
-          color: #74c75b; 
-          font-family: 'PT Sans', sans-serif;
-          margin:0; 
-        }
-
-
+h2::after { /*siempre al usar un after o un before hay que poner contenedor*/
+    content: '***';
+    color: #74c75b;
+    font-size: 2em;
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 10px;
+    margin: 0;
+}
+h3{
+    font-size:1.8em; 
+    color: #74c75b; 
+    font-family: 'PT Sans', sans-serif;
+    margin:0; 
+}
 .button{
     background-color: #74c75b;
     padding: 10px 40px;  /*osea, 10 pixeles arriba y 40 por los lados*/
@@ -180,29 +178,44 @@ h2{
     display:inline-block;
     transition: all .3s ease;
     border:2px solid #74c75b;
-  
-  }
-  .button.hollow,
-  .button.hollow{
-   background-color:white;
-   color:#74c75b; 
-  }
-  .button:hover{
-      background-color:#74c75b;
-      color:white;
-
-  }
-div.welcome{
-    color:white;
+    width: 140px;
 }
-div.welcome a{
-    color: white; /*pa que se pongan los iconos blanquitos*/
-    font-size: 2em;
-    margin-right: 20px; /* pa dar separacion entre las imagenes*/
+.long-button {
+    background-color: #74c75b;
+    padding: 10px 40px;  /*osea, 10 pixeles arriba y 40 por los lados*/
+    color:white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oswald',sans-serif;
+    text-decoration: none;
+    font-size:1em;
+    margin-top: 20px;
+    display:inline-block;
+    transition: all .3s ease;
+    border:2px solid #74c75b;
+    width: 220px;
+}
+.button.hollow,
+.long-button.hollow {
+    background-color:white;
+    color:#74c75b; 
+}
+.button:hover,
+.long-button:hover {
+    background-color:#74c75b;
+    color:white;
+
+}
+div.welcome {
+    display: inline-block;
+    margin-top: 10px;
+}
+div.welcome img {
+    width: 250px;
 }
 div.hero{
     background-color: #74c75b;
-    padding:20px 0;
+    padding: 20px;
     background-position: top center; 
     background-size: cover;
 }
@@ -226,7 +239,8 @@ nav.principal-navegation a{
         width:67%;
         float: right;
         text-align: right;
-        display: block;
+        display: inline-block;
+        margin-top: 30px;
     }
     nav.principal-navegation a{
         padding: 10px 10px; 
@@ -240,17 +254,17 @@ nav.principal-navegation a{
     nav.principal-navegation a:hover{
         background-color:white;
         color:#74c75b;
-        }
-        nav.principal-navegation a:first-child{
+    }
+    nav.principal-navegation a:first-child{
         border: 2px solid white; 
         color:white; 
-        }
-        nav.principal-navegation a:last-child:hover{
-            color:#74c75b; 
-            }
-            nav.principal-navegation a:first-child:hover{
-                color:#74c75b; 
-                }
+    }
+    nav.principal-navegation a:last-child:hover{
+        color:#74c75b; 
+    }
+    nav.principal-navegation a:first-child:hover{
+        color:#74c75b; 
+    }
 }
 div.menu-movil{
     width: 60px;
@@ -268,18 +282,15 @@ div.menu-movil :hover{
     }
 }
 div.menu-movil span {
-height:8px;
-margin-bottom:6px; 
-background-color: white;
-display:block;
+    height:8px;
+    margin-bottom:6px; 
+    background-color: white;
+    display:block;
 }
-
-div.jeje{
-position:relative;
-height: auto;
-
+section.seccionuni {
+    text-align: center;
 }
-img{
+div.imgaau img{
     width: 80%;
     height: 100%;
     margin: auto;
@@ -287,91 +298,74 @@ img{
 }
 
 /*** Testimoniales **/
+
+ul{ /*to delete the dots*/
+    list-style: none;
+    margin:0;
+    padding:0;   
+} 
+
 div.testimoniales {
     padding-bottom: 20px;
-    
+}
+div.testimonial {
+    padding: 5px;
+}
+@media only screen and (min-width: 768px) {
+    div.testimonial {
+        float: left;
+        width: 50%;
     }
-    div.testimonial
-    {
-padding: 10px;
-
-    }
-    @media only screen and ( min-width:768px){
-div.testimonial{
-float: left;
-width: 100%;
-display: flex;
-
 }
-    }
-    blockquote p{
-text-align:justify!important;
-font-size:1em!important;
-font-family:'RT Sans', sans-serif;
-padding: 0 20px 0 65px;
-
-    }
-blockquote{
-background-color:#f2f2f2;
-border: 1px solid #f2f2f2;
-position: relative;
-margin: 0 0 10px 0;
-padding-bottom: 8px;
-
+blockquote {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding-bottom: 20px;
 }
-
-
-
-blockquote p::before{
-content: '\201c';
-position: absolute;
-left: 13px;
-top:0px;
-font-size: 8rem;
-margin: 0;
-padding: 0;
-line-height: 1;
-color: #74c75b;
+blockquote p {
+    text-align: left!important;
+    font-size: 1em!important;
+    font-family: 'PT Sans', sans-serif;
+    padding: 0 20px 0 65px;
 }
-footer.info-testimonial{
-    padding:0;
+blockquote p::before {
+    content: '\201c';
+    position: absolute;
+    left: 13px;
+    font-size: 8em;
+    margin: 0;
+    line-height: 1;
+    color: #fe4918;
 }
-footer.info-testimonial img{
-float: left;
-width: 90%;
-border-radius: 5%;
-margin-left: 10px;
+footer.info-testimonial {
+    padding: 0;
+    background-color: transparent;
 }
-footer.info-testimonial cite{
-text-align: left;
-color:#2e2e2e;
-text-transform: uppercase;
-font-size: 12px;
-padding-top: 20px;
-width: 66.5%;
-float:right;
-font-weight:bold;
-font-style:normal;
+footer.info-testimonial img {
+    float: left;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 60px;
 }
-footer.info-testimonial cite span{
-    color: rgb(3, 56, 3);
+footer.info-testimonial cite {
+    text-align: left;
+    color: #fe4918;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding-top: 60px;
+    width: 66.6%;
+    float: right;
+    font-weight: bold;
+    font-style: normal;
+}
+footer.info-testimonial cite span {
+    color: black;
     display: block;
-    text-transform: none;
+    text-transform: none; 
     margin-top: 5px;
 }
-
-    p.numer{
-    color:rgb(14, 116, 14);;
-    font-size: 4em;
-    display:block;
-    margin: 0 0 10px 0;
-    font-family: 'Oswald',sans-serif;
-    }
-    ul{ /*to delete the dots*/
-        list-style: none;
-        margin:0;
-        padding:0;   
-       }
 
 /* number students families*/
 .parallax::before{ 
@@ -396,9 +390,13 @@ div.picture::before{
  background-image: url(../img/family4.jpg);
 content:'';
 }
-ul.families-students{
+ul.families-students {
     position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding:120px 0;
+
 }
 ul.families-students li {
     width:50%;
@@ -408,34 +406,38 @@ ul.families-students li {
     text-transform: uppercase;
     font-family: 'Oswald',sans-serif;
     font-size: 24px;
-
 }
-    @media only screen and (min-width:768px){
-        ul.families-students li{
-           width:25%;
-        }
-        }
-     p.number{
-        color:#74c75b;
-        font-size: 4em;
-         display:block;
-         margin: 0 0 10px 0;
-        font-family: 'Oswald',sans-serif;
-            }      
+@media only screen and (min-width:768px){
+    ul.families-students li{
+        width:25%;
+    }
+}
+p.number{
+    color:#5a9c46;
+    font-size: 4em;
+    display:block;
+    margin: 0 0 10px 0;
+    font-family: 'Oswald',sans-serif;
+}      
 
 
-        /*footer*/
+/*footer*/
 
 footer{
     background-color: #74c75b/* #353535*/;
     padding-top:40px;
     margin-top: 20px;
-    }
-
+    margin-bottom: 0;
+}
+footer p {
+    text-align: left!important;
+}
 footer .conteiner > div{
-color:white;
-padding:0px 20px;
-font-size:15px;
+    color:white;
+    padding:0px 20px;
+    font-size:15px;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
 @media only screen and (min-width:768px){
@@ -456,66 +458,86 @@ footer h3 span{
 }
 footer .last-tweets li{
     margin-bottom: 10px;
+    text-align: left;
 }
 footer nav.social-networks{
     text-align: left;
 }
 
 p.copyright{
+    font-size: .8em;
     background-color:#5a9c46;
     color:white;
     padding:10px 0; /*10 top and bottom, 0 left and right*/
-    margin:20 0 0 0;/*20 px to y 0 in all the others*/
-    text-align: center;
+    margin: 0;
+    text-align: center!important;
 }
 nav.social-networks i {
     color:white;
     font-size: 2em;
     margin-right: 20px;
-    }
-    /*OTher Pages*/
-    /*FORMS*/
-    div.form{
-          
-        text-align: center;
-        margin-bottom: 1rem;
-        margin-top:1rem;
-        display: block;
-      
-    }
-    div.place{
-        margin-bottom:1rem;
-        margin-top: 1rem;
-       
-    }
-   section.private-information{
+}
+
+/*Other Pages*/
+
+ /*FORMS*/
+div.form{
     text-align: center;
-   border-bottom: 2px solid #5a9c46; 
-   padding-bottom:10px;
- 
-  /* background-color:white;
-  /* border:1px solid#e1e1e1;*/ /*or could be that one*/
-   }
-   section.preferences{
+    margin-bottom: 1rem;
+    margin-top:1rem;
+    display: block;
+}
+div.place{
+    margin-bottom:1rem;
+    margin-top: 1rem;   
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding-bottom: 20px;
+    width: 50%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+div.place label {
+    display: block;
+    padding: 20px;
+}
+div.place a {
+    display: block;
+}
+div.place button {
+    align-items: center;
+    justify-content: center;
+}
+a.small-link {
+    font-size: .8em;
+}
+section.private-information{
     text-align: center;
-   padding-bottom:10px;
-   }
-   form.register label{ /*name, last name,email etc, names before texfield*/
+    border-bottom: 2px solid #5a9c46; 
+    padding-bottom:10px;
+    /* background-color:white;
+    /* border:1px solid#e1e1e1;*/ /*or could be that one*/
+}
+section.preferences{
+    text-align: center;
+    padding-bottom:10px;
+}
+form.register label{ /*name, last name,email etc, names before texfield*/
     margin-bottom: 5px;
     font-weight: bold;
     text-align: inherit;
     display:block;
- 
-   
 }
 input{
     background-color: #ffffff;
-   border-radius: .5rem;
- align-content:center;
- 
+    align-content:center;
 }
-
-
 fieldset{
     background-color: #fcfcfc;
     margin-top: 40px;
@@ -527,18 +549,21 @@ fieldset{
     -webkit-border-radius:8px;	
     border-radius:8px;	
 }
-div.place{
-    padding:20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
- 
-}
-  form.register label{
-    margin-bottom: 5px;
-    font-weight: bold;
-    
-}
 
+/** FAQ **/
+p.faq {
+    text-align: left;
+    margin-left: 40px;
+    font-size: .9em;
+    width: 70%;
+}
+p.faq span {
+    font-weight: bold;
+}
+h5 {
+    margin-left: 40px;
+    font-size: 1em;
+}
 
 
 
