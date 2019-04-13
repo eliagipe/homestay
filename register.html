@@ -50,46 +50,28 @@
     </div><!--.bar-->
   </header>
 
-  <section class="seccion contenedor">
+  <section class="section conteiner">
     <h2>Register as a family or student!</h2>
-    <p>
-      <h4>Choose if you want to be registered as a family or a student:</h4>
-    </p> 
-   
+    <div class="form place">
+      <form id="register" class="register" action="index.html" method="post">
+        <label>Choose if you want to be registered as a family or a student:</label>
+        <input type="radio" name="choose" value="family" /> I want to be a host family<br>
+        <input type="radio" name="choose" value="student" /> I am a student<br />
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <label for="lastname">Last name</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create your password">
 
-    <div class="form">
-     <fieldset>
-       
-        <!--input type="radio" name="choose" value="family" /> I want to be a host family<br /-->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Confirm your password">
+        <p> <a href="register.html" class="button hollow">Register</a></p>
 
-        <!--p> <input type="radio" name="choose" value="student" /> I am a student<br /></p-->
-        <form id="register" class="register" action="index.html" method="post">
-          <div id="user-data" class="register box clearfix">
-            <div class="place">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name">
-            </div>
-            <div class="place">
-              <label for="lastname">Lastname</label>
-              <input type="text" id="lastname" name="lastname" placeholder="Your Last Name">
-            </div>
-            <div class="place">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your email" required>
-              <div class="place">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Create your password">
-              </div>
-              <div class="place">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Confirm your password">
-                <p> <a href="register.html" class="button hollow">Register as a family</a></p>
-                <p> <a href="register.html" class="button hollow">Register as a student</a></p>
    
-    </div>
-   
-    </form>
-    </fieldset>
+      </form>
     </div>
   </section>
 
