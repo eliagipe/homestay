@@ -53,10 +53,17 @@
     <h2>My Profile - Student</h2>
     <h3>Add or edit information</h3>
     <p>Here you can add or edit  information about yourself:</p>
-  
+    
     <div class="place">
     <form id="register" class="register" action="index.html"method="post">
       <div id="user-data" class="register box clearix">
+        
+        <div class="form-control"> 
+        <label class="header">Profile Photo:</label>
+
+        <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+    </div>
+   
         <label for="nationality">Nationality</label> 
         <select name="nationality">
               <option value="">-- select one --</option>
@@ -295,14 +302,15 @@
                   Browse Files
                 </button>
                 <span class="file-info">Upload your criminal record</span>
+                <p><a href="save.html" class="button hollow"> Upload criminal record</a></p>     
               </div>
 
-            <p><a href="save.html" class="button hollow"> Upload criminal record</a></p>       
+           
         
-     <p> <a href="save.html" class="button hollow">Save changes</a></p>
+     
 </div>
 
-    </form>
+    </form>   
   </div>
 
 </section>
@@ -317,9 +325,11 @@
        <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find a host family much quicker</label><br/>
        <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
      
+     
       </form>
-      
-    </div>
+       
+    </div> 
+    <div><p> <a href="save.html" class="button hollow">Save changes</a></p></div>
     </section>
 
 <footer class="site-footer">

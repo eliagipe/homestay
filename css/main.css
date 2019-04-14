@@ -389,7 +389,9 @@ footer h3 {
     filter:brightness(.9);
 
 }
+
 div.picture{
+
     position:relative;
     height: auto;
 }
@@ -511,6 +513,10 @@ div.place{
     margin-bottom: 20px;
     text-align: left;
 }
+.button{
+margin:auto;
+display:block;}
+
 div.place label {
     display: block;
     padding: 20px 0 5px 0;
