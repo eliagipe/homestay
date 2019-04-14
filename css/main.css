@@ -337,7 +337,7 @@ blockquote p::before {
     font-size: 8em;
     margin: 0;
     line-height: 1;
-    color: #fe4918;
+    color: #74c75b;
 }
 footer.info-testimonial {
     padding: 0;
@@ -351,7 +351,7 @@ footer.info-testimonial img {
 }
 footer.info-testimonial cite {
     text-align: left;
-    color: #fe4918;
+    color:#74c75b;
     text-transform: uppercase;
     font-size: 12px;
     padding-top: 60px;
