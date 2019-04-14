@@ -78,20 +78,20 @@
   </form>
 
   <h4>Advanced search</h4>  
-  <form action="adv-search" class="search" action="search.html" method="post">
+  <form action="adv-search" class="search-adv" action="search.html" method="post">
     <div class="adv-search">
-      <label for="gender">Gender</label>
+      <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
       <select name="gender" id="gender">
         <option value="select">-- Select one --</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="all">All</option>
       </select>
-      <label for="age">Age</label>
+      <label for="age"><i class="fas fa-male"></i> Age:</label>
       <input type="checkbox" value="18-20">18-20<br>
       <input type="checkbox" value="20-25">20-25<br>
       <input type="checkbox" value="all">All<br>
-      <label for="nationality">Nationality</label> 
+      <label for="nationality"><i class="fas fa-map-marker-alt"></i> Nationality:</label> 
         <select name="nationality">
           <option value="">-- select one --</option>
           <option value="all">All</option>
@@ -288,10 +288,12 @@
           <option value="zambian">Zambian</option>
           <option value="zimbabwean">Zimbabwean</option>
         </select>
-        <label for="smoking">Smoking</label>
+      </div>
+      <div class="adv-search">
+        <label for="smoking"><i class="fas fa-smoking"></i> Smoking:</label>
         <input type="radio" name="smoking" value="yes" /> Yes<br>
         <input type="radio" name="smoking" value="no" /> No<br />
-        <label for="criminal-record">Criminal record</label>
+        <label for="criminal-record"><i class="far fa-file-alt"></i> Criminal record:</label>
         <input type="radio" name="criminal-record" value="important" /> Important<br>
         <input type="radio" name="criminal-record" value="not-important" /> Not important<br />
         <input type="submit" class="button hollow" value="Search" href="search.html">
