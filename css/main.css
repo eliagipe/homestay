@@ -196,6 +196,7 @@ h3{
     transition: all .3s ease;
     border:2px solid #74c75b;
     width: 220px;
+    text-align: center;
 }
 .button.hollow,
 .long-button.hollow {
@@ -367,6 +368,10 @@ footer.info-testimonial cite span {
     display: block;
     text-transform: none; 
     margin-top: 5px;
+}
+footer h3 {
+    text-align: left;
+    padding: 0;
 }
 
 /* number students families*/
@@ -635,7 +640,61 @@ div.adv-search label {
 div.adv-search .button {
     margin: 0;
 }
-
+div.profiles {
+    padding-bottom: 20px;
+}
+div.profile {
+    width: 50%;
+}
+blockquote.search-result {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding-bottom: 20px;
+}
+blockquote.search-result p::before {
+    content: '';
+}
+blockquote.search-result p {
+    padding: 0;
+}
+p.name {
+    color: #74c75b;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+p.info span {
+    font-weight: bold;
+}
+p.rating i {
+    color: #ffd900;
+    font-size: 1.2em;
+}
+p.favorite i {
+    color: red;
+    font-size: 1.2em;
+}
+blockquote.search-result img {
+    width: 250px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    padding: 0 10px 0 20px;
+}
+.grid-item {
+    margin-top: 20px;
+}
+.item2 {
+    padding-top: 35px;
+}
+.item3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
 
 
 
