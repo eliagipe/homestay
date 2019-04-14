@@ -644,14 +644,16 @@ div.profiles {
     padding-bottom: 20px;
 }
 div.profile {
-    width: 50%;
+    float: left;
 }
 blockquote.search-result {
     background-color: white;
     border: 1px solid #e1e1e1;
     position: relative;
-    margin: 0 0 10px 0;
+    margin: 0 5px 10px 5px;
     padding-bottom: 20px;
+    float: left;
+    width: 45%
 }
 blockquote.search-result p::before {
     content: '';
@@ -693,7 +695,9 @@ blockquote.search-result img {
 }
 .item3 {
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
 }
 
 
