@@ -708,7 +708,11 @@ blockquote.search-result img {
     display: flex;
     justify-content: center;
 }
-
+/*map*/
+div.map{
+    height:420px;
+   
+}
 
 
 
