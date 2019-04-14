@@ -715,6 +715,16 @@ div.map{
     height:420px;
    
 }
+div.About{
+    text-align: center;
+    margin-bottom: 100px;
+}
+div.about{
+    color:#74c75b;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
 
 
 
