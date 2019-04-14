@@ -502,10 +502,11 @@ div.place{
     padding:20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: left;
 }
 div.place label {
     display: block;
-    padding: 20px;
+    padding: 20px 0 5px 0;
 }
 div.place a {
     display: block;
@@ -516,6 +517,10 @@ div.place button {
 }
 a.small-link {
     font-size: .8em;
+    padding-top: 15px;
+}
+p.justify-left {
+    text-align: left;
 }
 section.private-information{
     text-align: center;
