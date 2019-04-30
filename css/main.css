@@ -736,7 +736,11 @@ div.about{
     margin-bottom: 1em;
     margin-top: 2em;
 }
+/*agreement*/
 
+div.Agreement-Done .button {
+    display:block;
+}
 
 
 
