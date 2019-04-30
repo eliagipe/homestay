@@ -4,6 +4,8 @@
 
     //Connect to DB
 
+    //TODO change to real DB
+
     $db = new mysqli('localhost', 'root', 'root', 'website');
     $query = " SELECT * FROM users WHERE username = '$email' AND password = '$password' ";
     $result = mysqli_query($db, $query);
