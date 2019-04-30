@@ -12,7 +12,7 @@
     $rows = mysqli_num_rows($result);
 
     if ($rows > 0) {
-        header("location:search.html");
+        header("location: search.html");
     } else {
         echo "Try again.";
     }

@@ -737,6 +737,12 @@ div.about{
     margin-top: 2em;
 }
 
+//Javascript
+
+.navegacion-principal .active {
+    border-bottom: 2px solid #fe4918;
+}
+
 
 
 
