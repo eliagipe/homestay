@@ -21,7 +21,12 @@
 
 </head>
 
-<body>
+<?php 
+  $file = basename($_SERVER['PHP_SELF']);
+  $page = str_replace(".php", "", $file);
+?>
+
+<body class="<?php echo $page; ?>">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->

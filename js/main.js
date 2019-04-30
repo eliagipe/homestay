@@ -15,11 +15,9 @@
             .bindPopup('HomeStay is supervised from here!')
             .openPopup();
 
-        //Add class for menu
+        //Add class to menu
 
         $('body.signin .principal-navegation a:contains("Sign in")').addClass('active');
-        $('body.profile .navegacion-principal a:contains("Profile")').addClass('active');
-        $('body.search .navegacion-principal a:contains("Search match")').addClass('active');
 
 });// DOM CONTENT LOADED
 });
