@@ -19,7 +19,12 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<?php 
+  $file = basename($_SERVER['PHP_SELF']);
+  $page = str_replace(".php", "", $file);
+?>
+
+<body class="<?php echo $page ?>">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -40,12 +45,12 @@
           </div>
 
           <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
-            <a href="signin.html">Sign In</a>
-            <a href="profile.html">My profile</a>
-            <a href="search.html">Search match</a>
-            <a href="myfavorits.html">Favorites</a>
-            <a href="aboutus.html">About us</a>
-            <a href="faq.html">FAQ</a>
+            <a href="signin.php">Sign In</a>
+            <a href="profile.php">My profile</a>
+            <a href="search.php">Search match</a>
+            <a href="myfavorits.php">Favorites</a>
+            <a href="aboutus.php">About us</a>
+            <a href="faq.php">FAQ</a>
           </nav>
         </div><!--.conteneiner-->
     </div><!--.bar-->
