@@ -737,11 +737,15 @@ div.about{
     margin-top: 2em;
 }
 
-//Javascript
+/** Javascript **/
 
 .principal-navegation .active {
     border: none;
     border-bottom: 2px solid white;
+}
+p.hide {
+    display: none !important;
+    color: red !important;
 }
 
 

@@ -61,15 +61,15 @@
     <p>The only thing you need to do to find a match is sign in first:</p>
     <div class="form">
       <div class="place">
-        <form id="sign-in" class="sign-in" action="index.html"method="post">
+        <form id="sign-in" class="sign-in" action="validate.php" method="post">
             
               <label for="email">Email</label>
               <input type ="email" id="email" name="email" placeholder="Enter e-mail"required> 
               <label for="password">Password</label>
               <input type ="password" id="password" name="password" placeholder="Enter password"required>
+              <div class="hide"><p>Try again.</p></div> 
               <input class="button hollow" type="submit" value="Sign in"> 
               
-                
               <a class="small-link" href="password.html">Forgot password? Click here!</a>
         </form>
       </div>

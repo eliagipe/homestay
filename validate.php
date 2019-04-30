@@ -12,9 +12,10 @@
     $rows = mysqli_num_rows($result);
 
     if ($rows > 0) {
-        header("location: search.html");
+        header("location: search.php");
     } else {
-        echo "Try again.";
+        header("location: signin.php");
+        
     }
 
     mysqli_free_result($result);
