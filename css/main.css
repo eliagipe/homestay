@@ -740,7 +740,8 @@ div.about{
 //Javascript
 
 .principal-navegation .active {
-    border-bottom: 2px solid #fe4918;
+    border: none;
+    border-bottom: 2px solid white;
 }
 
 
