@@ -27,12 +27,11 @@
   <h5>Advanced search</h5>  
   <form action="adv-search" class="search-adv" action="search.html" method="post">
     <div class="adv-search">
-      <label for="meals"><i class="fas fa-utensils"></i> includes meals</label>
-      <select name="meals" id="meals">
-        <option value="select">-- Select one --</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        <option value="all">All</option>
+      <label for="meals"><i class="fas fa-utensils"></i> Meals included</label>
+
+        <input type="checkbox" name="meals" value="breakfast"> Breakfast<br>
+        <input type="checkbox" name="meals" value="lunch"> Lunch<br>
+        <input type="checkbox" name="meals" value="dinner"> Dinner<br>
       </select>
      
       <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label> 

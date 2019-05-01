@@ -24,5 +24,31 @@
         $('body.aboutus .principal-navegation a:contains("About us")').addClass('active');
         $('body.faq .principal-navegation a:contains("FAQ")').addClass('active');
 
+        //bar
+    // menu fijo
+var windowHeight = $(window).height();
+var barraAltura = $('.bar').innerHeight();
+
+
+ 
+$(window).scroll(function(){
+var scroll=$(window).scrollTop();
+if(scroll>windowHeight){
+$('.bar').addClass('fixed');
+$('body').css({'margin-top': barraAltura +'px'})//pa que no de salto
+}else{
+$('.bar').removeClass('fixed');
+$('body').css({'margin-top':'0px'});
+}
+
+});
+
+//menu responsive
+
+$('.menu-movil') .on('click',function(){
+$(".navegacion-principal").slideToggle();//cuando esteen slide dog ejecutara down y asi.
+
+});
+
     });// DOM CONTENT LOADED
 });
