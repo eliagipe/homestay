@@ -13,6 +13,7 @@
 
     if ($rows > 0)
     {
+        session_start();
         $user = $result->fetch_object();
         $_SESSION["email"] = $email;
         $_SESSION["type"] = $user->type;
