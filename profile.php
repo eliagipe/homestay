@@ -6,7 +6,7 @@
     <p>Here you can add or edit  information about yourself:</p>
     
     <div class="place">
-      <form id="register" class="register" action="index.php"method="post">
+      <form id="register" class="register" action="index.html"method="post">
         <div id="user-data" class="register box clearix">
           <div class="form-control"> 
             <label class="header">Profile Photo:</label>

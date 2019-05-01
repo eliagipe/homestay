@@ -4,7 +4,7 @@
     <h2>Register as a family or student!</h2>
     <div class="form">
       <div class="place">
-        <form id="register" class="register" action="index.php" method="post">
+        <form id="register" class="register" action="index.html" method="post">
           <label>Choose if you want to be registered as a family or a student:</label>
           <input type="radio" name="choose" value="family" /> I want to be a host family<br>
           <input type="radio" name="choose" value="student" /> I am a student<br />

@@ -2,7 +2,7 @@
 
 <section class="conteiner section">
   <h2>Start looking for an exchange student to host!</h2>
-  <form id="search" class="search" action="search.php" method="post">
+  <form id="search" class="search" action="search.html" method="post">
     <div class="search-bar">
       <label for="location"><i class="fas fa-location-arrow"></i> My location</label>
       <select name="house-location" id="house-location">
@@ -24,12 +24,12 @@
         <option value="2students">2 students</option>
         <option value="more">More than 2 students</option>
       </select>
-      <input type="submit" class="button hollow" value="Search" href="search.php">
+      <input type="submit" class="button hollow" value="Search" href="search.html">
     </div>
   </form>
 
   <h5>Advanced search</h5>  
-  <form action="adv-search" class="search-adv" action="search.php" method="post">
+  <form action="adv-search" class="search-adv" action="search.html" method="post">
     <div class="adv-search">
       <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
       <select name="gender" id="gender">
@@ -247,7 +247,7 @@
         <label for="criminal-record"><i class="far fa-file-alt"></i> Criminal record:</label>
         <input type="radio" name="criminal-record" value="important" /> Important<br>
         <input type="radio" name="criminal-record" value="not-important" /> Not important<br />
-        <input type="submit" class="button hollow" value="Search" href="search.php">
+        <input type="submit" class="button hollow" value="Search" href="search.html">
       </div>
     </form>
   </div>

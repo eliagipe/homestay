@@ -13,7 +13,7 @@
               <input type ="password" id="password" name="password" placeholder="Enter password"required>
               <p><button class="button hollow" onclick="validate(document.getElementById('email').value, document.getElementById('password').value);">Sign in</button></p>
               
-              <a class="small-link" href="password.php">Forgot password? Click here!</a>
+              <a class="small-link" href="password.html">Forgot password? Click here!</a>
         </form>
         <script>
         function validate(email, password)
@@ -23,7 +23,7 @@
                 type: "POST",
                 data: "email="+email+"&password="+password,
                 success: function(resp){
-                $('#result').php(resp)
+                $('#result').html(resp)
                 }       
             });
         }
@@ -35,7 +35,7 @@
     <div class="form">
       <div class="place">
         <p class="justify-left">Don't have an account? The registration is going to take less <br> than a minute and becoming a member is totally free!</p>
-        <p> <a href="register.php" class="button hollow">Register</a></p>
+        <p> <a href="register.html" class="button hollow">Register</a></p>
       </div>
     </div>
   </section>
