@@ -35,7 +35,7 @@
     <div class= "hero">  
         <div class="conteiner clearfix"> <!--This is to center what we are going to write-->
           <div class="welcome">
-            <a href="index.html"><img src="img/HomeStay logo.png" alt="Logo"></a>
+            <a href="index.php"><img src="img/HomeStay logo.png" alt="Logo"></a>
           </div>
 
           <div class="menu-movil">
@@ -45,10 +45,20 @@
           </div>
 
           <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
-            <a href="signin.php">Sign In</a>
-            <a href="profile.php">My profile</a>
-            <a href="search.php">Search match</a>
-            <a href="myfavorits.php">Favorites</a>
+            <?php 
+              if ($_SESSION["type"] == null) {
+                echo "<a href='signin.php'>Sign In</a>";
+              } else {
+                echo "<a href='logout.php'>Sign Out</a>";
+              }
+            ?>
+
+            <!-- TODO falta versió estudiants i famílies -->
+            <?php if($_SESSION["type"] == 'F') {
+                echo "<a href='profile.php'>My profile</a>";
+                echo "<a href='search.php'>Search match</a>";
+                echo "<a href='myfavorits.php'>Favorites</a>";
+            } ?>
             <a href="aboutus.php">About us</a>
             <a href="faq.php">FAQ</a>
           </nav>
