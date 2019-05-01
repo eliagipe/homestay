@@ -19,12 +19,9 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<?php 
-  $file = basename($_SERVER['PHP_SELF']);
-  $page = str_replace(".php", "", $file);
-?>
 
-<body class="<?php echo $page; ?>">
+
+<body>
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -46,7 +43,9 @@
 
           <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
             <a href="signin.php">Sign In</a>
-            <a href="profile.php">My profile</a>
+            <?php if($_SESSION["type"] == 'F') {
+              echo "<a href='profile.php'>My profile</a>";
+            } ?>
             <a href="search.php">Search match</a>
             <a href="myfavorits.php">Favorites</a>
             <a href="aboutus.php">About us</a>
@@ -67,9 +66,7 @@
               <input type ="email" id="email" name="email" placeholder="Enter e-mail"required> 
               <label for="password">Password</label>
               <input type ="password" id="password" name="password" placeholder="Enter password"required>
-              <!-- <div class="hide"><p>Try again.</p></div>  -->
               <p><button class="button hollow" onclick="validate(document.getElementById('email').value, document.getElementById('password').value);">Sign in</button></p>
-              <!-- <input class="button hollow" type="submit" value="Sign in">  -->
               
               <a class="small-link" href="password.html">Forgot password? Click here!</a>
         </form>
