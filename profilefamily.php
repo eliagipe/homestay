@@ -4,7 +4,7 @@
     <h2>My Profile - Family</h2>
     <h3> Add more information about your accomodation! </h3>
     <div class="place">
-      <form id="register" class="register" action="index.html"method="post">
+      <form id="register" class="register" action="index.php"method="post">
         <div id="user-data" class="register box clearix">
           <div class="place"> 
             <label class="header">Profile Photo:</label> <!--needs database, php-->
