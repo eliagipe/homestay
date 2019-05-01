@@ -56,7 +56,6 @@
             }
           ?>
 
-          <!-- TODO falta versió estudiants i famílies -->
           <?php 
               session_start();
               if($_SESSION["type"] == 'F') {
