@@ -743,7 +743,7 @@ div.about{
     border: none;
     border-bottom: 2px solid white;
 }
-p.hide {
+.hide {
     display: none !important;
     color: red !important;
 }

@@ -11,11 +11,16 @@
     $result = mysqli_query($db, $query);
     $rows = mysqli_num_rows($result);
 
-    if ($rows > 0) {
-        header("location: search.php");
-    } else {
-        header("location: signin.php");
-        
+    if ($rows > 0)
+    {
+        $user = $result->fetch_object();
+        $_SESSION["email"] = $email;
+        $_SESSION["type"] = $user->type;
+        echo '<script>location.href = "search.php"</script>';
+    }
+    else
+    {
+        echo '<span>Try again.</span>';
     }
 
     mysqli_free_result($result);
