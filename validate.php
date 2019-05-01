@@ -17,7 +17,11 @@
         $user = $result->fetch_object();
         $_SESSION["email"] = $email;
         $_SESSION["type"] = $user->type;
-        echo '<script>location.href = "searchS.php"</script>';
+        if ($user->type == S) {
+            echo '<script>location.href = "searchS.php"</script>';
+        } elseif ($user->type == F) {
+            echo '<script>location.href = "searchF.php"</script>';
+        }
     }
     else
     {
