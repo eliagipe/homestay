@@ -738,9 +738,23 @@ div.about{
 }
 /*agreement*/
 
+<<<<<<< HEAD
 div.Agreement-Done .button {
     display:block;
 }
+=======
+/** Javascript **/
+
+.principal-navegation .active {
+    border: none;
+    border-bottom: 2px solid white;
+}
+.hide {
+    display: none !important;
+    color: red !important;
+}
+
+>>>>>>> c1b5e0886de401d90e0149019c81ac0e43c86abd
 
 
 
