@@ -17,7 +17,7 @@
         $user = $result->fetch_object();
         $_SESSION["email"] = $email;
         $_SESSION["type"] = $user->type;
-        echo '<script>location.href = "search.php"</script>';
+        echo '<script>location.href = "searchS.php"</script>';
     }
     else
     {

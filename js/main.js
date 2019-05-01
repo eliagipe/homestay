@@ -15,14 +15,18 @@
             .bindPopup('HomeStay is supervised from here!')
             .openPopup();
 
-        //Add class to menu
-
-        $('body.signin .principal-navegation a:contains("Sign In")').addClass('active');
-        $('body.profile .principal-navegation a:contains("My profile")').addClass('active');
-        $('body.search .principal-navegation a:contains("Search match")').addClass('active');
-        $('body.myfavorits .principal-navegation a:contains("Favorites")').addClass('active');
-        $('body.aboutus .principal-navegation a:contains("About us")').addClass('active');
-        $('body.faq .principal-navegation a:contains("FAQ")').addClass('active');
-
     });// DOM CONTENT LOADED
 });
+
+$(function() {
+    //Add class to menu
+
+    $('body.signin .principal-navegation a:contains("Sign In")').addClass('active');
+    $('body.profileS .principal-navegation a:contains("My profile")').addClass('active');
+    $('body.searchS .principal-navegation a:contains("Search match")').addClass('active');
+    $('body.profileF .principal-navegation a:contains("My profile")').addClass('active');
+    $('body.searchF .principal-navegation a:contains("Search match")').addClass('active');
+    $('body.myfavorits .principal-navegation a:contains("Favorites")').addClass('active');
+    $('body.aboutus .principal-navegation a:contains("About us")').addClass('active');
+    $('body.faq .principal-navegation a:contains("FAQ")').addClass('active');
+})
