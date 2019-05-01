@@ -70,6 +70,6 @@
           <a href="aboutus.php">About us</a>
           <a href="faq.php">FAQ</a>
         </nav>
-      </div><!--.conteneiner-->
+      </div><!--.conteiner-->
   </div><!--.bar-->
 </header>
