@@ -42,7 +42,7 @@
 
         <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
           <?php 
-            if ($_SESSION["type"] = null) {
+            if ($_SESSION["type"] == null) {
               echo "<a href='signin.php'>Sign In</a>";
             } else {
               echo "<a href='logout.php'>Sign Out</a>";
@@ -50,7 +50,7 @@
           ?>
 
           <!-- TODO falta versió estudiants i famílies -->
-          <?php if($_SESSION["type"] = 'F') {
+          <?php if($_SESSION["type"] == 'F') {
               echo "<a href='profile.php'>My profile</a>";
               echo "<a href='search.php'>Search match</a>";
               echo "<a href='myfavorits.php'>Favorites</a>";

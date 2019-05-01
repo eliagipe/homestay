@@ -41,6 +41,7 @@
 
           <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
             <?php 
+              session_start();
               if ($_SESSION["type"] == null) {
                 echo "<a href='signin.php'>Sign In</a>";
               } else {
@@ -49,7 +50,9 @@
             ?>
 
             <!-- TODO falta versió estudiants i famílies -->
-            <?php if($_SESSION["type"] == 'F') {
+            <?php 
+                session_start();
+                if($_SESSION["type"] == 'F') {
                 echo "<a href='profile.php'>My profile</a>";
                 echo "<a href='search.php'>Search match</a>";
                 echo "<a href='myfavorits.php'>Favorites</a>";
