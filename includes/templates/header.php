@@ -19,9 +19,14 @@
   <meta name="theme-color" content="#fafafa">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
 
+<?php
+  $file = basename($_SERVER['PHP_SELF']);
+  $page = str_replace(".php", "", $file);
+?>
+
 </head>
 
-<body>
+<body class="<?php echo $page ?>">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->

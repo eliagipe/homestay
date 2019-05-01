@@ -6,8 +6,8 @@
 
     //TODO change to real DB
 
-    $db = new mysqli('localhost', 'root', 'root', 'website');
-    $query = " SELECT * FROM users WHERE username = '$email' AND password = '$password' ";
+    $db = new mysqli('localhost', 'root', 'root', 'homestay');
+    $query = " SELECT * FROM account_register WHERE email = '$email' AND Password = '$password' ";
     $result = mysqli_query($db, $query);
     $rows = mysqli_num_rows($result);
 
