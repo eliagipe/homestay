@@ -1,5 +1,11 @@
 <?php 
   use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+
+  require 'PHPMailer/Exception.php';
+  require 'PHPMailer/PHPMailer.php';
+  require 'PHPMailer/SMTP.php';  
+  
   require_once "functions.php";
 
   if(isset($_POST['email'])) {
@@ -10,20 +16,18 @@
 
       $token = generateNewString();
 
-      $db->query("UPDATE users SET token='$token', 
+      $db->query("UPDATE account_register SET token='$token', 
                 tokenExpire=DATE_ADD(NOW(), INTERVAL 5 MINUTE)
                 WHERE email='$email'
       ");
 
-      require "PHPMailer/PHPMailer.php";
-      require "PHPMailer/Exception.php";
+    
 
       $mail = new PHPMailer(true);
 
-      try {
-        $mail->SMTPDebug = 2;                                       
+        $mail->SMTPDebug = 0;                                       
         $mail->isSMTP();                                            
-        $mail->Host       = 'smtp.gmail.com';  
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;                                   
         $mail->Username   = 'homestay.aau@gmail.com';                     
         $mail->Password   = 'idaaau2019';                               
@@ -31,22 +35,29 @@
         $mail->Port       = 587;                                    
 
         $mail->addAddress($email);
-        $mail->setFrom("homestay.aau@gmail.com", "Mailer");
+        $mail->setFrom("homestay.aau@gmail.com", "Homestay");
         $mail->Subject = "Reset Password";
         $mail->isHTML(true);
         $mail->Body = "
-            Hola
+          Hi,<br><br>
+              
+          In order to reset your password, please click on the link below:<br>
+          <a href='http://localhost:8888/GitHub/homestay/resetPassword.php?email=$email&token=$token'>http://localhost:8888/GitHub/homestay/resetPassword.php?email=$email&token=&token</a><br><br>
+          
+          Kind Regards,<br>
+          HomeStay
         ";
 
-        //$mail->send();
-
-        // if($mail->send()) 
-        //   exit(json_encode(array("status" => 1, "msg" => 'Please check your email inbox!')));
-        // else 
-        //   exit(json_encode(array("status" => 0, "msg" => 'Something wrong just happened! Please try again.')));
+      try {
+        if($mail->send()) 
+          exit(json_encode(array("status" => 1, "msg" => 'Please check your email inbox!')));
+        else 
+          exit(json_encode(array("status" => 0, "msg" => 'Something wrong just happened! Please try again.')));
+      } catch (phpmailerException $e) {
+        exit(json_encode(array("status" => 0, "msg" => $e->errorMessage())));
       } catch(Exception $e) {
-        //exit(json_encode(array("status" => 0, "msg" => 'Message could not be sent. Mailer Error: {$mail->ErrorInfo}')));
-      }
+        exit(json_encode(array("status" => 0, "msg" => $e->getMessage())));
+      } 
     } else {
       exit(json_encode(array("status" => 0, "msg" => 'Please check your inputs!')));
     }
@@ -56,7 +67,7 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
 <section class="section conteiner">
-    <h2>Recover your password!</h2>
+    <h2>Reset your password!</h2>
     <p>Write your email to receive a link to change your password:</p>
     <div class="form">
       <div class="place">
