@@ -13,7 +13,7 @@
               <input type ="password" id="password" name="password" placeholder="Enter password"required>
               <p><button class="button hollow" onclick="validate(document.getElementById('email').value, document.getElementById('password').value);">Sign in</button></p>
               
-              <a class="small-link" href="password.html">Forgot password? Click here!</a>
+              <a class="small-link" href="forgotpassword.php">Forgot password? Click here!</a>
         </form>
         <script>
         function validate(email, password)
