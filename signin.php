@@ -35,7 +35,7 @@
     <div class="form">
       <div class="place">
         <p class="justify-left">Don't have an account? The registration is going to take less <br> than a minute and becoming a member is totally free!</p>
-        <p> <a href="register.html" class="button hollow">Register</a></p>
+        <p> <a href="register.php" class="button hollow">Register</a></p>
       </div>
     </div>
   </section>
