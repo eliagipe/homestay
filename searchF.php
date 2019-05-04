@@ -11,13 +11,8 @@
     $criminal = $_POST['criminal-record'];
     $smoke = $_POST['smoking'];
 
-    $query = " SELECT * FROM student INNER JOIN account_register ON student.RegisterIdS = account_register.RegisterId";
-    
-
-    if(isset($start) && isset($end) ) {
-      $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
-      
-    }
+    $query = " SELECT * FROM student INNER JOIN account_register ON student.RegisterIdS = account_register.RegisterId 
+              WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo)";
 
     if(isset($gender) && $gender == "male") {
         $query = $query . " AND (Gender = 'M') ";
@@ -48,11 +43,10 @@
     if(isset($nationality) && $nationality != "select" && $nationality != "all") {
         $query = $query . " AND (Nationality = '$nationality') ";
     }
-    echo $query . '<br>';
+    
     $result = mysqli_query($db, $query);
-    while($student = $result->fetch_object()) {
-      echo $student->LastName;
-    }
+    $rows = mysqli_num_rows($result);
+    
   }
 
 ?>
@@ -66,17 +60,17 @@
 
       <div class="search1">
         <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
-        <input type="date" name="starting-date" id="starting-date" placeholder="yy/mm/dd" >
+        <input type="date" name="starting-date" id="starting-date" placeholder="yy/mm/dd" value="<?php echo $start; ?>" required>
       </div>
 
       <div class="search4">
         <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
-        <input type="date" name="ending-date" id="ending-date" placeholder="yy/mm/dd">
+        <input type="date" name="ending-date" id="ending-date" placeholder="yy/mm/dd" value="<?php echo $end; ?>" required>
       </div>
 
       <div class="search5">
         <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
-        <select name="gender" id="gender">
+        <select name="gender" id="gender"> 
           <option value="select">-- Select one --</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -97,7 +91,7 @@
       <div class="search7">
         <label for="nationality"><i class="fas fa-map-marker-alt"></i> Nationality:</label> 
         <select name="nationality">
-        <option value="select">-- Select one --</option>
+          <option value="select">-- Select one --</option>
           <option value="all">All</option>
           <option value="afghan">Afghan</option>
           <option value="albanian">Albanian</option>
@@ -321,82 +315,45 @@
 </section>
 
 <section class="conteiner section">
-  <h3>Students that match your searching result:</h3>
+
+  <?php if(!isset($rows)) { ?>
+    <h3>Select at least one option from the searching bar.</h3>
+  <?php } ?>
+  <?php if ($rows > 0) { ?>
+    <h3>Students that match your searching result:</h3>
+  <?php } ?>
+
+  <?php if (isset($rows) && $rows == 0) { ?>
+    <h3>There aren't any students that match your search.</h3>
+  <?php } ?>
+
     <div class="profiles conteiner clearfix">
       <div class="profile">
-        <blockquote class="search-result grid-container">
 
-          <div class="grid-item item1">
-            <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-            <img src="img/Loui 23.jpg" alt="student">
-            <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-          </div>
+        <?php while($student = $result->fetch_object()) { ?>
+          <blockquote class="search-result grid-container">
 
-          <div class="grid-item item2">
-            <p class="name">Mathias Heinekein</p>
-            <p class="info"><span>Nationality:</span> German/Netherlands</p>
-            <p class="info"><span>Age:</span> 22 years old</p>
-            <p class="info"><span>Duration:</span> 1 year</p>
-            <p class="info"><span>Criminal record:</span> Clean record</p>
-          </div>
-
-          <div class="item3">
-            <a href="#" class="long-button hollow">See profile</a>
-          </div>
-
-        </blockquote>
-
-        <blockquote class="search-result grid-container">
             <div class="grid-item item1">
               <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
               <img src="img/Loui 23.jpg" alt="student">
               <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
             </div>
+
             <div class="grid-item item2">
-              <p class="name">Mathias Heinekein</p>
-              <p class="info"><span>Nationality:</span> German/Netherlands</p>
-              <p class="info"><span>Age:</span> 22 years old</p>
-              <p class="info"><span>Duration:</span> 1 year</p>
-              <p class="info"><span>Criminal record:</span> Clean record</p>
+              <p class="name"><?php echo $student->FirstName . " " . $student->LastName; ?></p>
+              <p class="info"><span>Nationality:</span> <?php echo $student->Nationality; ?></p>
+              <p class="info"><span>Age:</span> <?php echo $student->Age; ?> years old</p>
+              <p class="info"><span>From:</span> <?php echo $student->AvailableFrom; ?></p>
+              <p class="info"><span>To:</span> <?php echo $student->AvailableTo; ?></p>
             </div>
+
             <div class="item3">
               <a href="#" class="long-button hollow">See profile</a>
             </div>
+
           </blockquote>
-          <blockquote class="search-result grid-container">
-              <div class="grid-item item1">
-                <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                <img src="img/Loui 23.jpg" alt="student">
-                <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-              </div>
-              <div class="grid-item item2">
-                <p class="name">Mathias Heinekein</p>
-                <p class="info"><span>Nationality:</span> German/Netherlands</p>
-                <p class="info"><span>Age:</span> 22 years old</p>
-                <p class="info"><span>Duration:</span> 1 year</p>
-                <p class="info"><span>Criminal record:</span> Clean record</p>
-              </div>
-              <div class="item3">
-                <a href="#" class="long-button hollow">See profile</a>
-              </div>
-            </blockquote>
-            <blockquote class="search-result grid-container">
-                <div class="grid-item item1">
-                  <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                  <img src="img/Loui 23.jpg" alt="student">
-                  <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-                </div>
-                <div class="grid-item item2">
-                  <p class="name">Mathias Heinekein</p>
-                  <p class="info"><span>Nationality:</span> German/Netherlands</p>
-                  <p class="info"><span>Age:</span> 22 years old</p>
-                  <p class="info"><span>Duration:</span> 1 year</p>
-                  <p class="info"><span>Criminal record:</span> Clean record</p>
-                </div>
-                <div class="item3">
-                  <a href="#" class="long-button hollow">See profile</a>
-                </div>
-              </blockquote>
+        <?php } ?>
+
       </div>
   </div>
 </section>
