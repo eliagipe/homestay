@@ -270,6 +270,7 @@
       </div>
     </div>
   </form>
+</section>
 
 <section class="conteiner section">
   <h3>Students that match your searching result:</h3>
