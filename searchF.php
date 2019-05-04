@@ -319,6 +319,7 @@
   <?php if(!isset($rows)) { ?>
     <h3>Select at least one option from the searching bar.</h3>
   <?php } ?>
+  
   <?php if ($rows > 0) { ?>
     <h3>Students that match your searching result:</h3>
   <?php } ?>
