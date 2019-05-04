@@ -60,4 +60,6 @@
         $query = $query . " AND (Nationality = $nationality) ";
     }
 
+    foreach 
+
 ?>

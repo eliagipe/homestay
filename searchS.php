@@ -49,7 +49,7 @@
       </div>
 
       <div class="search6">
-        <input type="submit" class="button hollow" value="Search" href="search.html">
+        <input type="submit" class="button hollow" value="Search">
       </div>
     </div>
   </form>

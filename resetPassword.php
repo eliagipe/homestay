@@ -7,7 +7,7 @@
         $token = $db->real_escape_string($_GET['token']);
 
         $sql = $db->query("SELECT RegisterId FROM account_register WHERE 
-                            email = '$email' AND token = '$token' AND token<>'' AND tokenExpire > NOW()
+            email = '$email' AND token = '$token' AND token<>'' AND tokenExpire > NOW()
         ");
 
         if($sql->num_rows > 0) {

@@ -5,23 +5,27 @@
 
     //Connect to DB
 
-    //TODO change to real DB
 
     $db = new mysqli('localhost', 'root', 'root', 'homestay');
-    $query = " SELECT * FROM account_register WHERE email = '$email' AND Password = '$passwordEncrypted' "; 
+    $query = " SELECT * FROM account_register WHERE email = '$email' "; 
     $result = mysqli_query($db, $query);
     $rows = mysqli_num_rows($result);
 
-    if ($rows > 0)
-    {
-        session_start();
+    if ($rows > 0) {
         $user = $result->fetch_object();
-        $_SESSION["email"] = $email;
-        $_SESSION["type"] = $user->type;
-        if ($user->type == S) {
-            echo '<script>location.href = "searchS.php"</script>';
-        } elseif ($user->type == F) {
-            echo '<script>location.href = "searchF.php"</script>';
+
+        if (password_verify($password, $user->Password)) {
+            session_start();
+            $_SESSION["email"] = $email;
+            $_SESSION["type"] = $user->type;
+            
+            if ($user->type == S) {
+                echo '<script>location.href = "searchS.php"</script>';
+            } elseif ($user->type == F) {
+                echo '<script>location.href = "searchF.php"</script>';
+            }
+        } else {
+            echo '<span>Try again.</span>';
         }
     }
     else
