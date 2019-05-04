@@ -6,13 +6,13 @@
     <div class="search-grid">
       <div class="search1">
         <label for="location"><i class="fas fa-location-arrow"></i> My location</label>
-        <select name="house-location" id="house-location">
-          <option value="select">-- Select one --</option>
-          <option value="aalborg-c">Aalborg C</option>
-          <option value="aalborg-ø">Aalborg Ø</option>
-          <option value="aalborg-v">Aalborg V</option>
-          <option value="aalborg-s">Aalborg S</option>
-          <option value="nørresudby">Nørresundby</option>
+        <select name="location" id="location">
+        <option value="select">-- Select one --</option>
+          <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
+          <option value="4km-6km">3km-6km from Aalborg Univesity's main campus</option>
+          <option value="7km-15km">6km-15km from Aalborg Univesity's main campus</option>
+          <option value="16km-19km">15km-20km from Aalborg Univesity's main campus</option>
+          <option value="20km">More than 20km from Aalborg Univesity's main campus</option>
           <option value="all">All</option>
         </select>
       </div>

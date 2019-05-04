@@ -2,7 +2,7 @@
     
     $db = new mysqli('localhost', 'root', 'root', 'homestay');
     
-    //$distance = $_POST['distance'];
+    $distance = $_POST['location'];
     $start = $_POST['starting-date'];
     $end = $_POST['ending-date'];
     $gender = $_POST['gender'];
@@ -15,7 +15,17 @@
 
     if(isset($distance) && $distance == "0km-3km from Aalborg Univesity's main campus") {
         $query = $query . " AND (Distance <=  3) ";
-    } 
+    } elseif(isset($distance) && $distance == "4km-6km from Aalborg Univesity's main campus") {
+        $query = $query . " AND (Distance BETWEEN 4 AND 6) ";
+    } elseif(isset($distance) && $distance == "6km-15km from Aalborg Univesity's main campus") {
+        $query = $query . " AND (Distance BETWEEN 6 AND 15) ";
+    } elseif(isset($distance) && $distance == "15km-20km from Aalborg Univesity's main campus") {
+        $query = $query . " AND (Distance BETWEEN 15 AND 20) ";
+    } elseif(isset($distance) && $distance == "More than 20km from Aalborg Univesity's main campus") {
+        $query = $query . " AND (Distance >=  20) ";
+    } elseif(isset($distance) && $distance == "All") {
+        $query = $query . " AND (Distance >  0) ";
+    }
 
 
     if(isset($gener) && $gender == "Male") {
@@ -47,4 +57,9 @@
     }
 
     if(isset($nationality) && $nationality == "All") {
-        $query = $query . " AND (Nationality IS NOT NULL)" 
+        $query = $query . " AND (Nationality IS NOT NULL) ";
+    } elseif(isset($nationality) && $nationality == 'nationality') {
+        $query = $query . " AND (Nationality = $nationality) ";
+    }
+
+?>
