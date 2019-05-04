@@ -4,15 +4,7 @@
   <h2>Start looking for an exchange student to host!</h2>
   <form id="search" class="search" action="search.html" method="post">
     <div class="search-bar">
-      <label for="location"><i class="fas fa-location-arrow"></i> My location</label>
-      <select name="house-location" id="house-location">
-        <option value="select">-- Select one --</option>
-        <option value="aalborg-c">Aalborg C</option>
-        <option value="aalborg-ø">Aalborg Ø</option>
-        <option value="aalborg-v">Aalborg V</option>
-        <option value="aalborg-s">Aalborg S</option>
-        <option value="nørresudby">Nørresundby</option>
-        <option value="all">All</option>
+     
       </select>
       <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
       <input type="date" name="starting-date" placeholder="dd/mm/yy">

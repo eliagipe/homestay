@@ -6,7 +6,7 @@
     <p>Here you can add or edit  information about yourself:</p>
     
     <div class="place">
-      <form id="register" class="register" action="index.html"method="post">
+      <form id="register" class="register" action="validatestudentprofile.php"method="post">
         <div id="user-data" class="register box clearix">
           <div class="form-control"> 
             <label class="header">Profile Photo:</label>
@@ -211,13 +211,10 @@
         <label for="age">Age</label>
         <input type="number" name="age" value="Age"/><br />
 
-        <label for="duration">Duration of stay</label>
-        <select name="duration">
-          <option value="">-- select one --</option>
-          <option value="lessthansixmonths">Less than 6 Months</option>
-          <option value="sixmonths">6 Months</option>
-          <option value="oneyear">One Year</option>
-        </select>
+        <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
+      <input type="date" name="starting-date" placeholder="dd/mm/yy">
+      <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
+      <input type="date" name="ending-date" placeholder="dd/mm/yy">
 
         <label for="allergies">Allergies</label>
         <input type="text" id="allergies" name="allergies" placeholder="Optional">
@@ -233,7 +230,9 @@
         <input type="radio" name="smoking" value="yes"/> Yes<br />
 
         <label for="languages">Languages</label>
-        <input type="text" id="languages" placeholder="Languages">
+        <input type="text" id="languages" name="languages" placeholder="Languages">
+        <input type="text" id="languages1"name="languages1" placeholder="Optional additional language">
+        <input type="text" id="languages2" name="languages2" placeholder="Optional additional language">
         
         <label for="diet">Special diet</label>
         <input type="text" id="diet" placeholder="Optional">
