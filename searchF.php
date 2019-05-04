@@ -50,7 +50,7 @@
       <div class="search2">
         <label for="nationality"><i class="fas fa-map-marker-alt"></i> Nationality:</label> 
         <select name="nationality">
-          <option value="">-- select one --</option>
+        <option value="select">-- Select one --</option>
           <option value="all">All</option>
           <option value="afghan">Afghan</option>
           <option value="albanian">Albanian</option>
