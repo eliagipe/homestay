@@ -2,42 +2,53 @@
 
 <section class="conteiner section">
   <h2>Start looking for an exchange student to host!</h2>
-  <form id="search" class="search" action="search.html" method="post">
-    <div class="search-bar">
-      <label for="location"><i class="fas fa-location-arrow"></i> My location</label>
-      <select name="house-location" id="house-location">
-        <option value="select">-- Select one --</option>
-        <option value="aalborg-c">Aalborg C</option>
-        <option value="aalborg-ø">Aalborg Ø</option>
-        <option value="aalborg-v">Aalborg V</option>
-        <option value="aalborg-s">Aalborg S</option>
-        <option value="nørresudby">Nørresundby</option>
-        <option value="all">All</option>
-      </select>
-      <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
-      <input type="date" name="starting-date" placeholder="dd/mm/yy">
-      <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
-      <input type="date" name="ending-date" placeholder="dd/mm/yy">
-    
-      <input type="submit" class="button hollow" value="Search" href="search.html">
-    </div>
-  </form>
+  <form id="search" class="search" action="searchF.php" method="post">
+    <div class="search-grid">
+      <div class="search1">
+        <label for="location"><i class="fas fa-location-arrow"></i> My location</label>
+        <select name="house-location" id="house-location">
+          <option value="select">-- Select one --</option>
+          <option value="aalborg-c">Aalborg C</option>
+          <option value="aalborg-ø">Aalborg Ø</option>
+          <option value="aalborg-v">Aalborg V</option>
+          <option value="aalborg-s">Aalborg S</option>
+          <option value="nørresudby">Nørresundby</option>
+          <option value="all">All</option>
+        </select>
+      </div>
 
-  <h5>Advanced search</h5>  
-  <form action="adv-search" class="search-adv" action="search.html" method="post">
-    <div class="adv-search">
-      <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
-      <select name="gender" id="gender">
-        <option value="select">-- Select one --</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="all">All</option>
-      </select>
-      <label for="age"><i class="fas fa-male"></i> Age:</label>
-      <input type="checkbox" value="18-20">18-20<br>
-      <input type="checkbox" value="20-25">20-25<br>
-      <input type="checkbox" value="all">All<br>
-      <label for="nationality"><i class="fas fa-map-marker-alt"></i> Nationality:</label> 
+      <div class="search4">
+        <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
+        <input type="date" name="starting-date" placeholder="dd/mm/yy">
+      </div>
+
+      <div class="search7">
+        <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
+        <input type="date" name="ending-date" placeholder="dd/mm/yy">
+      </div>
+
+      <div class="search8">
+        <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
+        <select name="gender" id="gender">
+          <option value="select">-- Select one --</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+
+      <div class="search5">
+        <label for="age"><i class="fas fa-male"></i> Age:</label>
+        <select name="age" id="age">
+          <option value="select">-- Select one --</option>
+          <option value="18-20">18-20</option>
+          <option value="20-25">20-25</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+      
+      <div class="search2">
+        <label for="nationality"><i class="fas fa-map-marker-alt"></i> Nationality:</label> 
         <select name="nationality">
           <option value="">-- select one --</option>
           <option value="all">All</option>
@@ -235,18 +246,30 @@
           <option value="zimbabwean">Zimbabwean</option>
         </select>
       </div>
-      <div class="adv-search">
+
+      <div class="search3">
         <label for="smoking"><i class="fas fa-smoking"></i> Smoking:</label>
-        <input type="radio" name="smoking" value="yes" /> Yes<br>
-        <input type="radio" name="smoking" value="no" /> No<br />
+        <select name="smoking" id="smoking">
+          <option value="select">-- Select one --</option>
+          <option name="smoking" value="yes"> Yes</option>
+          <option name="smoking" value="no"> No</option>
+        </select>
+      </div>
+
+      <div class="search6">
         <label for="criminal-record"><i class="far fa-file-alt"></i> Criminal record:</label>
-        <input type="radio" name="criminal-record" value="important" /> Important<br>
-        <input type="radio" name="criminal-record" value="not-important" /> Not important<br />
+        <select name="criminal-record" id="criminal-record">
+          <option value="select">-- Select one --</option>
+          <option name="criminal-record" value="important" > Important</option>
+          <option name="criminal-record" value="not-important" > Not important</option>
+        </select>
+      </div>
+    
+      <div class="search9">
         <input type="submit" class="button hollow" value="Search" href="search.html">
       </div>
-    </form>
-  </div>
-</section>
+    </div>
+  </form>
 
 <section class="conteiner section">
   <h3>Students that match your searching result:</h3>

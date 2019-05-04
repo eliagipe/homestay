@@ -12,8 +12,9 @@
 
         if($sql->num_rows > 0) {
             $newPassword = generateNewString();
-            $newPasswordEncrypted = password_hash($newPassword, PASSWORD_BCRYPT);
-            $db->query("UPDATE RegisterId SET token = '', password = '$newPasswordEncrypted'
+            // $newPasswordEncrypted = password_hash($newPassword, PASSWORD_BCRYPT);
+            //TODO $db->query change to $newPasswordEncrypted
+            $db->query("UPDATE account_register SET token = '', Password = '$newPassword' 
                 WHERE email = '$email'
             ");
 

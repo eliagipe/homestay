@@ -1,13 +1,14 @@
 <?php 
     $email = $_POST['email'];
     $password = $_POST['password'];
+    //$passwordEncrypted = password_hash($password, PASSWORD_BCRYPT);
 
     //Connect to DB
 
     //TODO change to real DB
 
     $db = new mysqli('localhost', 'root', 'root', 'homestay');
-    $query = " SELECT * FROM account_register WHERE email = '$email' AND Password = '$password' ";
+    $query = " SELECT * FROM account_register WHERE email = '$email' AND Password = '$password' "; //TODO change to $passwordEncrypted
     $result = mysqli_query($db, $query);
     $rows = mysqli_num_rows($result);
 
