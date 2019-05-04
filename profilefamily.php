@@ -119,27 +119,12 @@
     
 
         <div class="places">
-          <p><h4>Upload a clean criminal record for better chances of finding a match!</h4></p> <!--needs database-->
-          <p> <input type="radio" name="record" value="no " /> I don't have a criminal record<br /></p>
-          <div class="input-container">
-            <input type="file" id="recordfamily">
-            <button class="browse-btn">Browse </button> 
-            <span class="file-info">Upload your criminal record</span>
-          </div>
-          <p><a href="save.html" class="long-button hollow"> Upload criminal record</a></p>   
+          <p><h4>Having a criminal record makes it a lot easier to find a match!</h4></p>
+          <p> <input type="radio" name="record" value="0" /> I don't have a criminal record<br /></p>
+          <p> <input type="radio" name="recordyes" value="1" /> I can provide a criminal record<br /></p>
         </div>
+      
         
-        <div class="places">
-          <p><h4> Here you can upload pictures of your family and your home! </h4></p> <!--needs database-->
-          <p><h4>This is a great way to give your future family member a great first impression! You can add up to six pictures in total!</h4> </p>
-          <div class="input-container">
-            <input type="file" id="familypics">
-            <button class="browse-btn">Browse</button>
-            <span class="file-info"></span>
-          </div>
-        
-          <p><a href="save.html" class="long-button hollow"> Upload your pictures </a></p>       
-    
         </div>
       </form>
     </div>
