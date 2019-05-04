@@ -9,12 +9,13 @@
     $firstname = $_POST['name'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
-    $password1 = $_POST['password'];
+    $password = $_POST['password'];
+    $passwordEncrypted = password_hash($password, PASSWORD_BCRYPT);
 
     try{
 require_once('connectiondb.php');
-$stmt = $conn->prepare("INSERT INTO account_register (type, FirstName, LastName, email, Password) VALUES (?,?,?,?,?)");
-$stmt->bind_param("sssss", $familystudent, $firstname, $lastname, $email, $password1);
+$stmt = $conn->prepare("INSERT INTO account_register (typefs, FirstName, LastName, email, Password) VALUES (?,?,?,?,?)");
+$stmt->bind_param("sssss", $familystudent, $firstname, $lastname, $email, $passwordEncrypted);
 $stmt->execute();
 $stmt->close();
 $conn->close();

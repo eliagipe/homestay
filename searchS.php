@@ -2,56 +2,61 @@
 
 <section class="conteiner section">
   <h2>Start looking for a family!</h2>
-  <form id="search" class="search" action="search.html" method="post">
-    <div class="search-bar">
-      <label for="location"><i class="fas fa-location-arrow"></i> Location</label>
-      <select name="house-location" id="house-location">
-        <option value="select">-- Select one --</option>
-        <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
-        <option value="4km-6km">4km-6km from Aalborg Univesity's main campus</option>
-        <option value="7km-15km">7km-15km from Aalborg Univesity's main campus</option>
-        <option value="16km-19km">7km-15km from Aalborg Univesity's main campus</option>
-        <option value="20km">more than 20km from Aalborg Univesity's main campus</option>
-        <option value="all">All</option>
-      </select>
-      <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
-      <input type="date" name="starting-date" placeholder="dd/mm/yy">
-      <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
-      <input type="date" name="ending-date" placeholder="dd/mm/yy">
-      
-      </select>
-      <input type="submit" class="button hollow" value="Search" href="search.html">
-    </div>
-  </form>
+  <form id="search" class="search" action="searchS.php" method="post">
+    <div class="search-grid">
+      <div class="searchS1">
+        <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
+        <input type="date" name="starting-date" placeholder="dd/mm/yy" required>
+      </div>
 
-  <h5>Advanced search</h5>  
-  <form action="adv-search" class="search-adv" action="search.html" method="post">
-    <div class="adv-search">
-      <label for="meals"><i class="fas fa-utensils"></i> includes meals</label>
-      <select name="meals" id="meals">
-        <option value="select">-- Select one --</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        <option value="all">All</option>
-      </select>
+      <div class="search2">
+        <label for="distance"><i class="fas fa-location-arrow"></i> Distance</label>
+          <select name="distance" id="distance">
+            <option value="select">-- Select one --</option>
+            <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
+            <option value="4km-6km">4km-6km from Aalborg Univesity's main campus</option>
+            <option value="7km-15km">7km-15km from Aalborg Univesity's main campus</option>
+            <option value="16km-19km">7km-15km from Aalborg Univesity's main campus</option>
+            <option value="20km">More than 20km from Aalborg Univesity's main campus</option>
+            <option value="all">All</option>
+          </select>
+      </div>
+
+      <div class="search3">
+        <label for="meals"><i class="fas fa-utensils"></i> Includes meals</label>
+          <select name="meals" id="meals">
+            <option value="select">-- Select one --</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="all">All</option>
+          </select>
+      </div>
+
+      <div class="search4">
+        <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
+        <input type="date" name="ending-date" placeholder="dd/mm/yy" required>
+      </div>
      
-      <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label> 
-        <select name="price">
-          <option value="">-- select one --</option>
-          <option value="1500">less than 1500 a month</option>
+      <div class="search5">
+        <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label> 
+        <select name="price" id="price">
+          <option value="">-- Select one --</option>
+          <option value="1500">Less than 1500 a month</option>
           <option value="1600-2500">1600-2500 a month</option>
           <option value="2600-3000">2600-3000 a month</option>
-          <option value="3000">more than 3000 a month</option>
-                 
+          <option value="3000">More than 3000 a month</option>
         </select>
       </div>
-      
-    </form>
-  </div>
+
+      <div class="search6">
+        <input type="submit" class="button hollow" value="Search" href="search.html">
+      </div>
+    </div>
+  </form>
 </section>
 
 <section class="conteiner section">
-  <h3>Students that match your searching result:</h3>
+  <h3>Families that match your searching result:</h3>
     <div class="profiles conteiner clearfix">
       <div class="profile">
         <blockquote class="search-result grid-container">
