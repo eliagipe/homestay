@@ -3,6 +3,7 @@
 <section class="section conteiner">
 
     <h2>Register results!</h2>
+
     <?php if(isset($_POST['submit']));
     $familystudent = $_POST['choose'];
     $firstname = $_POST['name'];
@@ -12,7 +13,7 @@
 
     try{
 require_once('connectiondb.php');
-$stmt = $conn->prepare("INSERT INTO account_register (typefs, FirstName, LastName, email, passWord1) VALUES (?,?,?,?,?)");
+$stmt = $conn->prepare("INSERT INTO account_register (type, FirstName, LastName, email, Password) VALUES (?,?,?,?,?)");
 $stmt->bind_param("sssss", $familystudent, $firstname, $lastname, $email, $password1);
 $stmt->execute();
 $stmt->close();
