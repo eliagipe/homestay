@@ -1,6 +1,5 @@
 <?php
   if(isset($_POST['starting-date'])) {
-    echo '<span>"Hola"</span>';
     $db = new mysqli('localhost', 'root', 'root', 'homestay');
     
     $distance = $_POST['location'];
@@ -15,64 +14,47 @@
     $query = " SELECT * FROM student INNER JOIN account_register ON student.RegisterIdS = account_register.RegisterId";
     
 
-    if(isset($_POST['starting-date']) && isset($_POST['ending-date']) ) {
-      echo 'filtre per dates' . $start;
+    if(isset($start) && isset($end) ) {
       $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
+      
     }
 
-    if(isset($distance) && $distance == "0km-3km from Aalborg Univesity's main campus") {
-        $query = $query . " AND (Distance <=  3) ";
-    } elseif(isset($distance) && $distance == "4km-6km from Aalborg Univesity's main campus") {
-        $query = $query . " AND (Distance BETWEEN 4 AND 6) ";
-    } elseif(isset($distance) && $distance == "6km-15km from Aalborg Univesity's main campus") {
-        $query = $query . " AND (Distance BETWEEN 6 AND 15) ";
-    } elseif(isset($distance) && $distance == "15km-20km from Aalborg Univesity's main campus") {
-        $query = $query . " AND (Distance BETWEEN 15 AND 20) ";
-    } elseif(isset($distance) && $distance == "More than 20km from Aalborg Univesity's main campus") {
-        $query = $query . " AND (Distance >=  20) ";
-    } elseif(isset($distance) && $distance == "All") {
-        $query = $query . " AND (Distance >  0) ";
+    if(isset($gender) && $gender == "male") {
+        $query = $query . " AND (Gender = 'M') ";
+    } elseif(isset($gender) && $gender == "female") {
+        $query = $query . " AND (Gender = 'F') ";
     }
 
+    if(isset($age) && $age == "18-20") {
+        $query = $query . " AND (Age BETWEEN 18 AND 20) ";
+    } elseif(isset($age) && $age == "20-25") {
+        $query = $query . " AND (Age BETWEEN 20 AND 25) ";
+    } elseif(isset($age) && $age == "All") {
+        $query = $query . " AND (Age > 0) ";
+    }
 
-    // if(isset($gener) && $gender == "Male") {
-    //     $query = $query . " AND (Gender = 'M') ";
-    // } elseif(isset($gener) && $gender == "Female") {
-    //     $query = $query . " AND (Gender = 'F') ";
-    // } elseif(isset($gener) && $gender == "All") {
-    //     $query = $query . " AND (Gender = 'M' OR Gender = 'F') ";
-    // }
+    if(isset($criminal) && $criminal == "important") {
+        $query = $query . " AND (CriminalRecord = 1) ";
+    } elseif(isset($criminal) && $criminal == "not-important") {
+        $query = $query . " AND (CriminalRecord = 0) ";
+    }
 
-    // if(isset($age) && $age == "18-20") {
-    //     $query = $query . " AND (Age BETWEEN 18 AND 20) ";
-    // } elseif(isset($age) && $age == "20-25") {
-    //     $query = $query . " AND (Age BETWEEN 20 AND 25) ";
-    // } elseif(isset($age) && $age == "All") {
-    //     $query = $query . " AND (Age > 0) ";
-    // }
+    if(isset($smoke) && $smoke == "yes") {
+        $query = $query . " AND (Smoke = 1) ";
+    } elseif(isset($smoke) && $smoke == "no") {
+        $query = $query . " AND (Smoke = 0) ";
+    }
 
-    // if(isset($criminal) && $criminal == "Important") {
-    //     $query = $query . " AND (CriminalRecord = 1) ";
-    // } elseif(isset($criminal) && $criminal == "Not important") {
-    //     $query = $query . " AND (CriminalRecord = 0) ";
-    // }
-
-    // if(isset($smoke) && $smoke == "Yes") {
-    //     $query = $query . " AND (Smoke = 1) ";
-    // } elseif(isset($smoke) && $smoke == "No") {
-    //     $query = $query . " AND (Smoke = 0) ";
-    // }
-
-    // if(isset($nationality) && $nationality == 'nationality') {
-    //     $query = $query . " AND (Nationality = '$nationality') ";
-    // }
-
+    if(isset($nationality) && $nationality != "select" && $nationality != "all") {
+        $query = $query . " AND (Nationality = '$nationality') ";
+    }
+    echo $query . '<br>';
     $result = mysqli_query($db, $query);
     while($student = $result->fetch_object()) {
       echo $student->LastName;
-      echo '. ';
     }
   }
+
 ?>
 
 <?php include_once 'includes/templates/header.php'; ?>
@@ -81,30 +63,18 @@
   <h2>Start looking for an exchange student to host!</h2>
   <form id="search" class="search" action="searchF.php" method="post">
     <div class="search-grid">
+
       <div class="search1">
-        <label for="location"><i class="fas fa-location-arrow"></i> My location</label>
-        <select name="location" id="location">
-        <option value="select">-- Select one --</option>
-          <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
-          <option value="4km-6km">3km-6km from Aalborg Univesity's main campus</option>
-          <option value="7km-15km">6km-15km from Aalborg Univesity's main campus</option>
-          <option value="16km-19km">15km-20km from Aalborg Univesity's main campus</option>
-          <option value="20km">More than 20km from Aalborg Univesity's main campus</option>
-          <option value="all">All</option>
-        </select>
+        <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
+        <input type="date" name="starting-date" id="starting-date" placeholder="yy/mm/dd" >
       </div>
 
       <div class="search4">
-        <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
-        <input type="date" name="starting-date" id="starting-date" placeholder="yy/mm/dd">
-      </div>
-
-      <div class="search7">
         <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
         <input type="date" name="ending-date" id="ending-date" placeholder="yy/mm/dd">
       </div>
 
-      <div class="search8">
+      <div class="search5">
         <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
         <select name="gender" id="gender">
           <option value="select">-- Select one --</option>
@@ -114,7 +84,7 @@
         </select>
       </div>
 
-      <div class="search5">
+      <div class="search2">
         <label for="age"><i class="fas fa-male"></i> Age:</label>
         <select name="age" id="age">
           <option value="select">-- Select one --</option>
@@ -124,7 +94,7 @@
         </select>
       </div>
       
-      <div class="search2">
+      <div class="search7">
         <label for="nationality"><i class="fas fa-map-marker-alt"></i> Nationality:</label> 
         <select name="nationality">
         <option value="select">-- Select one --</option>
@@ -337,8 +307,8 @@
         <label for="criminal-record"><i class="far fa-file-alt"></i> Criminal record:</label>
         <select name="criminal-record" id="criminal-record">
           <option value="select">-- Select one --</option>
-          <option name="criminal-record" value="important" > Important</option>
-          <option name="criminal-record" value="not-important" > Not important</option>
+          <option name="criminal-record" value="important" >Important</option>
+          <option name="criminal-record" value="not-important" >Not important</option>
         </select>
       </div>
     
