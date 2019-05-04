@@ -6,8 +6,8 @@
       <div class="place">
         <form id="register" class="register" action="validateregister.php" method="post">
           <label>Choose if you want to be registered as a family or a student:</label>
-          <input type="radio" name="choose" value="F" /> I am FAMILY<br>
-          <input type="radio" name="choose" value="S" />I am a STUDENT<br />
+          <input type="radio" name="choose" value="0" /> I am FAMILY<br>
+          <input type="radio" name="choose" value="1" />I am a STUDENT<br />
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Enter your name"required>
           <label for="lastname">Last name</label>
