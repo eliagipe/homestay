@@ -12,22 +12,21 @@
           </div>
    
         <label for="meals"> Meals</label> 
-        <input type="checkbox" name="meals" value="breakfast"> Breakfast<br>
-        <input type="checkbox" name="meals" value="lunch"> Lunch<br>
-        <input type="checkbox" name="meals" value="dinner"> Dinner<br>
+        <input type="checkbox" name="B" value="breakfast"> Breakfast<br>
+        <input type="checkbox" name="L" value="lunch"> Lunch<br>
+        <input type="checkbox" name="D" value="dinner"> Dinner<br>
               
         <label for="priceforstay">Price for Stay</label>
         <input type="number" name="priceforstay" value="priceforstay"/> DKK. <br />
         <label for="distancetouni"> Distance to Aalborg Øst Campus</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->
         <input type="number" id="distancetouni" name="distancetouni" placeholder="KM">
 
-        <label for="durationmax">Maximum duration of stay</label>
-        <select name="durationmax">
-            <option value="">-- select one --</option>
-            <option value="lessthansixmonths">Less than 6 Months</option>
-            <option value="sixmonths">6 Months</option>
-            <option value="oneyear">One Year</option>
-        </select>
+        
+        <label for="duration">The accomodation is available between these dates:<i class="far fa-calendar-check"></i> From:</label>
+      <input type="date" name="starting-date" placeholder="dd/mm/yy">
+      <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
+      <input type="date" name="ending-date" placeholder="dd/mm/yy">
+
            
            
         <label for="language"> Language</label><!--it can be changed to a text if you want-->

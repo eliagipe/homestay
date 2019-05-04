@@ -226,26 +226,23 @@
           <option value="female">Female</option>
         </select>
         <label for="smoking">Do you smoke?</label>
-        <input type="radio" name="smoking" value="no"/> No<br />
-        <input type="radio" name="smoking" value="yes"/> Yes<br />
+        <input type="radio" name="smoking" value="0"/> No<br />
+        <input type="radio" name="smoking" value="1"/> Yes<br />
 
         <label for="languages">Languages</label>
         <input type="text" id="languages" name="languages" placeholder="Languages">
-        <input type="text" id="languages1"name="languages1" placeholder="Optional additional language">
-        <input type="text" id="languages2" name="languages2" placeholder="Optional additional language">
+        <input type="text" id="languages1"name="languages1" placeholder="Optional language">
+        <input type="text" id="languages2" name="languages2" placeholder="Optional language">
         
         <label for="diet">Special diet</label>
         <input type="text" id="diet" placeholder="Optional">
 
 
         <div class="places">
-          <p><h4>Upload a clean criminal record for better chances of finding a match!</h4></p>
-          <p> <input type="radio" name="record" value="no " /> I don't have a criminal record<br /></p>
-          <div class="input-container">
-            <input type="file" id="real-input">
-            <button class="browse-btn">Browse Files</button>
-            <span class="file-info">Upload your criminal record</span>
-            <p><a href="save.html" class="long-button hollow"> Upload criminal record</a></p>     
+          <p><h4>Having a criminal record makes it a lot easier to find a match!</h4></p>
+          <p> <input type="radio" name="record" value="0" /> I don't have a criminal record<br /></p>
+          <p> <input type="radio" name="recordyes" value="1" /> I can provide a criminal record<br /></p>
+               
           </div>
         </div>
       </div>
