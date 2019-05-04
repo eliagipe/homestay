@@ -18,13 +18,13 @@
       </div>
 
       <div class="search4">
-        <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
-        <input type="date" name="starting-date" placeholder="dd/mm/yy">
+        <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
+        <input type="date" name="starting-date" id="starting-date" placeholder="dd/mm/yy" required>
       </div>
 
       <div class="search7">
-        <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
-        <input type="date" name="ending-date" placeholder="dd/mm/yy">
+        <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
+        <input type="date" name="ending-date" id="ending-date" placeholder="dd/mm/yy" required>
       </div>
 
       <div class="search8">

@@ -2,7 +2,7 @@
 
 <section class="section conteiner">
     <h2>Sign In</h2>
-    <p>The only thing you need to do to find a match is sign in first:</p>
+    <p>Sign in to start looking for a match:</p>
     <div class="form">
       <div class="place">
         <form id="sign-in" class="sign-in" action="return false" onsubmit="return false" method="post">

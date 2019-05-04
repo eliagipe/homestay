@@ -2,11 +2,11 @@
 
 <section class="conteiner section">
   <h2>Start looking for a family!</h2>
-  <form id="search" class="search" action="searchS.php" method="post">
+  <form id="search" class="search" action="filterF.php" method="post">
     <div class="search-grid">
       <div class="searchS1">
-        <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
-        <input type="date" name="starting-date" placeholder="dd/mm/yy" required>
+        <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
+        <input id="starting-date" type="date" name="starting-date" placeholder="dd/mm/yy" required>
       </div>
 
       <div class="search2">
@@ -14,9 +14,9 @@
           <select name="distance" id="distance">
             <option value="select">-- Select one --</option>
             <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
-            <option value="4km-6km">4km-6km from Aalborg Univesity's main campus</option>
-            <option value="7km-15km">7km-15km from Aalborg Univesity's main campus</option>
-            <option value="16km-19km">7km-15km from Aalborg Univesity's main campus</option>
+            <option value="4km-6km">3km-6km from Aalborg Univesity's main campus</option>
+            <option value="7km-15km">6km-15km from Aalborg Univesity's main campus</option>
+            <option value="16km-19km">15km-20km from Aalborg Univesity's main campus</option>
             <option value="20km">More than 20km from Aalborg Univesity's main campus</option>
             <option value="all">All</option>
           </select>
@@ -33,8 +33,8 @@
       </div>
 
       <div class="search4">
-        <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
-        <input type="date" name="ending-date" placeholder="dd/mm/yy" required>
+        <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
+        <input type="date" name="ending-date" id="ending-date" placeholder="dd/mm/yy" required>
       </div>
      
       <div class="search5">
@@ -42,8 +42,8 @@
         <select name="price" id="price">
           <option value="">-- Select one --</option>
           <option value="1500">Less than 1500 a month</option>
-          <option value="1600-2500">1600-2500 a month</option>
-          <option value="2600-3000">2600-3000 a month</option>
+          <option value="1600-2500">1500-2500 a month</option>
+          <option value="2600-3000">2500-3000 a month</option>
           <option value="3000">More than 3000 a month</option>
         </select>
       </div>
