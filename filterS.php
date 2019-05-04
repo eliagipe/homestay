@@ -56,9 +56,7 @@
         $query = $query . " AND (Smoke = 0) ";
     }
 
-    if(isset($nationality) && $nationality == "All") {
-        $query = $query . " AND (Nationality IS NOT NULL) ";
-    } elseif(isset($nationality) && $nationality == 'nationality') {
+    if(isset($nationality) && $nationality == 'nationality') {
         $query = $query . " AND (Nationality = $nationality) ";
     }
 

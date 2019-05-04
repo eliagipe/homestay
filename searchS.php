@@ -6,7 +6,7 @@
     <div class="search-grid">
       <div class="searchS1">
         <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
-        <input id="starting-date" type="date" name="starting-date" placeholder="dd/mm/yy" required>
+        <input id="starting-date" type="date" name="starting-date" placeholder="yy/mm/dd" required>
       </div>
 
       <div class="search2">
@@ -34,7 +34,7 @@
 
       <div class="search4">
         <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
-        <input type="date" name="ending-date" id="ending-date" placeholder="dd/mm/yy" required>
+        <input type="date" name="ending-date" id="ending-date" placeholder="yy/mm/dd" required>
       </div>
      
       <div class="search5">
