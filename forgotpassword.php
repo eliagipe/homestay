@@ -71,13 +71,9 @@
     <p>Write your email to receive a link to change your password:</p>
     <div class="form">
       <div class="place">
-        <form id="sign-in" class="sign-in" action="index.php"method="post">
+        <form id="sign-in" class="sign-in" action="index.php" method="post">
               <label for="email">Email</label>
               <input type ="text" id="email" name="email" placeholder="Enter e-mail"> 
-              <!-- <label for="password">Password</label>
-              <input type ="password" id="password" name="password" placeholder="Enter new password">
-              <label for="password">Repeat password</label>
-              <input type ="password" id="password" name="password" placeholder="Repeat new password">  -->
               <input class="btn long-button hollow" value="Reset password" type="button">
               <br><br>
               <p id="response"></p>
