@@ -139,27 +139,27 @@
 
             <div class="grid-item item1">
             <p class="rating">Rating score: 
-                <?php if($user->rating >= 1): ?>
+                <?php if($user->Rating >= 1): ?>
                     <i class="fas fa-star"></i>
                 <?php else : ?>
                     <i class="far fa-star"></i>
                 <?php endif; ?>
-                <?php if($user->rating >= 2): ?>
+                <?php if($user->Rating >= 2): ?>
                     <i class="fas fa-star"></i>
                 <?php else : ?>
                     <i class="far fa-star"></i>
                 <?php endif; ?>
-                <?php if($user->rating >= 3): ?>
+                <?php if($user->Rating >= 3): ?>
                     <i class="fas fa-star"></i>
                 <?php else : ?>
                     <i class="far fa-star"></i>
                 <?php endif; ?>
-                <?php if($user->rating >= 4): ?>
+                <?php if($user->Rating >= 4): ?>
                     <i class="fas fa-star"></i>
                 <?php else : ?>
                     <i class="far fa-star"></i>
                 <?php endif; ?>
-                <?php if($user->rating >= 5): ?>
+                <?php if($user->Rating >= 5): ?>
                     <i class="fas fa-star"></i>
                 <?php else : ?>
                     <i class="far fa-star"></i>
@@ -169,7 +169,7 @@
               <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
             </div>
 
-            <div class="grid-item item2">
+            <div class="grid-item item2_1"> 
               <p class="name">Family <?php echo $family->LastName; ?></p>
               <p class="info"><span>From:</span> <?php echo $family->AvailableFrom; ?></p>
               <p class="info"><span>To:</span> <?php echo $family->AvailableTo; ?></p>

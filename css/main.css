@@ -780,6 +780,9 @@ blockquote.search-result img {
 .item2 {
     padding-top: 20px;
 }
+.item2_1 {
+    padding-top: 55px;
+}
 .item3 {
     grid-column-start: 1;
     grid-column-end: 3;
