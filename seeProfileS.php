@@ -39,7 +39,6 @@
         </div>
 
         <div class="profile4 profile-item">
-            <p class="rating"><span>Rate student:</span> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
             <p class="favorite"><span>Mark as favorite:</span> <a href="#"><i class="far fa-heart"></i></a> </p>
         </div>
     </div>
@@ -88,9 +87,9 @@
                 } ?></p>
                 <p class="info"><i class="far fa-file-alt"></i> <span>Criminal Record: </span> 
                 <?php if($student->CriminalRecord == 0) {
-                    echo "I don't have a Criminal Record document.";
+                    echo "I don't have a Criminal Record.";
                 } elseif($student->CriminalRecord == 1) {
-                    echo "I have a Criminal Record document.";
+                    echo "I have a Criminal Record.";
                 } ?></p>
             </div>
     </div>

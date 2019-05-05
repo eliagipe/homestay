@@ -60,11 +60,11 @@
               session_start();
               if($_SESSION["type"] == 'F') {
                 echo "<a href='profileF.php'>My profile</a>";
-                echo "<a href='searchF.php'>Search match</a>";
+                echo "<a href='searchS.php'>Search match</a>";
                 echo "<a href='myfavorits.php'>Favorites</a>";
               } elseif($_SESSION["type"] == 'S') {
                 echo "<a href='profileS.php'>My profile</a>";
-                echo "<a href='searchS.php'>Search match</a>";
+                echo "<a href='searchF.php'>Search match</a>";
                 echo "<a href='myfavorits.php'>Favorites</a>";
               } ?>
           <a href="aboutus.php">About us</a>

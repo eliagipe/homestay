@@ -774,10 +774,11 @@ blockquote.search-result img {
     margin-top: 20px;
 }
 .item1 {
+    padding-top: 20px;
     display: inline;
 }
 .item2 {
-    padding-top: 35px;
+    padding-top: 20px;
 }
 .item3 {
     grid-column-start: 1;
@@ -879,11 +880,12 @@ div.about{
 }
 .profile9 {
     grid-row: 3;
-    grid-column: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 
-}
+
 /*HERE FINISH HOME STAY*/
 
  /* ==========================================================================

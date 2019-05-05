@@ -21,9 +21,9 @@
             $_SESSION["type"] = $user->type;
             
             if ($user->type == S) {
-                echo '<script>location.href = "searchS.php"</script>';
-            } elseif ($user->type == F) {
                 echo '<script>location.href = "searchF.php"</script>';
+            } elseif ($user->type == F) {
+                echo '<script>location.href = "searchS.php"</script>';
             }
         } else {
             echo '<span>Try again.</span>';
