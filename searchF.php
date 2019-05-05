@@ -138,35 +138,35 @@
           <blockquote class="search-result grid-container">
 
             <div class="grid-item item1">
-            <p class="rating">Rating score: 
-                <?php if($user->Rating >= 1): ?>
-                    <i class="fas fa-star"></i>
-                <?php else : ?>
-                    <i class="far fa-star"></i>
-                <?php endif; ?>
-                <?php if($user->Rating >= 2): ?>
-                    <i class="fas fa-star"></i>
-                <?php else : ?>
-                    <i class="far fa-star"></i>
-                <?php endif; ?>
-                <?php if($user->Rating >= 3): ?>
-                    <i class="fas fa-star"></i>
-                <?php else : ?>
-                    <i class="far fa-star"></i>
-                <?php endif; ?>
-                <?php if($user->Rating >= 4): ?>
-                    <i class="fas fa-star"></i>
-                <?php else : ?>
-                    <i class="far fa-star"></i>
-                <?php endif; ?>
-                <?php if($user->Rating >= 5): ?>
-                    <i class="fas fa-star"></i>
-                <?php else : ?>
-                    <i class="far fa-star"></i>
-                <?php endif; ?>
-              </p>
-              <img src="img/Loui 23.jpg" alt="family">
-              <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
+              <p class="rating">Rating score: 
+                  <?php if($family->rating >= 1): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 2): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 3): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 4): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 5): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                </p>
+                <img src="img/Loui 23.jpg" alt="family">
+                <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
             </div>
 
             <div class="grid-item item2_1"> 
