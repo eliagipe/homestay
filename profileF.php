@@ -1,134 +1,145 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
-<section class="conteiner section">
-  <h2>Start looking for a family!</h2>
-  <form id="search" class="search" action="search.html" method="post">
-    <div class="search-bar">
-      <label for="location"><i class="fas fa-location-arrow"></i> Location</label>
-      <select name="house-location" id="house-location">
-        <option value="select">-- Select one --</option>
-        <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
-        <option value="4km-6km">4km-6km from Aalborg Univesity's main campus</option>
-        <option value="7km-15km">7km-15km from Aalborg Univesity's main campus</option>
-        <option value="16km-19km">7km-15km from Aalborg Univesity's main campus</option>
-        <option value="20km">more than 20km from Aalborg Univesity's main campus</option>
-        <option value="all">All</option>
-      </select>
-      <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
+<section class="conteiner section private-information">
+    <h2>My Profile - Family</h2>
+    <h3> Add more information about your accomodation! </h3>
+    <div class="place">
+      <form id="register" class="register" action="index.html"method="post">
+        <div id="user-data" class="register box clearix">
+          <div class="place"> 
+            <label class="header">Profile Photo:</label> <!--needs database, php-->
+            <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+          </div>
+   
+        <label for="meals"> Meals</label> 
+        <input type="checkbox" name="B" value="breakfast"> Breakfast<br>
+        <input type="checkbox" name="L" value="lunch"> Lunch<br>
+        <input type="checkbox" name="D" value="dinner"> Dinner<br>
+              
+        <label for="priceforstay">Price for Stay</label>
+        <input type="number" name="priceforstay" value="priceforstay"/> DKK. <br />
+        <label for="distancetouni"> Distance to Aalborg Øst Campus</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->
+        <input type="number" id="distancetouni" name="distancetouni" placeholder="KM">
+
+        
+        <label for="duration">The accomodation is available between these dates:<i class="far fa-calendar-check"></i> From:</label>
       <input type="date" name="starting-date" placeholder="dd/mm/yy">
       <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
       <input type="date" name="ending-date" placeholder="dd/mm/yy">
-      
-      </select>
-      <input type="submit" class="button hollow" value="Search" href="search.html">
-    </div>
-  </form>
 
-  <h5>Advanced search</h5>  
-  <form action="adv-search" class="search-adv" action="search.html" method="post">
-    <div class="adv-search">
-      <label for="meals"><i class="fas fa-utensils"></i> includes meals</label>
-      <select name="meals" id="meals">
-        <option value="select">-- Select one --</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        <option value="all">All</option>
-      </select>
-     
-      <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label> 
-        <select name="price">
-          <option value="">-- select one --</option>
-          <option value="1500">less than 1500 a month</option>
-          <option value="1600-2500">1600-2500 a month</option>
-          <option value="2600-3000">2600-3000 a month</option>
-          <option value="3000">more than 3000 a month</option>
-                 
+           
+           
+        <label for="language"> Language</label><!--it can be changed to a text if you want-->
+        <select name="language" placeholder="Choose a Language..." > <!--To add more languages, its done with JS-->
+          <option value="Afrikanns">Afrikanns</option>
+          <option value="Albanian">Albanian</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Armenian">Armenian</option>
+          <option value="Basque">Basque</option>
+          <option value="Bengali">Bengali</option>
+          <option value="Bulgarian">Bulgarian</option>
+          <option value="Catalan">Catalan</option>
+          <option value="Cambodian">Cambodian</option>
+          <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+          <option value="Croation">Croation</option>
+          <option value="Czech">Czech</option>
+          <option value="Danish">Danish</option>
+          <option value="Dutch">Dutch</option>
+          <option value="English">English</option>
+          <option value="Estonian">Estonian</option>
+          <option value="Fiji">Fiji</option>
+          <option value="Finnish">Finnish</option>
+          <option value="French">French</option>
+          <option value="Georgian">Georgian</option>
+          <option value="German">German</option>
+          <option value="Greek">Greek</option>
+          <option value="Gujarati">Gujarati</option>
+          <option value="Hebrew">Hebrew</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Hungarian">Hungarian</option>
+          <option value="Icelandic">Icelandic</option>
+          <option value="Indonesian">Indonesian</option>
+          <option value="Irish">Irish</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Javanese">Javanese</option>
+          <option value="Korean">Korean</option>
+          <option value="Latin">Latin</option>
+          <option value="Latvian">Latvian</option>
+          <option value="Lithuanian">Lithuanian</option>
+          <option value="Macedonian">Macedonian</option>
+          <option value="Malay">Malay</option>
+          <option value="Malayalam">Malayalam</option>
+          <option value="Maltese">Maltese</option>
+          <option value="Maori">Maori</option>
+          <option value="Marathi">Marathi</option>
+          <option value="Mongolian">Mongolian</option>
+          <option value="Nepali">Nepali</option>
+          <option value="Norwegian">Norwegian</option>
+          <option value="Persian">Persian</option>
+          <option value="Polish">Polish</option>
+          <option value="Portuguese">Portuguese</option>
+          <option value="Punjabi">Punjabi</option>
+          <option value="Quechua">Quechua</option>
+          <option value="Romanian">Romanian</option>
+          <option value="Russian">Russian</option>
+          <option value="Samoan">Samoan</option>
+          <option value="Serbian">Serbian</option>
+          <option value="Slovak">Slovak</option>
+          <option value="Slovenian">Slovenian</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Swahili">Swahili</option>
+          <option value="Swedish ">Swedish </option>
+          <option value="Tamil">Tamil</option>
+          <option value="Tatar">Tatar</option>
+          <option value="Telugu">Telugu</option>
+          <option value="Thai">Thai</option>
+          <option value="Tibetan">Tibetan</option>
+          <option value="Tonga">Tonga</option>
+          <option value="Turkish">Turkish</option>
+          <option value="Ukranian">Ukranian</option>
+          <option value="Urdu">Urdu</option>
+          <option value="Uzbek">Uzbek</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Welsh">Welsh</option>
+          <option value="Xhosa">Xhosa</option>
         </select>
-      </div>
+
+        <label for="facilities"> Facilities available</label> 
+        <input type="checkbox" name="facilities" value="privatebathroom"> Private Bathroom<br>
+        <input type="checkbox" name="facilities" value="sharedbathroom"> Shared Bathroom<br>
+        <input type="checkbox" name="facilities" value="dinner"> Washing Machine<br>
+        <input type="checkbox" name="facilities" value="wifi"> WIFI<br>
+        <input type="checkbox" name="facilities" value="busnear"> Bus Stop Nearby<br>
+        <input type="checkbox" name="facilities" value="singlebed"> Single Bed<br>
+        <input type="checkbox" name="facilities" value="doublebed"> Double Bed<br>
+        <input type="checkbox" name="facilities" value="wifi"> WIFI<br>
+        <input type="checkbox" name="facilities" value="dinner"> Washing Machine<br>
+        <input type="checkbox" name="facilities" value="bike"> Bicycle<br>
+    
+
+        <div class="places">
+          <p><h4>Having a criminal record makes it a lot easier to find a match!</h4></p>
+          <p> <input type="radio" name="record" value="0" /> I don't have a criminal record<br /></p>
+          <p> <input type="radio" name="recordyes" value="1" /> I can provide a criminal record<br /></p>
+        </div>
       
-    </form>
-  </div>
+        
+        </div>
+      </form>
+    </div>
 </section>
+<!--Infomation about preferences:-->
 
-<section class="conteiner section">
-  <h3>Students that match your searching result:</h3>
-    <div class="profiles conteiner clearfix">
-      <div class="profile">
-        <blockquote class="search-result grid-container">
-
-          <div class="grid-item item1">
-            <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-            <img src="img/Loui 23.jpg" alt="student">
-            <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-          </div>
-
-          <div class="grid-item item2">
-            <p class="name">Mathias Heinekein</p>
-            <p class="info"><span>Nationality:</span> German/Netherlands</p>
-            <p class="info"><span>Age:</span> 22 years old</p>
-            <p class="info"><span>Duration:</span> 1 year</p>
-            <p class="info"><span>Criminal record:</span> Clean record</p>
-          </div>
-
-          <div class="item3">
-            <a href="#" class="long-button hollow">See profile</a>
-          </div>
-
-        </blockquote>
-
-        <blockquote class="search-result grid-container">
-            <div class="grid-item item1">
-              <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-              <img src="img/Loui 23.jpg" alt="student">
-              <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-            </div>
-            <div class="grid-item item2">
-              <p class="name">Mathias Heinekein</p>
-              <p class="info"><span>Nationality:</span> German/Netherlands</p>
-              <p class="info"><span>Age:</span> 22 years old</p>
-              <p class="info"><span>Duration:</span> 1 year</p>
-              <p class="info"><span>Criminal record:</span> Clean record</p>
-            </div>
-            <div class="item3">
-              <a href="#" class="long-button hollow">See profile</a>
-            </div>
-          </blockquote>
-          <blockquote class="search-result grid-container">
-              <div class="grid-item item1">
-                <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                <img src="img/Loui 23.jpg" alt="student">
-                <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-              </div>
-              <div class="grid-item item2">
-                <p class="name">Mathias Heinekein</p>
-                <p class="info"><span>Nationality:</span> German/Netherlands</p>
-                <p class="info"><span>Age:</span> 22 years old</p>
-                <p class="info"><span>Duration:</span> 1 year</p>
-                <p class="info"><span>Criminal record:</span> Clean record</p>
-              </div>
-              <div class="item3">
-                <a href="#" class="long-button hollow">See profile</a>
-              </div>
-            </blockquote>
-            <blockquote class="search-result grid-container">
-                <div class="grid-item item1">
-                  <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                  <img src="img/Loui 23.jpg" alt="student">
-                  <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-                </div>
-                <div class="grid-item item2">
-                  <p class="name">Mathias Heinekein</p>
-                  <p class="info"><span>Nationality:</span> German/Netherlands</p>
-                  <p class="info"><span>Age:</span> 22 years old</p>
-                  <p class="info"><span>Duration:</span> 1 year</p>
-                  <p class="info"><span>Criminal record:</span> Clean record</p>
-                </div>
-                <div class="item3">
-                  <a href="#" class="long-button hollow">See profile</a>
-                </div>
-              </blockquote>
+<section class="conteiner section preferences">
+    <h3>Add  information about your preferences</h3>
+    <form>
+      <div class="place">
+        <p> <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find your student match much quicker!</label><br/></p>
+        <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
       </div>
-  </div>
+    </form>
+   <div class="item3"> <p><a href="save.html" class="long-button hollow"> Save changes</a></p></div>
 </section>
 
 <?php include_once 'includes/templates/footer.php'; ?>

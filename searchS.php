@@ -126,17 +126,18 @@
             <div class="grid-item item1">
               <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
               <img src="img/Loui 23.jpg" alt="family">
-              <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
+              <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
             </div>
 
             <div class="grid-item item2">
               <p class="name">Family <?php echo $family->LastName; ?></p>
               <p class="info"><span>From:</span> <?php echo $family->AvailableFrom; ?></p>
               <p class="info"><span>To:</span> <?php echo $family->AvailableTo; ?></p>
+              <p class="info"><span>Price/month:</span> <?php echo $family->Price; ?>kr</p>
             </div>
 
             <div class="item3">
-              <a href="#" class="long-button hollow">See profile</a>
+              <a href="seeProfileF.php" class="long-button hollow">See profile</a>
             </div>
 
           </blockquote>

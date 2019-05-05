@@ -337,7 +337,7 @@
             <div class="grid-item item1">
               <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
               <img src="img/Loui 23.jpg" alt="student">
-              <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
+              <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
             </div>
 
             <div class="grid-item item2">
@@ -349,7 +349,7 @@
             </div>
 
             <div class="item3">
-              <a href="#" class="long-button hollow">See profile</a>
+              <a href="seeProfileS.php" class="long-button hollow">See profile</a>
             </div>
 
           </blockquote>
