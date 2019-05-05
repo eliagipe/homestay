@@ -53,6 +53,10 @@
                 <p class="info"><i class="far fa-file-alt"></i> <span>Criminal Record: </span>Clean</p>
             </div>
     </div>
+
+    <div class="item3">
+        <a href="#" class="long-button hollow">Start agreement</a>
+    </div>
 </section>
 
 <?php include_once 'includes/templates/footer.php'; ?>

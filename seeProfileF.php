@@ -41,6 +41,10 @@
             <p class="info"><i class="fas fa-location-arrow"></i> <span>Distance from AAU main campus: </span> 8km</p>
         </div>
     </div>
+
+    <div class="item3">
+        <a href="#" class="long-button hollow">Start agreement</a>
+    </div>
 </section>
 
 <?php include_once 'includes/templates/footer.php'; ?>
