@@ -1,11 +1,10 @@
 <?php
+    session_start();
+    $RegisterId = $_SESSION["RegisterId"];
 
-    if(isset($_GET['family'])) {
+    if(isset($_GET['family']) && $RegisterId != NULL) {
         $db = new mysqli('localhost', 'root', 'root', 'homestay');
         $family_id = $_GET['family'];
-
-        session_start();
-        $RegisterId = $_SESSION["RegisterId"];
         
         $family = $db->query(" 
             SELECT * FROM family 
@@ -15,6 +14,12 @@
             ON family.RegisterIdF = rating.RegisterIdF
             AND $RegisterId = rating.RegisterIdS
             WHERE (family.RegisterIdF = $family_id) 
+        ")->fetch_object();
+
+        $rating = $db->query("
+            SELECT * FROM rating
+            WHERE RegisterIdF = $family_id
+            AND RegisterIdS = $RegisterId
         ")->fetch_object();
     }
     
@@ -39,7 +44,18 @@
         </div>
 
         <div class="profile4 profile-item">
-            <p class="rating"><span>Rate family:</span> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+            <p class="rating"><span>Rate family:</span> 
+                <?php foreach(range(1, 5) as $value): ?>
+                    <?php if(!$rating) { ?>
+                        <a href="rate.php?registerids=<?php echo $RegisterId; ?>&registeridf=<?php echo $family_id; ?>&rating=<?php echo $value; ?>"><?php echo '<i class="far fa-star"></i>'; ?></a>
+                    <?php } else { ?>
+                    <?php if($rating->Rating >= $value): ?>
+                        <i class="fas fa-star"></i>
+                    <?php else : ?>
+                        <i class="far fa-star"></i>
+                    <?php endif; ?>
+                    <?php } ?>
+                <?php endforeach; ?>
             <p class="favorite"><span>Mark as favorite:</span> <a href="#"><i class="far fa-heart"></i></a> </p>
         </div>
     </div>
@@ -51,14 +67,21 @@
         </div>
 
         <div class="profile6 profile-item">
-            <p class="info"><i class="fas fa-dollar-sign"></i> <span>Price: </span> <?php echo $family->Price; ?></p>
-            <p class="info"><i class="fas fa-utensils"></i> <span>Meals: </span>Yes</p> 
-            <!-- TODO canviar Yes per $family->Meals (fer l'if)-->
+            <p class="info"><i class="fas fa-dollar-sign"></i> <span>Price: </span> <?php echo $family->Price; ?>kr</p>
+            <p class="info"><i class="fas fa-utensils"></i> <span>Meals: </span>
+                <?php if($family->Breakfast == 0 && $family->Lunch == 0 && $family->Dinner == 0) {
+                    echo "No";
+                } elseif($family->Breakfast == 1 && $family->Lunch == 1 && $family->Dinner == 1) {
+                    echo "All";
+                } else {
+                    echo "Yes";
+                }; ?>
+            </p> 
         </div>
 
         <div class="profile7 profile-item">
             <p class="info"><i class="fas fa-globe"></i> <span>Language: </span> <?php echo $family->Language; ?></p>
-            <p class="info"><i class="fas fa-location-arrow"></i> <span>Distance from AAU main campus: </span> 8km</p>
+            <p class="info"><i class="fas fa-location-arrow"></i> <span>Distance from AAU main campus: </span> <?php echo $family->Distance; ?>km</p>
             <!-- TODO canviar 8km per $family->Distance (fer l'if)-->
         </div>
     </div>

@@ -1,58 +1,63 @@
 <?php
-  $db = new mysqli('localhost', 'root', 'root', 'homestay');
-      
-  $distance = $_POST['distance'];
-  $start = $_POST['starting-date'];
-  $end = $_POST['ending-date'];
-  $meals = $_POST['meals'];
-  $price = $_POST['price'];
+  session_start();
+  $RegisterId = $_SESSION["RegisterId"];
+  
+  if(isset($_POST['starting-date']) && $RegisterId != NULL) {
+    $db = new mysqli('localhost', 'root', 'root', 'homestay');
+        
+    $distance = $_POST['distance'];
+    $start = $_POST['starting-date'];
+    $end = $_POST['ending-date'];
+    $meals = $_POST['meals'];
+    $price = $_POST['price'];
 
-  $query = " SELECT * 
-    , (SELECT AVG(rating.Rating) 
-            FROM rating
-            WHERE RegisterIdF = family.RegisterIdF
-            GROUP BY RegisterIdF)
-            AS rating
-            FROM family 
-            INNER JOIN account_register
-            ON family.RegisterIdF = account_register.RegisterId ";
+    $query = " SELECT * 
+      , (SELECT AVG(rating.Rating) 
+              FROM rating
+              WHERE RegisterIdF = family.RegisterIdF
+              GROUP BY RegisterIdF)
+              AS rating
+              FROM family 
+              INNER JOIN account_register
+              ON family.RegisterIdF = account_register.RegisterId ";
 
-    $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
+      $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
 
-  if(isset($distance) && $distance == "0km-3km") {
-      $query = $query . " AND (Distance <=  3) ";
-  } elseif(isset($distance) && $distance == "3km-6km") {
-      $query = $query . " AND (Distance BETWEEN 4 AND 6) ";
-  } elseif(isset($distance) && $distance == "6km-15km") {
-      $query = $query . " AND (Distance BETWEEN 6 AND 15) ";
-  } elseif(isset($distance) && $distance == "15km-20km") {
-      $query = $query . " AND (Distance BETWEEN 15 AND 20) ";
-  } elseif(isset($distance) && $distance == "20km") {
-      $query = $query . " AND (Distance >=  20) ";
-  } elseif(isset($distance) && $distance == "all") {
-      $query = $query . " AND (Distance >  0) ";
+    if(isset($distance) && $distance == "0km-3km") {
+        $query = $query . " AND (Distance <=  3) ";
+    } elseif(isset($distance) && $distance == "3km-6km") {
+        $query = $query . " AND (Distance BETWEEN 4 AND 6) ";
+    } elseif(isset($distance) && $distance == "6km-15km") {
+        $query = $query . " AND (Distance BETWEEN 6 AND 15) ";
+    } elseif(isset($distance) && $distance == "15km-20km") {
+        $query = $query . " AND (Distance BETWEEN 15 AND 20) ";
+    } elseif(isset($distance) && $distance == "20km") {
+        $query = $query . " AND (Distance >=  20) ";
+    } elseif(isset($distance) && $distance == "all") {
+        $query = $query . " AND (Distance >  0) ";
+    }
+
+    if(isset($meals) && $meals == "yes") {
+        $query = $query . " AND (Breakfast = 1 OR Lunch = 1 OR Dinner = 1) ";
+    } elseif(isset($meals) && $meals == "no") {
+        $query = $query . " AND (Breakfast = 0 AND Lunch = 0 AND Dinner = 0) ";
+    } elseif(isset($meals) && $meals == "all") {
+        $query = $query . " AND (Breakfast = 1 AND Lunch = 1 AND Dinner = 1) ";
+    }
+
+    if(isset($price) && $price == "1500") {
+        $query = $query . " AND (Price <= 1500) ";
+    } elseif(isset($price) && $price == "1500-2500") {
+        $query = $query . " AND (Price BETWEEN 1500 AND 2500) ";
+    } elseif(isset($price) && $price == "2500-3000") {
+        $query = $query . " AND (Price BETWEEN 2500 AND 3000) ";
+    } elseif(isset($price) && $price == "3000") {
+        $query = $query . " AND (Price >= 3000) ";
+    }
+
+    $result = mysqli_query($db, $query);
+    $rows = mysqli_num_rows($result);
   }
-
-  if(isset($meals) && $meals == "yes") {
-      $query = $query . " AND (Breakfast = 1 OR Lunch = 1 OR Dinner = 1) ";
-  } elseif(isset($meals) && $meals == "no") {
-      $query = $query . " AND (Breakfast = 0 AND Lunch = 0 AND Dinner = 0) ";
-  } elseif(isset($meals) && $meals == "all") {
-      $query = $query . " AND (Breakfast = 1 AND Lunch = 1 AND Dinner = 1) ";
-  }
-
-  if(isset($price) && $price == "1500") {
-      $query = $query . " AND (Price <= 1500) ";
-  } elseif(isset($price) && $price == "1500-2500") {
-      $query = $query . " AND (Price BETWEEN 1500 AND 2500) ";
-  } elseif(isset($price) && $price == "2500-3000") {
-      $query = $query . " AND (Price BETWEEN 2500 AND 3000) ";
-  } elseif(isset($price) && $price == "3000") {
-      $query = $query . " AND (Price >= 3000) ";
-  }
-
-  $result = mysqli_query($db, $query);
-  $rows = mysqli_num_rows($result);
 
 ?>
 
@@ -172,7 +177,7 @@
             </div>
 
             <div class="item3">
-              <a href="seeProfileF.php" class="long-button hollow">See profile</a>
+              <a href="seeProfileF.php?family=<?php echo $family->RegisterIdF ?>" class="long-button hollow">See profile</a>
             </div>
 
           </blockquote>
