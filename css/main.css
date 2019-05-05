@@ -773,6 +773,9 @@ blockquote.search-result img {
 .grid-item {
     margin-top: 20px;
 }
+.item1 {
+    display: inline;
+}
 .item2 {
     padding-top: 35px;
 }
@@ -879,6 +882,8 @@ div.about{
     grid-column: 2;
 }
 
+
+}
 /*HERE FINISH HOME STAY*/
 
  /* ==========================================================================

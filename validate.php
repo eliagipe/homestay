@@ -16,6 +16,7 @@
 
         if (password_verify($password, $user->Password)) {
             session_start();
+            $_SESSION["RegisterId"] = $user->RegisterId;
             $_SESSION["email"] = $email;
             $_SESSION["type"] = $user->type;
             

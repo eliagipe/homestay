@@ -11,8 +11,17 @@
     $criminal = $_POST['criminal-record'];
     $smoke = $_POST['smoking'];
 
-    $query = " SELECT * FROM student INNER JOIN account_register ON student.RegisterIdS = account_register.RegisterId 
-              WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo)";
+    $query = " SELECT * 
+    , (SELECT AVG(rating.Rating) 
+            FROM rating
+            WHERE RegisterIdS = student.RegisterIdS
+            GROUP BY RegisterIdS)
+            AS rating
+            FROM student 
+            INNER JOIN account_register
+            ON student.RegisterIdS = account_register.RegisterId ";
+
+    $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
 
     if(isset($gender) && $gender == "male") {
         $query = $query . " AND (Gender = 'M') ";
@@ -335,7 +344,34 @@
           <blockquote class="search-result grid-container">
 
             <div class="grid-item item1">
-              <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+              <p class="rating">Rating score: 
+                <?php if($user->rating >= 1): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($user->rating >= 2): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($user->rating >= 3): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($user->rating >= 4): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($user->rating >= 5): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+              </p>
+              
               <img src="img/Loui 23.jpg" alt="student">
               <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
             </div>
@@ -349,7 +385,7 @@
             </div>
 
             <div class="item3">
-              <a href="seeProfileS.php" class="long-button hollow">See profile</a>
+              <a href="seeProfileS.php?student=<?php echo $student->RegisterIdS ?>" class="long-button hollow">See profile</a>
             </div>
 
           </blockquote>
