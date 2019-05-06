@@ -1,23 +1,6 @@
+<?php include_once "includes/templates/header.php"; ?>
 
 <html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory fdfdf-->
-
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
-
-  <meta name="theme-color" content="#fafafa">
-</head>
 <script>
 
 function readURL(input) {
@@ -35,37 +18,7 @@ function readURL(input) {
         }
     }
 </script>
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
 
-  <!-- Add your site or application content here -->
-
-  <header class= "bar">
-    <div class= "hero">  
-        <div class="conteiner clearfix"> <!--This is to center what we are going to write-->
-          <div class="welcome">
-            <a href="index.html"><img src="img/HomeStay logo.png" alt="Logo"></a>
-          </div>
-
-          <div class="menu-movil">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
-            <a href="signin.html">Sign In</a>
-            <a href="profile.php">My profile</a>
-            <a href="search.html">Search match</a>
-            <a href="myfavorits.html">Favorits</a>
-            <a href="aboutus.html">About us</a>
-            <a href="faq.html">FAQ</a>
-          </nav>
-        </div><!--.conteneiner-->
-    </div><!--.bar-->
-  </header>
 <form id="register" class="register" action="profiledb.php"method="post" enctype="multipart/form-data">
 <section class="section conteiner private-information">
     <h2>My Profile - Student</h2>
