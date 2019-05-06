@@ -51,7 +51,7 @@ $(".navegacion-principal").slideToggle();//cuando esteen slide dog ejecutara dow
 
 
     $('body.signin .principal-navegation a:contains("Sign In")').addClass('active');
-    $('body.profileS .principal-navegation a:contains("My profile")').addClass('active');
+    $('body.profile .principal-navegation a:contains("My profile")').addClass('active');
     $('body.profileF .principal-navegation a:contains("My profile")').addClass('active');
     $('body.myfavorits .principal-navegation a:contains("Favorites")').addClass('active');
     $('body.aboutus .principal-navegation a:contains("About us")').addClass('active');

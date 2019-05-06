@@ -21,8 +21,9 @@
         $availableto = $_POST ["to"];
         $availablefrom = $_POST ["from"];
 
+        require_once('connectiondb.php');
         try{        
-            require_once('connectiondb.php');
+            
             $stmt = $conexion->prepare("INSERT INTO student 
                                       (RegisterIdS, StudentPhoto, Nationality, Age, Allergies, Gender, 
                                       Smoke, Language1, Language2, Language3, Diet, CriminalRecord, Descriptions,
