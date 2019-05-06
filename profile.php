@@ -1,63 +1,4 @@
-<<<<<<< HEAD:profileS.html
-<<<<<<< HEAD:profileS.html
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory fdfdf-->
-
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
-
-  <meta name="theme-color" content="#fafafa">
-</head>
-
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <!-- Add your site or application content here -->
-
-  <header class= "bar">
-    <div class= "hero">  
-        <div class="conteiner clearfix"> <!--This is to center what we are going to write-->
-          <div class="welcome">
-            <a href="index.html"><img src="img/HomeStay logo.png" alt="Logo"></a>
-          </div>
-
-          <div class="menu-movil">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
-            <a href="signin.html">Sign In</a>
-            <a href="profile.html">My profile</a>
-            <a href="searchF.html">Search match</a>
-            <a href="myfavorits.html">Favorites</a>
-            <a href="aboutus.html">About us</a>
-            <a href="faq.html">FAQ</a>
-          </nav>
-        </div><!--.conteneiner-->
-    </div><!--.bar-->
-  </header>
-=======
 <?php include_once 'includes/templates/header.php'; ?>
->>>>>>> c1b5e0886de401d90e0149019c81ac0e43c86abd:profile.php
-=======
-<?php include_once 'includes/templates/header.php'; ?>
->>>>>>> 525c0ba4b9462bad7dbf652db2bcabea8885dbc0:profileS.php
 
 <section class="section conteiner private-information">
     <h2>My Profile - Student</h2>
@@ -65,11 +6,11 @@
     <p>Here you can add or edit  information about yourself:</p>
     
     <div class="place">
-      <form id="register" class="register" action="validatestudentprofile.php"method="post">
+      <form id="register" class="register" action="index.html"method="post">
         <div id="user-data" class="register box clearix">
           <div class="form-control"> 
             <label class="header">Profile Photo:</label>
-         <input id="image" type="file" name="profile_photo" placeholder="Photo"required="" capture>
+            <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
           </div>
         <label for="nationality">Nationality</label> 
         <select name="nationality">
@@ -270,10 +211,13 @@
         <label for="age">Age</label>
         <input type="number" name="age" value="Age"/><br />
 
-        <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
-      <input type="date" name="starting-date" placeholder="dd/mm/yy">
-      <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
-      <input type="date" name="ending-date" placeholder="dd/mm/yy">
+        <label for="duration">Duration of stay</label>
+        <select name="duration">
+          <option value="">-- select one --</option>
+          <option value="lessthansixmonths">Less than 6 Months</option>
+          <option value="sixmonths">6 Months</option>
+          <option value="oneyear">One Year</option>
+        </select>
 
         <label for="allergies">Allergies</label>
         <input type="text" id="allergies" name="allergies" placeholder="Optional">
@@ -285,13 +229,13 @@
           <option value="female">Female</option>
         </select>
         <label for="smoking">Do you smoke?</label>
-        <input type="radio" name="smoking" value="0"/> No<br />
-        <input type="radio" name="smoking" value="1"/> Yes<br />
+        <input type="radio" name="smoking" value="no"/> No<br />
+        <input type="radio" name="smoking" value="yes"/> Yes<br />
 
-     
         <label for="language"> Language</label><!--it can be changed to a text if you want-->
         <select name="language" placeholder="Choose a Language..." > <!--To add more languages, its done with JS-->
-          <option value="Afrikanns">Afrikanns</option>
+        <option value="select">-- Select one --</option>  
+        <option value="Afrikanns">Afrikanns</option>
           <option value="Albanian">Albanian</option>
           <option value="Arabic">Arabic</option>
           <option value="Armenian">Armenian</option>
@@ -364,25 +308,171 @@
           <option value="Welsh">Welsh</option>
           <option value="Xhosa">Xhosa</option>
         </select>
-  
-        <input type="text" id="languages1"name="languages1" placeholder="Optional language">
-        <input type="text" id="languages2" name="languages2" placeholder="Optional language">
+        <label for="language"> Second Language</label><!--it can be changed to a text if you want-->
+        <select name="language" placeholder="Choose a Language..." > <!--To add more languages, its done with JS-->
+        <option value="select">-- Optional --</option>  
+        <option value="Afrikanns">Afrikanns</option>
+          <option value="Albanian">Albanian</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Armenian">Armenian</option>
+          <option value="Basque">Basque</option>
+          <option value="Bengali">Bengali</option>
+          <option value="Bulgarian">Bulgarian</option>
+          <option value="Catalan">Catalan</option>
+          <option value="Cambodian">Cambodian</option>
+          <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+          <option value="Croation">Croation</option>
+          <option value="Czech">Czech</option>
+          <option value="Danish">Danish</option>
+          <option value="Dutch">Dutch</option>
+          <option value="English">English</option>
+          <option value="Estonian">Estonian</option>
+          <option value="Fiji">Fiji</option>
+          <option value="Finnish">Finnish</option>
+          <option value="French">French</option>
+          <option value="Georgian">Georgian</option>
+          <option value="German">German</option>
+          <option value="Greek">Greek</option>
+          <option value="Gujarati">Gujarati</option>
+          <option value="Hebrew">Hebrew</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Hungarian">Hungarian</option>
+          <option value="Icelandic">Icelandic</option>
+          <option value="Indonesian">Indonesian</option>
+          <option value="Irish">Irish</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Javanese">Javanese</option>
+          <option value="Korean">Korean</option>
+          <option value="Latin">Latin</option>
+          <option value="Latvian">Latvian</option>
+          <option value="Lithuanian">Lithuanian</option>
+          <option value="Macedonian">Macedonian</option>
+          <option value="Malay">Malay</option>
+          <option value="Malayalam">Malayalam</option>
+          <option value="Maltese">Maltese</option>
+          <option value="Maori">Maori</option>
+          <option value="Marathi">Marathi</option>
+          <option value="Mongolian">Mongolian</option>
+          <option value="Nepali">Nepali</option>
+          <option value="Norwegian">Norwegian</option>
+          <option value="Persian">Persian</option>
+          <option value="Polish">Polish</option>
+          <option value="Portuguese">Portuguese</option>
+          <option value="Punjabi">Punjabi</option>
+          <option value="Quechua">Quechua</option>
+          <option value="Romanian">Romanian</option>
+          <option value="Russian">Russian</option>
+          <option value="Samoan">Samoan</option>
+          <option value="Serbian">Serbian</option>
+          <option value="Slovak">Slovak</option>
+          <option value="Slovenian">Slovenian</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Swahili">Swahili</option>
+          <option value="Swedish ">Swedish </option>
+          <option value="Tamil">Tamil</option>
+          <option value="Tatar">Tatar</option>
+          <option value="Telugu">Telugu</option>
+          <option value="Thai">Thai</option>
+          <option value="Tibetan">Tibetan</option>
+          <option value="Tonga">Tonga</option>
+          <option value="Turkish">Turkish</option>
+          <option value="Ukranian">Ukranian</option>
+          <option value="Urdu">Urdu</option>
+          <option value="Uzbek">Uzbek</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Welsh">Welsh</option>
+          <option value="Xhosa">Xhosa</option>
+        </select>
+        <label for="language"> Third Language</label><!--it can be changed to a text if you want-->
+        <select name="language" placeholder="Choose a Language..." > <!--To add more languages, its done with JS-->
+        <option value="select">-- Optional--</option> 
+        <option value="Afrikanns">Afrikanns</option>
+          <option value="Albanian">Albanian</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Armenian">Armenian</option>
+          <option value="Basque">Basque</option>
+          <option value="Bengali">Bengali</option>
+          <option value="Bulgarian">Bulgarian</option>
+          <option value="Catalan">Catalan</option>
+          <option value="Cambodian">Cambodian</option>
+          <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+          <option value="Croation">Croation</option>
+          <option value="Czech">Czech</option>
+          <option value="Danish">Danish</option>
+          <option value="Dutch">Dutch</option>
+          <option value="English">English</option>
+          <option value="Estonian">Estonian</option>
+          <option value="Fiji">Fiji</option>
+          <option value="Finnish">Finnish</option>
+          <option value="French">French</option>
+          <option value="Georgian">Georgian</option>
+          <option value="German">German</option>
+          <option value="Greek">Greek</option>
+          <option value="Gujarati">Gujarati</option>
+          <option value="Hebrew">Hebrew</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Hungarian">Hungarian</option>
+          <option value="Icelandic">Icelandic</option>
+          <option value="Indonesian">Indonesian</option>
+          <option value="Irish">Irish</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Javanese">Javanese</option>
+          <option value="Korean">Korean</option>
+          <option value="Latin">Latin</option>
+          <option value="Latvian">Latvian</option>
+          <option value="Lithuanian">Lithuanian</option>
+          <option value="Macedonian">Macedonian</option>
+          <option value="Malay">Malay</option>
+          <option value="Malayalam">Malayalam</option>
+          <option value="Maltese">Maltese</option>
+          <option value="Maori">Maori</option>
+          <option value="Marathi">Marathi</option>
+          <option value="Mongolian">Mongolian</option>
+          <option value="Nepali">Nepali</option>
+          <option value="Norwegian">Norwegian</option>
+          <option value="Persian">Persian</option>
+          <option value="Polish">Polish</option>
+          <option value="Portuguese">Portuguese</option>
+          <option value="Punjabi">Punjabi</option>
+          <option value="Quechua">Quechua</option>
+          <option value="Romanian">Romanian</option>
+          <option value="Russian">Russian</option>
+          <option value="Samoan">Samoan</option>
+          <option value="Serbian">Serbian</option>
+          <option value="Slovak">Slovak</option>
+          <option value="Slovenian">Slovenian</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Swahili">Swahili</option>
+          <option value="Swedish ">Swedish </option>
+          <option value="Tamil">Tamil</option>
+          <option value="Tatar">Tatar</option>
+          <option value="Telugu">Telugu</option>
+          <option value="Thai">Thai</option>
+          <option value="Tibetan">Tibetan</option>
+          <option value="Tonga">Tonga</option>
+          <option value="Turkish">Turkish</option>
+          <option value="Ukranian">Ukranian</option>
+          <option value="Urdu">Urdu</option>
+          <option value="Uzbek">Uzbek</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Welsh">Welsh</option>
+          <option value="Xhosa">Xhosa</option>
+        </select>
         
         <label for="diet">Special diet</label>
-        <input type="text" id="diet" name="diet" placeholder="Optional">
+        <input type="text" id="diet" placeholder="Optional">
 
 
         <div class="places">
-          <p><h4>Having a criminal record makes it a lot easier to find a match!</h4></p>
-          <p> <input type="radio" name="record" value="0" /> I don't have a criminal record<br /></p>
-          <p> <input type="radio" name="record" value="1" /> I can provide a criminal record<br /></p>
-          <h3>Add  information about your preferences</h3>
-           <div class="places">
-            <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find a host family much quicker</label><br/>
-       <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
-
-             
-          <p><input type="submit" class="button hollow" name="submit" value="submit"></p>
+          <p><h4>Upload a clean criminal record for better chances of finding a match!</h4></p>
+          <p> <input type="radio" name="record" value="no " /> I don't have a criminal record<br /></p>
+          <div class="input-container">
+            <input type="file" id="real-input">
+            <button class="browse-btn">Browse Files</button>
+            <span class="file-info">Upload your criminal record</span>
+            <p><a href="save.html" class="long-button hollow"> Upload criminal record</a></p>     
           </div>
         </div>
       </div>
@@ -390,10 +480,18 @@
   </div>
 
 </section>
-</div>
- 
- 
+<!--Infomation about preferences:-->
 
-
+<section class="section conteiner preferences">
+  <h3>Add  information about your preferences</h3>
+  <form class="form">
+    <div class="place">
+       <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find a host family much quicker</label><br/>
+       <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
+    </div> 
+  </form>
+       
+  <div class="item3"><p><a href="save.html" class="long-button hollow">Save changes</a></p></div>
+</section>
 
 <?php include_once 'includes/templates/footer.php'; ?>

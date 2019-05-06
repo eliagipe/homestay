@@ -266,6 +266,14 @@ nav.principal-navegation a{
         margin: 0 10px 0 0 ; 
         
     }
+    .fixed {
+        position: fixed;
+        width: 100;
+        top:0;
+        left:0;
+        z-index:2;
+
+    }
     nav.principal-navegation a:hover{
         background-color:white;
         color:#74c75b;

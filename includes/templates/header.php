@@ -33,7 +33,7 @@
 
   <!-- Add your site or application content here -->
 
-  <header class= "bar">
+  <header class= "hero">
     <div class= "hero">  
       <div class="conteiner clearfix"> <!--This is to center what we are going to write-->
         <div class="welcome">

@@ -21,6 +21,34 @@
 $(function() {
     //Add class to menu
 
+        //bar
+    // menu fijo
+var windowHeight = $(window).height();
+var barraAltura = $('.hero').innerHeight();
+
+
+ 
+$(window).scroll(function(){
+var scroll=$(window).scrollTop();
+if(scroll>windowHeight){
+$('.hero').addClass('fixed');
+$('body').css({'margin-top': barraAltura +'px'})//pa que no de salto
+}else{
+$('.hero').removeClass('fixed');
+$('body').css({'margin-top':'0px'});
+}
+
+});
+
+//menu responsive
+
+$('.menu-movil') .on('click',function(){
+$(".navegacion-principal").slideToggle();//cuando esteen slide dog ejecutara down y asi.
+
+});
+
+    });// DOM CONTENT LOADED
+
     $('body.signin .principal-navegation a:contains("Sign In")').addClass('active');
     $('body.profileS .principal-navegation a:contains("My profile")').addClass('active');
     $('body.profileF .principal-navegation a:contains("My profile")').addClass('active');
