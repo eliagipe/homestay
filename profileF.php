@@ -4,7 +4,7 @@
     <h2>My Profile - Family</h2>
     <h3> Add more information about your accomodation! </h3>
     <div class="place">
-      <form id="register" class="register" action="index.html"method="post">
+      <form id="register" class="register" action="validatefamilyprofile.php"method="post">
         <div id="user-data" class="register box clearix">
           <div class="place"> 
             <label class="header">Profile Photo:</label> <!--needs database, php-->
@@ -12,12 +12,13 @@
           </div>
    
         <label for="meals"> Meals</label> 
-        <input type="checkbox" name="B" value="breakfast"> Breakfast<br>
-        <input type="checkbox" name="L" value="lunch"> Lunch<br>
-        <input type="checkbox" name="D" value="dinner"> Dinner<br>
+        <input type="checkbox" name="meals[]" value="B"> Breakfast<br>
+        <input type="checkbox" name="meals[]" value="L"> Lunch<br>
+        <input type="checkbox" name="meals[]" value="D"> Dinner<br>
               
         <label for="priceforstay">Price for Stay</label>
         <input type="number" name="priceforstay" value="priceforstay"/> DKK. <br />
+
         <label for="distancetouni"> Distance to Aalborg Øst Campus</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->
         <input type="number" id="distancetouni" name="distancetouni" placeholder="KM">
 
@@ -106,40 +107,39 @@
         </select>
 
         <label for="facilities"> Facilities available</label> 
-        <input type="checkbox" name="facilities" value="privatebathroom"> Private Bathroom<br>
-        <input type="checkbox" name="facilities" value="sharedbathroom"> Shared Bathroom<br>
-        <input type="checkbox" name="facilities" value="dinner"> Washing Machine<br>
-        <input type="checkbox" name="facilities" value="wifi"> WIFI<br>
-        <input type="checkbox" name="facilities" value="busnear"> Bus Stop Nearby<br>
-        <input type="checkbox" name="facilities" value="singlebed"> Single Bed<br>
-        <input type="checkbox" name="facilities" value="doublebed"> Double Bed<br>
-        <input type="checkbox" name="facilities" value="wifi"> WIFI<br>
-        <input type="checkbox" name="facilities" value="dinner"> Washing Machine<br>
-        <input type="checkbox" name="facilities" value="bike"> Bicycle<br>
+        <input type="checkbox" name="facilities[0]" value="1"> Private Bathroom<br>
+        <input type="checkbox" name="facilities[1]" value="1"> Shared Bathroom<br>
+        <input type="checkbox" name="facilities[2]" value="1"> Washing Machine<br>
+        <input type="checkbox" name="facilities[3]" value="1"> WIFI<br>
+        <input type="checkbox" name="facilities[4]" value="1"> Bus Stop Nearby<br>
+        <input type="checkbox" name="facilities[5]" value="1"> Single Bed<br>
+        <input type="checkbox" name="facilities[6]" value="1"> Double Bed<br>
+        <input type="checkbox" name="facilities[7]" value="1"> WIFI<br>
+        <input type="checkbox" name="facilities[8]" value="1"> Washing Machine<br>
+        <input type="checkbox" name="facilities[9]" value="1"> Bicycle<br>
     
 
         <div class="places">
           <p><h4>Having a criminal record makes it a lot easier to find a match!</h4></p>
           <p> <input type="radio" name="record" value="0" /> I don't have a criminal record<br /></p>
-          <p> <input type="radio" name="recordyes" value="1" /> I can provide a criminal record<br /></p>
+          <p> <input type="radio" name="record" value="1" /> I can provide a criminal record<br /></p>
         </div>
       
         
         </div>
-      </form>
+      
     </div>
-</section>
-<!--Infomation about preferences:-->
+    </div>
 
-<section class="conteiner section preferences">
     <h3>Add  information about your preferences</h3>
-    <form>
+    
       <div class="place">
         <p> <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find your student match much quicker!</label><br/></p>
         <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
+        <p><input type="submit" class="button hollow" name="submit" value="submit"></p>
       </div>
     </form>
-   <div class="item3"> <p><a href="save.html" class="long-button hollow"> Save changes</a></p></div>
+   
 </section>
 
 <?php include_once 'includes/templates/footer.php'; ?>

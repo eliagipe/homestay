@@ -27,6 +27,19 @@ $conexion->close();
     catch (Exception $e){
         $error = $e->getMessage();
     }
+
+    $familystudent = $_POST['choose'];
+if ($familystudent=='S') {
+    echo '<script>location.href = "profileS.php"</script>';
+
+} elseif ($familystudent=='F'){
+    echo '<script>location.href = "profileF.php"</script>';
+    
+}
+
+
+
+    
    ?>
 
 

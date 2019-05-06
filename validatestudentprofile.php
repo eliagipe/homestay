@@ -41,27 +41,47 @@ if (!$conn) {
  
  echo "Connected successfully";
  
-$sql = "INSERT INTO student (StudentPhoto, Nationality, Age, Allergies, Gender, Smoke, Language1, Language2, Language3, Diet, CriminalRecord, Description, AvailableFrom, AvailableTo)".
-          "VALUES ( '$profilephoto', '$nationality', '$age', '$allergies', '$gender', '$smoking', '$language', '$languages1', '$languages2', '$diet', '$record', '$aboutme', '$startingdate', '$endingdate')";
+
+
+
+
+ $result =mysqli_query($conn ,"SELECT RegisterId FROM `account_register` ORDER BY `RegisterId` DESC LIMIT 1");
+while($consulta = mysqli_fetch_array($result)){
+
+      $algo=$consulta['RegisterId'];
+}
+
+
+
+
+
+$sql = "INSERT INTO student (RegisterIdS, StudentPhoto, Nationality, Age, Allergies, Gender, Smoke, Language1, Language2, Language3, Diet, CriminalRecord, Description, AvailableFrom, AvailableTo)".
+ "VALUES ('$algo', '$profilephoto', '$nationality', '$age', '$allergies', '$gender', '$smoking', '$language', '$languages1', '$languages2', '$diet', '$record', '$aboutme', '$startingdate', '$endingdate')";
 if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+
+
+    }
+
+
+catch (Exception $e){
+       $error = $e->getMessage();}
+
+
+      
+ $sql = " SELECT FirstName, LastName, email, Password, StudentPhoto, Nationality, Age, Gender, Smoke, Language1, Language2, Language3, Diet, CriminalRecord, Description, AvailableFrom, AvailableTo ";
+$sql .=" FROM account_register ";
+$sql .=" INNER JOIN student ";
+$sql .=" ON account_register.RegisterId = student.RegisterIdS ";
+$sql .=" WHERE RegisterId = $algo";
+$result = $conn->query($sql);
+$row= mysqli_fetch_assoc($result);
+var_dump($row);
  mysqli_close($conn);
 
-
-//require_once('connectiondb.php');
-//$stmt = $conexion->prepare("INSERT INTO student (StudentPhoto, Nationality, Age, Allergies, Gender, Smoke, Language1, Language2, Language3, Diet, CriminalRecord, Description, AvailableFrom, AvailableTo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-//$stmt->bind_param("ssississssisss", $profilephoto, $nationality, $age, $allergies, $gender, $smoking, $language, $languages1, $languages2, $diet, $record, $aboutme, $startingdate, $endingdate);
-//$stmt->execute();
-//$stmt->close();
-//$conexion->close();
-
-    }
-    catch (Exception $e){
-        $error = $e->getMessage();
-    }
    ?>
 
 
