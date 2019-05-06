@@ -44,7 +44,7 @@
         $mail->Body = "
           Hi,<br><br>
               
-          In order to reset your password, please click on the link below:<br>
+          In order to reset your password, please click on the link below. It will be deleted after 5 minutes:<br>
           <a href='http://localhost:8888/GitHub/homestay/resetPassword.php?email=$email&token=$token'>http://localhost:8888/GitHub/homestay/resetPassword.php?email=$email&token=&token</a><br><br>
           
           Kind Regards,<br>
