@@ -38,7 +38,7 @@
         
         <div class="profile3 profile-item">
             <p><span>Contact information:</span> <?php echo $student->email; ?></p>
-            <p><span>Description:</span> <?php echo $student->Description; ?></p>
+            <p><span>Description:</span> <?php echo $student->Descriptions; ?></p>
         </div>
 
         <div class="profile4 profile-item">
