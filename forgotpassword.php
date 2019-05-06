@@ -11,7 +11,7 @@
   session_start();
   $RegisterId = $_SESSION["RegisterId"];
 
-  if(isset($_POST['email']) && $RegisterId != NULL) {
+  if(isset($_POST['email'])) {
     $db = new mysqli('localhost', 'root', 'root', 'homestay');
     $email = $db->real_escape_string($_POST['email']);
     $sql = $db->query("SELECT RegisterId FROM account_register WHERE email = '$email'");
