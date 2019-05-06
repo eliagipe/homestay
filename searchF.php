@@ -1,130 +1,188 @@
+<?php
+  session_start();
+  $RegisterId = $_SESSION["RegisterId"];
+  
+  if(isset($_POST['starting-date']) && $RegisterId != NULL) {
+    $db = new mysqli('localhost', 'root', 'root', 'homestay');
+        
+    $distance = $_POST['distance'];
+    $start = $_POST['starting-date'];
+    $end = $_POST['ending-date'];
+    $meals = $_POST['meals'];
+    $price = $_POST['price'];
+
+    $query = " SELECT * 
+      , (SELECT AVG(rating.Rating) 
+              FROM rating
+              WHERE RegisterIdF = family.RegisterIdF
+              GROUP BY RegisterIdF)
+              AS rating
+              FROM family 
+              INNER JOIN account_register
+              ON family.RegisterIdF = account_register.RegisterId ";
+
+      $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
+
+    if(isset($distance) && $distance == "0km-3km") {
+        $query = $query . " AND (Distance <=  3) ";
+    } elseif(isset($distance) && $distance == "3km-6km") {
+        $query = $query . " AND (Distance BETWEEN 4 AND 6) ";
+    } elseif(isset($distance) && $distance == "6km-15km") {
+        $query = $query . " AND (Distance BETWEEN 6 AND 15) ";
+    } elseif(isset($distance) && $distance == "15km-20km") {
+        $query = $query . " AND (Distance BETWEEN 15 AND 20) ";
+    } elseif(isset($distance) && $distance == "20km") {
+        $query = $query . " AND (Distance >=  20) ";
+    } elseif(isset($distance) && $distance == "all") {
+        $query = $query . " AND (Distance >  0) ";
+    }
+
+    if(isset($meals) && $meals == "yes") {
+        $query = $query . " AND (Breakfast = 1 OR Lunch = 1 OR Dinner = 1) ";
+    } elseif(isset($meals) && $meals == "no") {
+        $query = $query . " AND (Breakfast = 0 AND Lunch = 0 AND Dinner = 0) ";
+    } elseif(isset($meals) && $meals == "all") {
+        $query = $query . " AND (Breakfast = 1 AND Lunch = 1 AND Dinner = 1) ";
+    }
+
+    if(isset($price) && $price == "1500") {
+        $query = $query . " AND (Price <= 1500) ";
+    } elseif(isset($price) && $price == "1500-2500") {
+        $query = $query . " AND (Price BETWEEN 1500 AND 2500) ";
+    } elseif(isset($price) && $price == "2500-3000") {
+        $query = $query . " AND (Price BETWEEN 2500 AND 3000) ";
+    } elseif(isset($price) && $price == "3000") {
+        $query = $query . " AND (Price >= 3000) ";
+    }
+
+    $result = mysqli_query($db, $query);
+    $rows = mysqli_num_rows($result);
+  }
+
+?>
+
 <?php include_once 'includes/templates/header.php'; ?>
 
 <section class="conteiner section">
-<h2>Start looking for a family!</h2>
-  <form id="search" class="search" action="search.html" method="post">
-    <div class="search-bar">
-      <label for="location"><i class="fas fa-location-arrow"></i> Location</label>
-      <select name="house-location" id="house-location">
-        <option value="select">-- Select one --</option>
-        <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
-        <option value="4km-6km">4km-6km from Aalborg Univesity's main campus</option>
-        <option value="7km-15km">7km-15km from Aalborg Univesity's main campus</option>
-        <option value="16km-19km">7km-15km from Aalborg Univesity's main campus</option>
-        <option value="20km">more than 20km from Aalborg Univesity's main campus</option>
-        <option value="all">All</option>
-      </select>
-      <label for="duration"><i class="far fa-calendar-check"></i> From:</label>
-      <input type="date" name="starting-date" placeholder="dd/mm/yy">
-      <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
-      <input type="date" name="ending-date" placeholder="dd/mm/yy">
-      
-      </select>
-      <input type="submit" class="button hollow" value="Search" href="search.html">
-    </div>
-  </form>
+  <h2>Start looking for a family!</h2>
+  <form id="search" class="search" action="searchF.php" method="post">
+    <div class="search-grid">
+      <div class="searchS1">
+        <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
+        <input id="starting-date" type="date" name="starting-date" placeholder="yy/mm/dd" required>
+      </div>
 
-  <h5>Advanced search</h5>  
-  <form action="adv-search" class="search-adv" action="search.html" method="post">
-    <div class="adv-search">
-      <label for="meals"><i class="fas fa-utensils"></i> Meals included</label>
+      <div class="search2">
+        <label for="distance"><i class="fas fa-location-arrow"></i> Distance</label>
+          <select name="distance" id="distance">
+            <option value="select">-- Select one --</option>
+            <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
+            <option value="3km-6km">3km-6km from Aalborg Univesity's main campus</option>
+            <option value="6km-15km">6km-15km from Aalborg Univesity's main campus</option>
+            <option value="15km-20km">15km-20km from Aalborg Univesity's main campus</option>
+            <option value="20km">More than 20km from Aalborg Univesity's main campus</option>
+            <option value="all">All</option>
+          </select>
+      </div>
 
-        <input type="checkbox" name="meals" value="breakfast"> Breakfast<br>
-        <input type="checkbox" name="meals" value="lunch"> Lunch<br>
-        <input type="checkbox" name="meals" value="dinner"> Dinner<br>
-      </select>
+      <div class="search3">
+        <label for="meals"><i class="fas fa-utensils"></i> Includes meals</label>
+          <select name="meals" id="meals">
+            <option value="select">-- Select one --</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="all">All</option>
+          </select>
+      </div>
+
+      <div class="search4">
+        <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
+        <input type="date" name="ending-date" id="ending-date" placeholder="yy/mm/dd" required>
+      </div>
      
-      <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label> 
-        <select name="price">
-          <option value="">-- select one --</option>
-          <option value="1500">less than 1500 a month</option>
-          <option value="1600-2500">1600-2500 a month</option>
-          <option value="2600-3000">2600-3000 a month</option>
-          <option value="3000">more than 3000 a month</option>
-                 
+      <div class="search5">
+        <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label> 
+        <select name="price" id="price">
+          <option value="">-- Select one --</option>
+          <option value="1500">Less than 1500 a month</option>
+          <option value="1500-2500">1500-2500 a month</option>
+          <option value="2500-3000">2500-3000 a month</option>
+          <option value="3000">More than 3000 a month</option>
         </select>
       </div>
-    </form>
-  </div>
+
+      <div class="search6">
+        <input type="submit" class="button hollow" value="Search">
+      </div>
+    </div>
+  </form>
 </section>
 
 <section class="conteiner section">
-  <h3>Students that match your searching result:</h3>
+  <?php if(!isset($rows)) { ?>
+    <h3>Select at least one option from the searching bar.</h3>
+  <?php } ?>
+
+  <?php if ($rows > 0) { ?>
+    <h3>Families that match your searching result:</h3>
+  <?php } ?>
+
+  <?php if (isset($rows) && $rows == 0) { ?>
+    <h3>There aren't any families that match your search.</h3>
+  <?php } ?>
+
     <div class="profiles conteiner clearfix">
       <div class="profile">
-        <blockquote class="search-result grid-container">
 
-          <div class="grid-item item1">
-            <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-            <img src="img/Loui 23.jpg" alt="student">
-            <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-          </div>
-
-          <div class="grid-item item2">
-            <p class="name">Mathias Heinekein</p>
-            <p class="info"><span>Nationality:</span> German/Netherlands</p>
-            <p class="info"><span>Age:</span> 22 years old</p>
-            <p class="info"><span>Duration:</span> 1 year</p>
-            <p class="info"><span>Criminal record:</span> Clean record</p>
-          </div>
-
-          <div class="item3">
-            <a href="#" class="long-button hollow">See profile</a>
-          </div>
-
-        </blockquote>
-
-        <blockquote class="search-result grid-container">
-            <div class="grid-item item1">
-              <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-              <img src="img/Loui 23.jpg" alt="student">
-              <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-            </div>
-            <div class="grid-item item2">
-              <p class="name">Mathias Heinekein</p>
-              <p class="info"><span>Nationality:</span> German/Netherlands</p>
-              <p class="info"><span>Age:</span> 22 years old</p>
-              <p class="info"><span>Duration:</span> 1 year</p>
-              <p class="info"><span>Criminal record:</span> Clean record</p>
-            </div>
-            <div class="item3">
-              <a href="#" class="long-button hollow">See profile</a>
-            </div>
-          </blockquote>
+        <?php while($family = $result->fetch_object()) { ?>
           <blockquote class="search-result grid-container">
-              <div class="grid-item item1">
-                <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                <img src="img/Loui 23.jpg" alt="student">
-                <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-              </div>
-              <div class="grid-item item2">
-                <p class="name">Mathias Heinekein</p>
-                <p class="info"><span>Nationality:</span> German/Netherlands</p>
-                <p class="info"><span>Age:</span> 22 years old</p>
-                <p class="info"><span>Duration:</span> 1 year</p>
-                <p class="info"><span>Criminal record:</span> Clean record</p>
-              </div>
-              <div class="item3">
-                <a href="#" class="long-button hollow">See profile</a>
-              </div>
-            </blockquote>
-            <blockquote class="search-result grid-container">
-                <div class="grid-item item1">
-                  <p class="rating">Rating score: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                  <img src="img/Loui 23.jpg" alt="student">
-                  <p class="favorite">Make favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
-                </div>
-                <div class="grid-item item2">
-                  <p class="name">Mathias Heinekein</p>
-                  <p class="info"><span>Nationality:</span> German/Netherlands</p>
-                  <p class="info"><span>Age:</span> 22 years old</p>
-                  <p class="info"><span>Duration:</span> 1 year</p>
-                  <p class="info"><span>Criminal record:</span> Clean record</p>
-                </div>
-                <div class="item3">
-                  <a href="#" class="long-button hollow">See profile</a>
-                </div>
-              </blockquote>
+
+            <div class="grid-item item1">
+              <p class="rating">Rating score: 
+                  <?php if($family->rating >= 1): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 2): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 3): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 4): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                  <?php if($family->rating >= 5): ?>
+                      <i class="fas fa-star"></i>
+                  <?php else : ?>
+                      <i class="far fa-star"></i>
+                  <?php endif; ?>
+                </p>
+                <img src="img/Loui 23.jpg" alt="family">
+                <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
+            </div>
+
+            <div class="grid-item item2_1"> 
+              <p class="name">Family <?php echo $family->LastName; ?></p>
+              <p class="info"><span>From:</span> <?php echo $family->AvailableFrom; ?></p>
+              <p class="info"><span>To:</span> <?php echo $family->AvailableTo; ?></p>
+              <p class="info"><span>Price/month:</span> <?php echo $family->Price; ?>kr</p>
+            </div>
+
+            <div class="item3">
+              <a href="seeProfileF.php?family=<?php echo $family->RegisterIdF ?>" class="long-button hollow">See profile</a>
+            </div>
+
+          </blockquote>
+        <?php } ?>
+
       </div>
   </div>
 </section>

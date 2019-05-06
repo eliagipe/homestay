@@ -2,7 +2,7 @@
 
 <section class="section conteiner">
     <h2>Sign In</h2>
-    <p>The only thing you need to do to find a match is sign in first:</p>
+    <p>Sign in to start looking for a match:</p>
     <div class="form">
       <div class="place">
         <form id="sign-in" class="sign-in" action="return false" onsubmit="return false" method="post">
@@ -13,7 +13,7 @@
               <input type ="password" id="password" name="password" placeholder="Enter password"required>
               <p><button class="button hollow" onclick="validate(document.getElementById('email').value, document.getElementById('password').value);">Sign in</button></p>
               
-              <a class="small-link" href="password.html">Forgot password? Click here!</a>
+              <a class="small-link" href="forgotpassword.php">Forgot password? Click here!</a>
         </form>
         <script>
         function validate(email, password)
@@ -35,7 +35,7 @@
     <div class="form">
       <div class="place">
         <p class="justify-left">Don't have an account? The registration is going to take less <br> than a minute and becoming a member is totally free!</p>
-        <p> <a href="register.html" class="button hollow">Register</a></p>
+        <p> <a href="register.php" class="button hollow">Register</a></p>
       </div>
     </div>
   </section>

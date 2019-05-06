@@ -19,9 +19,14 @@
   <meta name="theme-color" content="#fafafa">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
 
+<?php
+  $file = basename($_SERVER['PHP_SELF']);
+  $page = str_replace(".php", "", $file);
+?>
+
 </head>
 
-<body>
+<body class="<?php echo $page ?>">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -51,17 +56,20 @@
             }
           ?>
 
-          <!-- TODO falta versió estudiants i famílies -->
           <?php 
               session_start();
               if($_SESSION["type"] == 'F') {
-              echo "<a href='profile.php'>My profile</a>";
-              echo "<a href='search.php'>Search match</a>";
-              echo "<a href='myfavorits.php'>Favorites</a>";
-          } ?>
+                echo "<a href='profileF.php'>My profile</a>";
+                echo "<a href='searchS.php'>Search match</a>";
+                echo "<a href='myfavorits.php'>Favorites</a>";
+              } elseif($_SESSION["type"] == 'S') {
+                echo "<a href='profileS.php'>My profile</a>";
+                echo "<a href='searchF.php'>Search match</a>";
+                echo "<a href='myfavorits.php'>Favorites</a>";
+              } ?>
           <a href="aboutus.php">About us</a>
           <a href="faq.php">FAQ</a>
         </nav>
-      </div><!--.conteneiner-->
+      </div><!--.conteiner-->
   </div><!--.bar-->
 </header>
