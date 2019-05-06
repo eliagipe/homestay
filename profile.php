@@ -29,8 +29,8 @@
       <div class="place">
         <div id="user-data" class="register box clearix">
           <div class="form-control"> 
-            <label class="header">Profile Photo:</label>
-            <input id="image" type="file" name="profile_photo" placeholder="Photo" onchange="readURL(this);" required="" capture>
+            <label for="img" class="header">Profile Photo:</label>
+            <input id="img" type="file" name="img" placeholder="Photo" onchange="readURL(this);" required="" capture>
             <img id="blah" src="#" alt="your image" />
           </div>
           
@@ -234,13 +234,11 @@
         <label for="age">Age</label>
         <input type="number" name="age" id="age" value="age"/><br />
 
-        <label for="duration">Duration of stay</label>
-        <select name="duration" id="duration">
-          <option value="">-- select one --</option>
-          <option value="less6">Less than 6 Months</option>
-          <option value="6">6 Months</option>
-          <option value="1">One Year</option>
-        </select>
+        <label for="from">Available from:</label>
+        <input type="date" name="from" id="from">
+
+        <label for="to">Available to:</label>
+        <input type="date" name="to" id="to">
 
         <label for="allergies">Allergies</label>
         <input type="text" id="allergies" name="allergies" placeholder="Optional">
@@ -256,8 +254,15 @@
         <input type="radio" name="smoking" id="smoking" value="0"/> No<br />
         <input type="radio" name="smoking" id="smoking" value="1"/> Yes<br />
 
-        <label for="languages">Languages</label>
-        <input type="text" id="languages" name="languages" placeholder="Languages">
+        <label for="language1">Languages</label>
+        <input type="text" id="language1" name="language1" placeholder="Language" required>
+
+        <label for="language2"></label>
+        <input type="text" id="language2" name="language2" placeholder="Optional language">
+
+        <label for="language3"></label>
+        <input type="text" id="language3" name="language2" placeholder="Optional language">
+
         
         <label for="diet">Special diet</label>
         <input type="text" id="diet" name="diet" placeholder="Optional">
