@@ -52,8 +52,8 @@ while($consulta = mysqli_fetch_array($result)){
 
 
 
-$sql = "INSERT INTO family (`FamilyPhoto`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".
- "VALUES ('$profilephotof', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
+$sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".
+ "VALUES ('$algo1','$profilephotof', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
 if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
 } else {
