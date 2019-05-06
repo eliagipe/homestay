@@ -24,17 +24,17 @@ $(function() {
         //bar
     // menu fijo
 var windowHeight = $(window).height();
-var barraAltura = $('.hero').innerHeight();
+var barraAltura = $('.bar').innerHeight();
 
 
  
 $(window).scroll(function(){
 var scroll=$(window).scrollTop();
 if(scroll>windowHeight){
-$('.hero').addClass('fixed');
+$('.bar').addClass('fixed');
 $('body').css({'margin-top': barraAltura +'px'})//pa que no de salto
 }else{
-$('.hero').removeClass('fixed');
+$('.bar').removeClass('fixed');
 $('body').css({'margin-top':'0px'});
 }
 

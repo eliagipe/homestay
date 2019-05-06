@@ -28,7 +28,7 @@
 
     try{        
 
- $servername = "localhost:3308";
+ $servername = "localhost";
 $database = "homestay2.0";
  $username = "root";
  $password = "";
