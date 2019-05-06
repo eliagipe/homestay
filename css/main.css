@@ -257,6 +257,14 @@ nav.principal-navegation a{
         margin: 0 10px 0 0 ; 
         
     }
+    .fixed {
+        position: fixed;
+        width: 100;
+        top:0;
+        left:0;
+        z-index:2;
+
+    }
     nav.principal-navegation a:hover{
         background-color:white;
         color:#74c75b;
@@ -738,11 +746,9 @@ div.about{
 }
 /*agreement*/
 
-<<<<<<< HEAD
 div.Agreement-Done .button {
     display:block;
 }
-=======
 /** Javascript **/
 
 .principal-navegation .active {
@@ -754,7 +760,6 @@ div.Agreement-Done .button {
     color: red !important;
 }
 
->>>>>>> c1b5e0886de401d90e0149019c81ac0e43c86abd
 
 
 

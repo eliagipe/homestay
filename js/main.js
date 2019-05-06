@@ -27,17 +27,17 @@
         //bar
     // menu fijo
 var windowHeight = $(window).height();
-var barraAltura = $('.bar').innerHeight();
+var barraAltura = $('.hero').innerHeight();
 
 
  
 $(window).scroll(function(){
 var scroll=$(window).scrollTop();
 if(scroll>windowHeight){
-$('.bar').addClass('fixed');
+$('.hero').addClass('fixed');
 $('body').css({'margin-top': barraAltura +'px'})//pa que no de salto
 }else{
-$('.bar').removeClass('fixed');
+$('.hero').removeClass('fixed');
 $('body').css({'margin-top':'0px'});
 }
 
