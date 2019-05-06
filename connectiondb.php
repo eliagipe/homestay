@@ -6,5 +6,4 @@
 	// Datos de la base de datos
 	$db = new mysqli('localhost', 'root', 'root', 'homestay') or die ("No se ha podido conectar al servidor de Base de datos");
 	
-	
 ?>
