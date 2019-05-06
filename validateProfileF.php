@@ -3,6 +3,9 @@
       session_start();
       $RegisterId = $_SESSION["RegisterId"];
 
+
+      //Aparna change from here
+
       $profilephoto = $_POST['img'];
       $nationality = $_POST['nationality'];
       $age = $_POST['age'];
@@ -35,8 +38,9 @@
             $stmt->execute();
             $stmt->close();
                   
+            //Aparna don't change from here
             
-            echo '<script>location.href = "myProfileS.php?student='  . $RegisterId . '"</script>';
+            echo '<script>location.href = "myProfileF.php?student='  . $RegisterId . '"</script>';
 
             $db->close();
 
