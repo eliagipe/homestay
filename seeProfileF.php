@@ -2,7 +2,7 @@
     session_start();
     $RegisterId = $_SESSION["RegisterId"];
 
-    if(isset($_GET['family'])) {
+    if(isset($_GET['family']) && $RegisterId != NULL) {
         $db = new mysqli('localhost', 'root', 'root', 'homestay');
         $family_id = $_GET['family'];
         
@@ -82,7 +82,6 @@
         <div class="profile7 profile-item">
             <p class="info"><i class="fas fa-globe"></i> <span>Language: </span> <?php echo $family->Language; ?></p>
             <p class="info"><i class="fas fa-location-arrow"></i> <span>Distance from AAU main campus: </span> <?php echo $family->Distance; ?>km</p>
-            <!-- TODO canviar 8km per $family->Distance (fer l'if)-->
         </div>
     </div>
 

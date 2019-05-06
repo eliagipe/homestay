@@ -3,7 +3,7 @@
     session_start();
     $RegisterId = $_SESSION["RegisterId"];
 
-    if(isset($_GET['student'])) {
+    if(isset($_GET['student']) && $RegisterId != NULL) {
         $db = new mysqli('localhost', 'root', 'root', 'homestay');
         $student_id = $_GET['student'];
 
