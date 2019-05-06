@@ -4,9 +4,9 @@
 
     <h2>Register results!</h2>
 
-    <?php if(isset($_POST['submit']));
+    <?php if(isset($_POST['submit'])) {
     
-    $familystudent = $_POST['choose'];
+    $type = $_POST['choose'];
     $firstname = $_POST['name'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
@@ -15,30 +15,39 @@
 
     try{        
 
+        require_once('connectiondb.php');
+        $stmt = $db->prepare(" INSERT INTO account_register (FirstName, LastName, email, Password, type) VALUES (?,?,?,?,?) ");
+        $stmt->bind_param("sssss", $firstname, $lastname, $email, $passwordEncrypted, $type);
+        $stmt->execute();
+        $stmt->close();
 
-require_once('connectiondb.php');
-$stmt = $conexion->prepare("INSERT INTO account_register (FirstName, LastName, email, Password, type) VALUES (?,?,?,?,?)");
-$stmt->bind_param("sssss", $firstname, $lastname, $email, $passwordEncrypted, $familystudent);
-$stmt->execute();
-$stmt->close();
-$conexion->close();
+        $query = " SELECT * FROM account_register WHERE email = '$email' ";
+        $result = mysqli_query($db, $query);
+        $rows = mysqli_num_rows($result);
+
+        if ($rows > 0) {
+            $user = $result->fetch_object();
+
+            session_start();
+            $_SESSION["RegisterId"] = $user->RegisterId;
+            $_SESSION["email"] = $user->email;
+            $_SESSION["type"] = $user->type;
+                
+            if ($user->type == S) {
+                echo '<script>location.href = "profileS.php"</script>';
+            } elseif ($user->type == F) {
+                echo '<script>location.href = "profileF.php"</script>';
+            }
+        }
+
+        $db->close();
 
     }
     catch (Exception $e){
         $error = $e->getMessage();
     }
 
-    $familystudent = $_POST['choose'];
-if ($familystudent=='S') {
-    echo '<script>location.href = "profileS.php"</script>';
-
-} elseif ($familystudent=='F'){
-    echo '<script>location.href = "profileF.php"</script>';
-    
-}
-
-
-
+    }
     
    ?>
 

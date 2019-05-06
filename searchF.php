@@ -123,7 +123,7 @@
     <h3>Select at least one option from the searching bar.</h3>
   <?php } ?>
 
-  <?php if ($rows > 0) { ?>
+  <?php if (isset($rows) && $rows > 0) { ?>
     <h3>Families that match your searching result:</h3>
   <?php } ?>
 
@@ -133,7 +133,7 @@
 
     <div class="profiles conteiner clearfix">
       <div class="profile">
-
+        <?php if(isset($result)) { ?>
         <?php while($family = $result->fetch_object()) { ?>
           <blockquote class="search-result grid-container">
 
@@ -181,6 +181,7 @@
             </div>
 
           </blockquote>
+        <?php } ?>
         <?php } ?>
 
       </div>
