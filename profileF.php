@@ -107,16 +107,16 @@
         </select>
 
         <label for="facilities"> Facilities available</label> 
-        <input type="checkbox" name="facilities[0]" value="1"> Private Bathroom<br>
-        <input type="checkbox" name="facilities[1]" value="1"> Shared Bathroom<br>
-        <input type="checkbox" name="facilities[2]" value="1"> Washing Machine<br>
-        <input type="checkbox" name="facilities[3]" value="1"> WIFI<br>
-        <input type="checkbox" name="facilities[4]" value="1"> Bus Stop Nearby<br>
-        <input type="checkbox" name="facilities[5]" value="1"> Single Bed<br>
-        <input type="checkbox" name="facilities[6]" value="1"> Double Bed<br>
-        <input type="checkbox" name="facilities[7]" value="1"> WIFI<br>
-        <input type="checkbox" name="facilities[8]" value="1"> Washing Machine<br>
-        <input type="checkbox" name="facilities[9]" value="1"> Bicycle<br>
+        <input type="checkbox" name="facilities[]" value="1"> Private Bathroom<br>
+        <input type="checkbox" name="facilities[]" value="1"> Shared Bathroom<br>
+        <input type="checkbox" name="facilities[]" value="1"> Washing Machine<br>
+        <input type="checkbox" name="facilities[]" value="1"> WIFI<br>
+        <input type="checkbox" name="facilities[]" value="1"> Bus Stop Nearby<br>
+        <input type="checkbox" name="facilities[]" value="1"> Single Bed<br>
+        <input type="checkbox" name="facilities[]" value="1"> Double Bed<br>
+        <input type="checkbox" name="facilities[]" value="1"> WIFI<br>
+        <input type="checkbox" name="facilities[]" value="1"> Washing Machine<br>
+        <input type="checkbox" name="facilities[]" value="1"> Bicycle<br>
     
 
         <div class="places">

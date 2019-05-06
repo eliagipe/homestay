@@ -6,7 +6,7 @@
 	// Datos de la base de datos
 	$usuario = "root";
 	$password = "";
-	$servidor = "localhost";
+	$servidor = "localhost:3308";
 	$basededatos = "homestay2.0";
 	
 	// creación de la conexión a la base de datos con mysql_connect()
