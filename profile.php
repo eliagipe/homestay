@@ -19,7 +19,7 @@
     }
 </script>
 
-<form id="register" class="register" action="profiledb.php"method="post" enctype="multipart/form-data">
+<form id="register" class="register" action="profiledb.php" method="post" enctype="multipart/form-data">
 <section class="section conteiner private-information">
     <h2>My Profile - Student</h2>
     <h3>Add or edit information</h3>
