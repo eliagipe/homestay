@@ -3,7 +3,7 @@
 <html class="no-js" lang="">
 <script>
 
-function readURL(input) {
+  function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
@@ -20,6 +20,7 @@ function readURL(input) {
 </script>
 
 <form id="profile" class="profile" action="profiledb.php"method="post" enctype="multipart/form-data">
+<form id="register" class="register" action="profiledb.php" method="post" enctype="multipart/form-data">
 <section class="section conteiner private-information">
     <h2>My Profile - Student</h2>
     <h3>Add or edit information</h3>
