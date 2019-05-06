@@ -4,7 +4,7 @@
     session_start();
     $RegisterId = $_SESSION["RegisterId"];
     
-    if(isset($_GET['email']) && isset($_GET['token']) && $RegisterId != NULL) {
+    if(isset($_GET['email']) && isset($_GET['token'])) {
         $db = new mysqli('localhost', 'root', 'root', 'homestay');
         $email = $db->real_escape_string($_GET['email']);
         $token = $db->real_escape_string($_GET['token']);

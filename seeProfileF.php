@@ -2,7 +2,7 @@
     session_start();
     $RegisterId = $_SESSION["RegisterId"];
 
-    if(isset($_GET['family']) && $RegisterId != NULL) {
+    if(isset($_GET['family'])) {
         $db = new mysqli('localhost', 'root', 'root', 'homestay');
         $family_id = $_GET['family'];
         
