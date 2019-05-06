@@ -4,7 +4,7 @@
 $servername = "localhost:8889";
 $username = "root";
 $password = "root";
-$dbname = "homestay2.0";
+$dbname = "homestay";
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
