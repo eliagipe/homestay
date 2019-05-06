@@ -1,4 +1,48 @@
 
+<?php
+
+$servername = "localhost:8889";
+$username = "root";
+$password = "root";
+$dbname = "homestay2.0";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+
+$image = addslashes(file_get_contents($_FILES['profile_photo']['tmp_name']));
+$nationality = $_POST ["nationality"];
+$age =  $_POST["age"];
+$allergies =  $_POST["allergies"];
+$gender =  $_POST["gender"];
+$smoking =  $_POST["smoking"];
+$language1 =  $_POST["languages1"];
+$language2 = $_POST ["language2"];
+$diet =  $_POST["diet"];
+$crimreport = addslashes(file_get_contents($_FILES['real-input']['tmp_name']));
+$about =  $_POST["about-me"];
+$language3 = $_POST["language3"];
+$availableto = $_POST ["available-to"];
+$availablefrom = $_POST ["available-from"];
+
+
+
+$sql = "INSERT INTO student (StudentPhoto, Nationality, Age, Allergies, Gender, Smoke, Language1, Language2, Diet, CriminalRecord, Descriptions, Language3, AvailableTo, AvailableFrom)
+VALUES ('$image', '$nationality','$age', '$allergies', '$gender', '$smoking', '$language1', '$diet', '$crimreport', '$about', '$language3','$availableto', '$availablefrom' )";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+?>
+
 <html class="no-js" lang="">
 
 <head>
@@ -66,7 +110,7 @@ function readURL(input) {
         </div><!--.conteneiner-->
     </div><!--.bar-->
   </header>
-<form id="register" class="register" action="profiledb.php"method="post" enctype="multipart/form-data">
+<form id="register" class="register" action="profile.php"method="post" enctype="multipart/form-data">
 <section class="section conteiner private-information">
     <h2>My Profile - Student</h2>
     <h3>Add or edit information</h3>
@@ -78,10 +122,10 @@ function readURL(input) {
           <div class="form-control"> 
             <label class="header">Profile Photo:</label>
             <input id="image" type="file" name="profile_photo" placeholder="Photo" onchange="readURL(this);" required="" capture>
-            <img id="blah" src="#" alt="your image" />
+            <img id="blah" src=""data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"" alt="your image" />
           </div>
         <label for="nationality">Nationality</label> 
-        <select name="nationality">
+        <select name="nationality" value="<?php echo $row ['nationality']; ?> " >
           <option value="">-- select one --</option>
           <option value="afghan">Afghan</option>
           <option value="albanian">Albanian</option>
@@ -277,10 +321,10 @@ function readURL(input) {
           <option value="zimbabwean">Zimbabwean</option>
         </select>
         <label for="age">Age</label>
-        <input type="number" name="age" value="Age"/><br />
+        <input type="number" name="age" value="<?php echo $row ['age']; ?> "/><br />
 
         <label for="duration">Duration of stay</label>
-        <select name="duration">
+        <select name="duration" value="<?php echo $row ['duration']; ?> ">
           <option value="">-- select one --</option>
           <option value="lessthansixmonths">Less than 6 Months</option>
           <option value="sixmonths">6 Months</option>
@@ -288,10 +332,10 @@ function readURL(input) {
         </select>
 
         <label for="allergies">Allergies</label>
-        <input type="text" id="allergies" name="allergies" placeholder="Optional">
+        <input type="text" id="allergies" name="allergies" value="<?php echo $row ['allergies']; ?> " placeholder="Optional">
 
         <label for="gender">Gender</label>
-        <select name="gender">
+        <select name="gender" value="<?php echo $row ['gender']; ?> ">
           <option value="">-- select one --</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -301,10 +345,10 @@ function readURL(input) {
         <input type="radio" name="smoking" value="yes"/> Yes<br />
 
         <label for="languages">Languages</label>
-        <input type="text" id="languages" name="languages" placeholder="Languages">
+        <input type="text" id="languages" name="languages" value="<?php echo $row ['languages']; ?> " placeholder="Languages">
         
         <label for="diet">Special diet</label>
-        <input type="text" id="diet" name="diet" placeholder="Optional">
+        <input type="text" id="diet" name="diet" value="<?php echo $row ['diet']; ?> " placeholder="Optional">
 
 
         <div class="places">
@@ -329,7 +373,7 @@ function readURL(input) {
   
     <div class="place">
        <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find a host family much quicker</label><br/>
-       <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
+       <textarea name="about-me" rows="10" cols="70" id="about-me">"<?php echo $row ['about-me']; ?>"</textarea>
     </div> 
   
        
@@ -384,4 +428,4 @@ function readURL(input) {
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
 
-</html>;
+</html>
