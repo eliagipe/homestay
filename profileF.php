@@ -22,6 +22,7 @@
     <h2>My Profile - Family</h2>
     <h3> Add more information about your accomodation! </h3>
     <div class="place">
+
       <form id="register" class="register" action="validateProfileF.php"method="post">
         <div id="user-data" class="register box clearix">
           <div class="place"> 
@@ -29,19 +30,19 @@
             <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
           </div>
    
-        <label for="meals"> Meals</label> 
-        <input type="checkbox" name="meals[]" value="B"> Breakfast<br>
-        <input type="checkbox" name="meals[]" value="L"> Lunch<br>
-        <input type="checkbox" name="meals[]" value="D"> Dinner<br>
+          <label for="meals"> Meals</label> 
+          <input type="checkbox" name="meals[]" value="B"> Breakfast<br>
+          <input type="checkbox" name="meals[]" value="L"> Lunch<br>
+          <input type="checkbox" name="meals[]" value="D"> Dinner<br>
               
-        <label for="priceforstay">Price for Stay</label>
-        <input type="number" name="priceforstay" value="priceforstay"/> DKK. <br />
+          <label for="priceforstay">Price for Stay</label>
+          <input type="number" name="priceforstay" value="priceforstay"/> DKK. <br />
 
-        <label for="distancetouni"> Distance to Aalborg Øst Campus</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->
-        <input type="number" id="distancetouni" name="distancetouni" placeholder="KM">
+          <label for="distancetouni"> Distance to Aalborg Øst Campus</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->
+          <input type="number" id="distancetouni" name="distancetouni" placeholder="KM">
 
         
-        <label for="duration">The accomodation is available between these dates:<i class="far fa-calendar-check"></i> From:</label>
+          <label for="duration">The accomodation is available between these dates:<i class="far fa-calendar-check"></i> From:</label>
       <input type="date" name="starting-date" placeholder="dd/mm/yy">
       <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
       <input type="date" name="ending-date" placeholder="dd/mm/yy">
