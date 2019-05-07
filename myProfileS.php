@@ -5,6 +5,7 @@
 
     if(isset($_GET['student']) && $RegisterId != NULL) {
         require_once('connectiondb.php');
+        $db = new mysqli('localhost:3308', 'root', '', 'homestay2.0');
         $student_id = $_GET['student'];
 
         session_start();
