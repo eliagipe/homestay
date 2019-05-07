@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php include_once 'includes/templates/header.php'; ?>
 
 <section class="section conteiner">
