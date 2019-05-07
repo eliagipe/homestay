@@ -48,6 +48,7 @@
 
         <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
           <?php 
+          session_start();
             
             if($_SESSION['type'] == null) {
               echo "<a href='signin.php'>Sign In</a>";
