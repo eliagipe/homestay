@@ -1,10 +1,6 @@
-<?php include_once 'includes/templates/header.php'; ?>
-
-<section class="section conteiner">
-
-    <h2>Register results!</h2>
-
-    <?php if(isset($_POST['submit'])) {
+    <?php 
+    
+    if(isset($_POST['submit'])) {
     
     $type = $_POST['choose'];
     $firstname = $_POST['name'];
@@ -51,6 +47,3 @@
     
    ?>
 
-
-</section>
-<?php include_once 'includes/templates/footer.php'; ?>
