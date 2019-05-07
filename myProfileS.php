@@ -7,9 +7,6 @@
         require_once('connectiondb.php');
         $db = new mysqli('localhost:3308', 'root', '', 'homestay2.0');
         $student_id = $_GET['student'];
-
-        session_start();
-        $RegisterId = $_SESSION["RegisterId"];
         
         $student = $db->query(" 
             SELECT * FROM student 
