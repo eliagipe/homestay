@@ -27,6 +27,8 @@
 
 <section class="conteiner section">
 
+    <h2>My profile</h2>
+
     <div class="profile-grid">
         <div class="profile1">
             <h6><?php echo $student->FirstName . " " . $student->LastName; ?></h3>
@@ -74,23 +76,33 @@
             <div class="profile-line"></div>
 
             <div class="profile8 profile-item">
-                <p class="info"><i class="fas fa-utensils"></i> <span>Special diet: </span> <?php echo $student->Diet; ?></p>
-                <p class="info"><i class="fas fa-plus-square"></i> <span>Allergies: </span> <?php echo $student->Allergies; ?></p>
+                <p class="info"><i class="fas fa-utensils"></i> <span>Special diet: </span> 
+                    <?php if($student->Diet == NULL) {
+                        echo "No"; 
+                    } else {
+                        echo $student->Diet;
+                    }?></p>
+                <p class="info"><i class="fas fa-plus-square"></i> <span>Allergies: </span> 
+                    <?php if($student->Allergies == NULL) {
+                        echo "No"; 
+                    } else {
+                        echo $student->Allergies;
+                    }?></p>
             </div>
 
             <div class="profile9 profile-item">
                 <p class="info"><i class="fas fa-smoking"></i> <span>Smoking: </span> 
-                <?php if($student->Somke == 0) {
-                    echo 'No';
-                } elseif($student->Somke == 1) {
-                    echo 'Yes';
-                } ?></p>
+                    <?php if($student->Somke == 0) {
+                        echo 'No';
+                    } elseif($student->Somke == 1) {
+                        echo 'Yes';
+                    } ?></p>
                 <p class="info"><i class="far fa-file-alt"></i> <span>Criminal Record: </span> 
-                <?php if($student->CriminalRecord == 0) {
-                    echo "I don't have a Criminal Record.";
-                } elseif($student->CriminalRecord == 1) {
-                    echo "I have a Criminal Record.";
-                } ?></p>
+                    <?php if($student->CriminalRecord == 0) {
+                        echo "I don't have a Criminal Record.";
+                    } elseif($student->CriminalRecord == 1) {
+                        echo "I have a Criminal Record.";
+                    } ?></p>
             </div>
     </div>
 

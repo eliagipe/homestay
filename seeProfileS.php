@@ -77,8 +77,18 @@
             <div class="profile-line"></div>
 
             <div class="profile8 profile-item">
-                <p class="info"><i class="fas fa-utensils"></i> <span>Special diet: </span> <?php echo $student->Diet; ?></p>
-                <p class="info"><i class="fas fa-plus-square"></i> <span>Allergies: </span> <?php echo $student->Allergies; ?></p>
+                <p class="info"><i class="fas fa-utensils"></i> <span>Special diet: </span> 
+                    <?php if($student->Diet == NULL) {
+                        echo "No"; 
+                    } else {
+                        echo $student->Diet;
+                    }?></p>
+                <p class="info"><i class="fas fa-plus-square"></i> <span>Allergies: </span> 
+                    <?php if($student->Allergies == NULL) {
+                        echo "No"; 
+                    } else {
+                        echo $student->Allergies;
+                    }?></p>
             </div>
 
             <div class="profile9 profile-item">

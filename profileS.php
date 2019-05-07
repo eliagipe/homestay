@@ -29,13 +29,13 @@
       <div class="place">
         <div id="user-data" class="register box clearix">
           <div class="form-control"> 
-            <label for="img" class="header">Profile Photo:</label>
+            <label for="img" class="header">Profile Photo: *</label>
             <input id="img" type="file" name="img" placeholder="Photo" onchange="readURL(this);" required="" capture>
             <img id="image" src="#" alt="your-image" />
           </div>
           
-          <label for="nationality">Nationality</label> 
-          <select name="nationality" id="nationality">
+          <label for="nationality">Nationality *</label> 
+          <select name="nationality" id="nationality" required>
             <option value="">-- select one --</option>
             <option value="afghan">Afghan</option>
             <option value="albanian">Albanian</option>
@@ -231,31 +231,31 @@
             <option value="zimbabwean">Zimbabwean</option>
           </select>
 
-        <label for="age">Age</label>
-        <input type="number" name="age" id="age" value="age"/><br />
+        <label for="age">Age *</label>
+        <input type="number" name="age" id="age" value="age" required><br>
 
-        <label for="start">Available from:</label>
-        <input type="date" name="start" id="start">
+        <label for="start">Available from: *</label>
+        <input type="date" name="start" id="start" required>
 
-        <label for="end">Available to:</label>
-        <input type="date" name="end" id="end">
+        <label for="end">Available to: *</label>
+        <input type="date" name="end" id="end" required>
 
         <label for="allergies">Allergies</label>
         <input type="text" id="allergies" name="allergies" placeholder="Optional">
 
-        <label for="gender">Gender</label>
-        <select name="gender" id="gender">
+        <label for="gender">Gender *</label>
+        <select name="gender" id="gender" required>
           <option value="">-- select one --</option>
           <option value="M">Male</option>
           <option value="F">Female</option>
         </select>
 
-        <label for="smoking">Do you smoke?</label>
-        <input type="radio" name="smoking" id="smoking" value="0"/> No<br />
-        <input type="radio" name="smoking" id="smoking" value="1"/> Yes<br />
+        <label for="smoking">Do you smoke? *</label>
+        <input type="radio" name="smoking" id="smoking" value="0" required>No<br>
+        <input type="radio" name="smoking" id="smoking" value="1" required>Yes<br>
 
-        <label for="language1">Languages</label><!--it can be changed to a text if you want-->
-        <select name="language1" id="language1"> <!--To add more languages, its done with JS-->
+        <label for="language1">Languages *</label><!--it can be changed to a text if you want-->
+        <select name="language1" id="language1" required> <!--To add more languages, its done with JS-->
           <option value="select">-- Select one --</option>
           <option value="Afrikanns">Afrikanns</option>
           <option value="Albanian">Albanian</option>
@@ -489,9 +489,9 @@
         <label for="diet">Special diet</label>
         <input type="text" id="diet" name="diet" placeholder="Optional">
 
-        <label for="criminal">Criminal record</label>
-        <input type="radio" name="criminal" id="criminal" value="1"/>I have a Criminal Record document<br />
-        <input type="radio" name="criminal" id="criminal" value="0"/>I don't have a Criminal Record document<br />
+        <label for="criminal">Criminal record *</label>
+        <input type="radio" name="criminal" id="criminal" value="1" required>I have a Criminal Record document<br>
+        <input type="radio" name="criminal" id="criminal" value="0" required>I don't have a Criminal Record document<br>
         
       </div>  
   </div>
@@ -503,8 +503,8 @@
     <h3>Add  information about your preferences</h3>
     
     <div class="place">
-        <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find a host family much quicker</label><br/>
-        <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
+        <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find a host family much quicker. *</label><br/>
+        <textarea name="about-me" rows="10" cols="70" id="about-me" required></textarea>
     </div> 
     
         
