@@ -27,7 +27,7 @@
       try{        
 
             require_once('connectiondb.php');
-            $stmt = $db->prepare(" INSERT INTO student
+            $stmt = $db->prepare(" INSERT INTO family
                                 (RegisterIdS, Nationality, Age, Allergies, Gender, 
                                 Smoke, Language1, Language2, Language3, Diet, 
                                 CriminalRecord, Descriptions, AvailableFrom, AvailableTo) 

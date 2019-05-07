@@ -1,5 +1,23 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
+<script>
+
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
 <section class="conteiner section private-information">
     <h2>My Profile - Family</h2>
     <h3> Add more information about your accomodation! </h3>
