@@ -508,7 +508,7 @@
     </div> 
     
         
-    <div class="item3"><p><input type="submit" class="long-button hollow" value ="saved" name="submit" id="submit"></p></div>
+    <div class="item3"><p><input type="submit" class="long-button hollow" value ="save" name="submit" id="submit"></p></div>
   </section>
 </form>
 
