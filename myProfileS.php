@@ -3,7 +3,7 @@
     session_start();
     $RegisterId = $_SESSION["RegisterId"];
 
-    if(isset($_GET['student']) && $RegisterId != NULL) {
+    if(isset($_GET['student'])) {
         require_once('connectiondb.php');
         $student_id = $_GET['student'];
 
@@ -92,9 +92,9 @@
 
             <div class="profile9 profile-item">
                 <p class="info"><i class="fas fa-smoking"></i> <span>Smoking: </span> 
-                    <?php if($student->Somke == 0) {
+                    <?php if($student->Smoke == 0) {
                         echo 'No';
-                    } elseif($student->Somke == 1) {
+                    } elseif($student->Smoke == 1) {
                         echo 'Yes';
                     } ?></p>
                 <p class="info"><i class="far fa-file-alt"></i> <span>Criminal Record: </span> 
