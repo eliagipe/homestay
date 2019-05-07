@@ -12,7 +12,7 @@
   $RegisterId = $_SESSION["RegisterId"];
 
   if(isset($_POST['email'])) {
-    $db = new mysqli('localhost', 'root', 'root', 'homestay');
+    require_once('connectiondb.php');
     $email = $db->real_escape_string($_POST['email']);
     $sql = $db->query("SELECT RegisterId FROM account_register WHERE email = '$email'");
     if($sql->num_rows >  0) {

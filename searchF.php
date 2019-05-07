@@ -3,7 +3,7 @@
   $RegisterId = $_SESSION["RegisterId"];
   
   if(isset($_POST['starting-date']) && $RegisterId != NULL) {
-    $db = new mysqli('localhost', 'root', 'root', 'homestay');
+    require_once('connectiondb.php');
         
     $distance = $_POST['distance'];
     $start = $_POST['starting-date'];

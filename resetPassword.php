@@ -5,7 +5,7 @@
     $RegisterId = $_SESSION["RegisterId"];
     
     if(isset($_GET['email']) && isset($_GET['token'])) {
-        $db = new mysqli('localhost', 'root', 'root', 'homestay');
+        require_once('connectiondb.php');
         $email = $db->real_escape_string($_GET['email']);
         $token = $db->real_escape_string($_GET['token']);
 

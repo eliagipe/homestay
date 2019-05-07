@@ -3,7 +3,7 @@
     $RegisterId = $_SESSION["RegisterId"];
 
     if(isset($_GET['family']) && $RegisterId != NULL) {
-        $db = new mysqli('localhost', 'root', 'root', 'homestay');
+        require_once('connectiondb.php');
         $family_id = $_GET['family'];
         
         $family = $db->query(" 

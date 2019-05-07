@@ -6,7 +6,7 @@
     //Connect to DB
 
 
-    $db = new mysqli('localhost', 'root', 'root', 'homestay');
+    require_once('connectiondb.php');
     $query = " SELECT * FROM account_register WHERE email = '$email' "; 
     $result = mysqli_query($db, $query);
     $rows = mysqli_num_rows($result);

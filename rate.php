@@ -1,5 +1,5 @@
 <?php
-    $db = new mysqli('localhost', 'root', 'root', 'homestay');
+    require_once('connectiondb.php');
 
     if(isset($_GET['registeridf'],$_GET['registerids'], $_GET['rating'])) {
         $family = (int)$_GET['registeridf'];
