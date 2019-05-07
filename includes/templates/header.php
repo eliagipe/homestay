@@ -48,7 +48,7 @@
 
         <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
           <?php 
-            session_start();
+            
             if($_SESSION['type'] == null) {
               echo "<a href='signin.php'>Sign In</a>";
             } else {
@@ -57,7 +57,7 @@
           ?>
 
           <?php 
-              session_start();
+              $RegisterId = $_SESSION['RegisterId'];
               if($_SESSION["type"] == 'F') {
                 echo "<a href='myProfileF.php?family=" . $RegisterId . "'>My profile</a>";
                 echo "<a href='searchS.php'>Search match</a>";
