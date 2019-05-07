@@ -18,6 +18,10 @@
       $criminal = $_POST['criminal'];
       $aboutme = $_POST['about-me'];
 
+ 
+
+
+
       if(isset($_POST['submit'])) {
     
     
