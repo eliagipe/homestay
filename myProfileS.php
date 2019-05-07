@@ -17,7 +17,10 @@
             ON student.RegisterIdS = rating.RegisterIdS
             AND $RegisterId = rating.RegisterIdF
             WHERE (student.RegisterIdS = $student_id)
-        ")->fetch_object();
+            
+            ")->fetch_object();
+
+
     }
     
 ?>

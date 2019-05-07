@@ -48,25 +48,25 @@
 
         <nav class="principal-navegation"> <!--this class is made so then this icons does not mix with others-->
           <?php 
-            session_start();
-            if($_SESSION['type'] == null) {
-              echo "<a href='signin.php'>Sign In</a>";
-            } else {
-              echo "<a href='logout.php'>Sign Out</a>";
-            }
-          ?>
+ // session_start();
+  //if($_SESSION['type'] == null) {
+   // echo "<a href='signin.php'>Sign In</a>";
+  //} else {
+    //echo "<a href='logout.php'>Sign Out</a>";
+  //}
+?>
 
-          <?php 
-              session_start();
-              if($_SESSION["type"] == 'F') {
-                echo "<a href='myProfileF.php?family=" . $RegisterId . "'>My profile</a>";
-                echo "<a href='searchS.php'>Search match</a>";
-                echo "<a href='myfavorits.php'>Favorites</a>";
-              } elseif($_SESSION["type"] == 'S') {
-                echo "<a href='myProfileS.php?student="  . $RegisterId . "'>My profile</a>";
-                echo "<a href='searchF.php'>Search match</a>";
-                echo "<a href='myfavorits.php'>Favorites</a>";
-              } ?>
+<?php 
+   // session_start();
+    //if($_SESSION["type"] == 'F') {
+      //echo "<a href='myProfileF.php?family=" . $RegisterId . "'>My profile</a>";
+      //echo "<a href='searchS.php'>Search match</a>";
+      //echo "<a href='myfavorits.php'>Favorites</a>";
+    //} elseif($_SESSION["type"] == 'S') {               
+      // echo "<a href='myProfileS.php?student="  . $RegisterId . "'>My profile</a>";
+        //        echo "<a href='searchF.php'>Search match</a>";
+          //      echo "<a href='myfavorits.php'>Favorites</a>";
+            //  } ?>
           <a href="aboutus.php">About us</a>
           <a href="faq.php">FAQ</a>
         </nav>
