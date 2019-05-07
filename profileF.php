@@ -7,31 +7,32 @@
       <form id="register" class="register" action="validateProfileF.php"method="post">
         <div id="user-data" class="register box clearix">
           <div class="place"> 
-            <label class="header">Profile Photo:</label> <!--needs database, php-->
+            <label class="header">Profile Photo: *</label> <!--needs database, php-->
             <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
           </div>
    
-        <label for="meals"> Meals</label> 
-        <input type="checkbox" name="meals[]" value="B"> Breakfast<br>
-        <input type="checkbox" name="meals[]" value="L"> Lunch<br>
-        <input type="checkbox" name="meals[]" value="D"> Dinner<br>
+        <label for="meals"> Meals *</label> 
+        <input type="checkbox" name="meals[]" value="1" required> Breakfast<br>
+        <input type="checkbox" name="meals[]" value="1" required> Lunch<br>
+        <input type="checkbox" name="meals[]" value="1" required> Dinner<br>
               
-        <label for="priceforstay">Price for Stay</label>
-        <input type="number" name="priceforstay" value="priceforstay"/> DKK. <br />
+        <label for="priceforstay">Price for Stay *</label>
+        <input type="number" name="priceforstay" value="priceforstay" required>kr<br>
 
-        <label for="distancetouni"> Distance to Aalborg Øst Campus</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->
-        <input type="number" id="distancetouni" name="distancetouni" placeholder="KM">
+        <label for="distancetouni"> Distance to Aalborg Øst Campus *</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->
+        <input type="number" id="distancetouni" name="distancetouni" placeholder="KM" required>
 
         
-        <label for="duration">The accomodation is available between these dates:<i class="far fa-calendar-check"></i> From:</label>
-      <input type="date" name="starting-date" placeholder="dd/mm/yy">
-      <label for="duration"><i class="far fa-calendar-check"></i> To:</label>
-      <input type="date" name="ending-date" placeholder="dd/mm/yy">
+        <label for="start">The accomodation is available between these dates: <br> <i class="far fa-calendar-check"></i> From: *</label>
+        <input type="date" name="start" placeholder="dd/mm/yy" required>
+        <label for="end"><i class="far fa-calendar-check"></i> To: *</label>
+        <input type="date" name="end" placeholder="dd/mm/yy" required>
 
            
            
-        <label for="language"> Language</label><!--it can be changed to a text if you want-->
-        <select name="language" placeholder="Choose a Language..." > <!--To add more languages, its done with JS-->
+        <label for="language">Language *</label><!--it can be changed to a text if you want-->
+        <select name="language" required> <!--To add more languages, its done with JS-->
+          <option value="-- Select one --"></option>
           <option value="Afrikanns">Afrikanns</option>
           <option value="Albanian">Albanian</option>
           <option value="Arabic">Arabic</option>
@@ -106,23 +107,23 @@
           <option value="Xhosa">Xhosa</option>
         </select>
 
-        <label for="facilities"> Facilities available</label> 
-        <input type="checkbox" name="facilities[]" value="1"> Private Bathroom<br>
-        <input type="checkbox" name="facilities[]" value="1"> Shared Bathroom<br>
-        <input type="checkbox" name="facilities[]" value="1"> Washing Machine<br>
-        <input type="checkbox" name="facilities[]" value="1"> WIFI<br>
-        <input type="checkbox" name="facilities[]" value="1"> Bus Stop Nearby<br>
-        <input type="checkbox" name="facilities[]" value="1"> Single Bed<br>
-        <input type="checkbox" name="facilities[]" value="1"> Double Bed<br>
-        <input type="checkbox" name="facilities[]" value="1"> WIFI<br>
-        <input type="checkbox" name="facilities[]" value="1"> Washing Machine<br>
-        <input type="checkbox" name="facilities[]" value="1"> Bicycle<br>
+        <label for="facilities"> Facilities available *</label> 
+        <input type="checkbox" name="facilities[]" value="1" required> Private Bathroom<br>
+        <input type="checkbox" name="facilities[]" value="1" required> Shared Bathroom<br>
+        <input type="checkbox" name="facilities[]" value="1" required> Washing Machine<br>
+        <input type="checkbox" name="facilities[]" value="1" required> WIFI<br>
+        <input type="checkbox" name="facilities[]" value="1" required> Bus Stop Nearby<br>
+        <input type="checkbox" name="facilities[]" value="1" required> Single Bed<br>
+        <input type="checkbox" name="facilities[]" value="1" required> Double Bed<br>
+        <input type="checkbox" name="facilities[]" value="1" required> WIFI<br>
+        <input type="checkbox" name="facilities[]" value="1" required> Washing Machine<br>
+        <input type="checkbox" name="facilities[]" value="1" required> Bicycle<br>
     
 
         <div class="places">
-          <p><h4>Having a criminal record makes it a lot easier to find a match!</h4></p>
-          <p> <input type="radio" name="record" value="0" /> I don't have a criminal record<br /></p>
-          <p> <input type="radio" name="record" value="1" /> I can provide a criminal record<br /></p>
+          <p><h4>Having a criminal record makes it a lot easier to find a match! *</h4></p>
+          <p> <input type="radio" name="record" value="0" /> I don't have a Criminal Record document<br /></p>
+          <p> <input type="radio" name="record" value="1" /> I can provide a Criminal Record document<br /></p>
         </div>
       
         
@@ -134,9 +135,10 @@
     <h3>Add  information about your preferences</h3>
     
       <div class="place">
-        <p> <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find your student match much quicker!</label><br/></p>
-        <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
-        <p><input type="submit" class="button hollow" name="submit" value="submit"></p>
+        <p> <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find your student match much quicker! *</label><br/></p>
+        <textarea name="about-me" rows="10" cols="70" id="about-me" required></textarea>
+
+        <p><input type="submit" class="button hollow" name="submit" value="save"></p>
       </div>
     </form>
    
