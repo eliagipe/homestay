@@ -2,25 +2,27 @@
 
     session_start();
     $RegisterId = $_SESSION["RegisterId"];
-    
-        
+
     if(isset($_GET['student'])) {
         require_once('connectiondb.php');
         $student_id = $_GET['student'];
 
+     
         
-
-        $student = $db->query(" SELECT * FROM `student` 
-            INNER JOIN `account_register` 
+        $student = $db->query(" 
+            SELECT * FROM student 
+            INNER JOIN account_register 
             ON student.RegisterIdS = account_register.RegisterId 
-            LEFT JOIN `rating` 
+            LEFT JOIN rating 
             ON student.RegisterIdS = rating.RegisterIdS
-            AND ($RegisterId = rating.RegisterIdF)
-            WHERE (student.RegisterIdS = $student_id)")->fetch_object();
-    } 
-    
+            AND $RegisterId = rating.RegisterIdF
+            WHERE (student.RegisterIdS = $student_id)
+            
+            ")->fetch_object();
 
-   
+
+    }
+    
 ?>
 
 <?php include_once 'includes/templates/header.php'; ?>
