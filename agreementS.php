@@ -2,20 +2,20 @@
   session_start();
   $RegisterId = $_SESSION['RegisterId'];
 
-  if(isset($_GET['family']) && $RegisterId != NULL) {
+  if(isset($_GET['student']) && $RegisterId != NULL) {
     require_once('connectiondb.php');
-    $family_id = $_GET['family'];
+    $student_id = $_GET['student'];
     
-    $family = $db->query(" 
-        SELECT * FROM family 
+    $student = $db->query(" 
+        SELECT * FROM student 
         INNER JOIN account_register 
-        ON family.RegisterIdF = account_register.RegisterId 
+        ON student.RegisterIdS = account_register.RegisterId 
         LEFT JOIN agreement 
-        ON family.FamilyId = agreement.FamilyIdAgreement
-        WHERE family.RegisterIdF = $family_id;
+        ON student.StudentId = agreement.StudentIdAgreement
+        WHERE student.RegisterIdS = $student_id;
     ")->fetch_object();
     
-    $student = $db->query(" SELECT StudentId FROM student WHERE RegisterIdS = $RegisterId ")->fetch_object();
+    $family = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
 
     $agreement = $db->query("
         SELECT * FROM agreement
@@ -29,10 +29,10 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
 <section class="section conteiner">
-  <h2>You are about to make an agreement with family <?php echo $family->LastName; ?></h2>
+  <h2>You are about to make an agreement with <?php echo $student->FirstName . " " . $student->LastName; ?></h2>
   <div class="form">
     <div class="place">
-      <p class="faq">You are about to make an agreement with family <?php echo $family->LastName; ?>.</p>
+      <p class="faq">You are about to make an agreement with family <?php echo $student->FirstName . " " . $student->LastName; ?>.</p>
       <p class="faq"><span>We suggest you to follow the next instructions:</span></p>
       <p class="faq">Write a document where both parts agree on the duration of the stay, the mutual rules
       the price and the expectations of this experience.</p> 
@@ -42,7 +42,7 @@
 
   <?php if(!isset($agreement)) { ?>
     <div class="item3">
-    <a href="validateAgreement.php?family=<?php echo $family->FamilyId; ?>&student=<?php echo $student->StudentId; ?>&family_id=<?php echo $family_id; ?>" class="button hollow">Accept</a>
+    <a href="validateAgreement.php?family=<?php echo $family->FamilyId; ?>&student=<?php echo $student->StudentId; ?>&student_id=<?php echo $student_id; ?>" class="button hollow">Accept</a>
     </div>
 
     <div class="item3">

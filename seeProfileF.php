@@ -21,6 +21,14 @@
             WHERE RegisterIdF = $family_id
             AND RegisterIdS = $RegisterId
         ")->fetch_object();
+
+        $student = $db->query(" SELECT StudentId FROM student WHERE RegisterIdS = $RegisterId ")->fetch_object();
+
+        $agreement = $db->query("
+            SELECT * FROM agreement
+            WHERE FamilyIdAgreement = $family->FamilyId
+            AND StudentIdAgreement = $student->StudentId;
+        ")->fetch_object();
     }
     
 ?>
@@ -44,18 +52,20 @@
         </div>
 
         <div class="profile4 profile-item">
-            <p class="rating"><span>Rate family:</span> 
-                <?php foreach(range(1, 5) as $value): ?>
-                    <?php if(!$rating) { ?>
-                        <a href="rate.php?registerids=<?php echo $RegisterId; ?>&registeridf=<?php echo $family_id; ?>&rating=<?php echo $value; ?>"><?php echo '<i class="far fa-star"></i>'; ?></a>
-                    <?php } else { ?>
-                    <?php if($rating->Rating >= $value): ?>
-                        <i class="fas fa-star"></i>
-                    <?php else : ?>
-                        <i class="far fa-star"></i>
-                    <?php endif; ?>
-                    <?php } ?>
-                <?php endforeach; ?>
+            <?php if(isset($agreement)) { ?>
+                <p class="rating"><span>Rate family:</span>
+                    <?php foreach(range(1, 5) as $value): ?>
+                        <?php if(!$rating) { ?>
+                            <a href="rate.php?registerids=<?php echo $RegisterId; ?>&registeridf=<?php echo $family_id; ?>&rating=<?php echo $value; ?>"><?php echo '<i class="far fa-star"></i>'; ?></a>
+                        <?php } else { ?>
+                        <?php if($rating->Rating >= $value): ?>
+                            <i class="fas fa-star"></i>
+                        <?php else : ?>
+                            <i class="far fa-star"></i>
+                        <?php endif; ?>
+                        <?php } ?>
+                    <?php endforeach; ?>
+            <?php } ?>
             <p class="favorite"><span>Mark as favorite:</span> <a href="#"><i class="far fa-heart"></i></a> </p>
         </div>
     </div>
@@ -82,10 +92,15 @@
             <p class="info"><i class="fas fa-location-arrow"></i> <span>Distance from AAU main campus: </span> <?php echo $family->Distance; ?>km</p>
         </div>
     </div>
+    
+    <?php if(!isset($agreement)) { ?>
+        <div class="item3">
+            <a href="agreementF.php?family=<?php echo $family_id; ?>" class="long-button hollow">Start agreement</a>
+        </div>
+    <?php } elseif(isset($agreement)) { ?>
+        <p>Agreement accepted</p>
+    <?php } ?>
 
-    <div class="item3">
-        <a href="agreementF.php?family=<?php echo $family_id; ?>" class="long-button hollow">Start agreement</a>
-    </div>
 </section>
 
 <?php include_once 'includes/templates/footer.php'; ?>
