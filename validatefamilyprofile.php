@@ -15,7 +15,7 @@
     $startingdatef = $_POST['starting-date'];
     $endingdatef = $_POST['ending-date'];
     $languagef = $_POST['language'];
-    //$facilities = $_POST['facilities'];
+    $facilities = $_POST['facilities'];
     $recordf = $_POST['record'];
     $aboutmef = $_POST['about-me'];
    
@@ -47,9 +47,21 @@ while($consulta = mysqli_fetch_array($result)){
 
       $algo1=$consulta['RegisterId'];
 }
+$resultadof =mysqli_query($conn ,"SELECT FamilyId FROM `family` ORDER BY `FamilyId` DESC LIMIT 1");
+while($quehago = mysqli_fetch_array($resultadof)){
 
+      $familyidff = $quehago['FamilyId'];
+}
 
-
+for ($i=0; $i<sizeof ($facilities);$i++) {  
+      $sql="INSERT INTO familyfacilities (`FamilyIdFF`,`PrivateBathroom`,`SharedBathroom`, `WashingMachine`,`WiFi`, `BusStop`,`SingleBed`,`DoubleBed`,`Bike`
+      ) VALUES ('$familyidff','".$facilities[$i]. "')";  //aui te quedaste majo
+      if(mysqli_query($conn, $sql)){
+            echo "yay";}
+            else { echo "error:" . $sql . "<br>" . mysqli_error($conn);  
+      }  
+   
+}
 
 
 $sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Meals`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".

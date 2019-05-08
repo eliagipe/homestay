@@ -132,8 +132,6 @@
         <input type="checkbox" name="facilities[]" value="1"> Bus Stop Nearby<br>
         <input type="checkbox" name="facilities[]" value="1"> Single Bed<br>
         <input type="checkbox" name="facilities[]" value="1"> Double Bed<br>
-        <input type="checkbox" name="facilities[]" value="1"> WIFI<br>
-        <input type="checkbox" name="facilities[]" value="1"> Washing Machine<br>
         <input type="checkbox" name="facilities[]" value="1"> Bicycle<br>
     
 

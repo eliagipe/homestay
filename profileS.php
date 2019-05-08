@@ -246,8 +246,8 @@
         <label for="gender">Gender *</label>
         <select name="gender" id="gender" required>
           <option value="">-- select one --</option>
-          <option value="M">Male</option>
-          <option value="F">Female</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
 
         <label for="smoking">Do you smoke? *</label>
