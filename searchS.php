@@ -349,7 +349,7 @@
 
             <div class="grid-item item1">
               <img src="img/Loui 23.jpg" alt="student">
-              <p class="favorite">Mark as favorite: <a href="#"><i class="far fa-heart"></i></a> </p>
+              <p class="favorite">Mark as favorite: <a href="gaturu.php?fav=<?php echo $student->RegisterIdS ?>"><i class="far fa-heart"></i></a> </p>
             </div>
 
             <div class="grid-item item2">
