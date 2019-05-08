@@ -69,11 +69,9 @@
         <div class="profile6 profile-item">
             <p class="info"><i class="fas fa-dollar-sign"></i> <span>Price: </span> <?php echo $family->Price; ?>kr</p>
             <p class="info"><i class="fas fa-utensils"></i> <span>Meals: </span>
-                <?php if($family->Breakfast == 0 && $family->Lunch == 0 && $family->Dinner == 0) {
+                <?php if($family->Meals == 0) {
                     echo "No";
-                } elseif($family->Breakfast == 1 && $family->Lunch == 1 && $family->Dinner == 1) {
-                    echo "All";
-                } else {
+                } elseif($family->Meals == 1) {
                     echo "Yes";
                 }; ?>
             </p> 

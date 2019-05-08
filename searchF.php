@@ -89,9 +89,8 @@
         <label for="meals"><i class="fas fa-utensils"></i> Includes meals</label>
           <select name="meals" id="meals">
             <option value="select">-- Select one --</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-            <option value="all">All</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
       </div>
 
