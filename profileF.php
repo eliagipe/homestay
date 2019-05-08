@@ -23,17 +23,16 @@
     <h3> Add more information about your accomodation! </h3>
     <div class="place">
 
-      <form id="register" class="register" action="validateProfileF.php"method="post">
+      <form id="register" class="register" action="validatefamilyprofile.php"method="post">
         <div id="user-data" class="register box clearix">
           <div class="place"> 
             <label class="header">Profile Photo:</label> <!--needs database, php-->
             <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
           </div>
    
-          <label for="meals"> Meals</label> 
-          <input type="checkbox" name="meals[]" value="B"> Breakfast<br>
-          <input type="checkbox" name="meals[]" value="L"> Lunch<br>
-          <input type="checkbox" name="meals[]" value="D"> Dinner<br>
+          <label for="meals">Meals</label>
+          <p> <input type="radio" name="meals" value="1" /> I will provide meals for the student.<br /></p>
+          <p> <input type="radio" name="meals" value="0" /> I cannot provide meals for the student.<br /></p>
               
           <label for="priceforstay">Price for Stay</label>
           <input type="number" name="priceforstay" value="priceforstay"/> DKK. <br />

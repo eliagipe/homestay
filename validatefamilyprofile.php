@@ -9,7 +9,7 @@
     <?php if(isset($_POST['submit']));
     
     $profilephotof = $_POST['profile_photo'];
-   // $meals = $_POST['meals'];
+    $meals = $_POST['meals'];
     $pricestay= $_POST['priceforstay'];
     $distanceuni=$_POST['distancetouni'];
     $startingdatef = $_POST['starting-date'];
@@ -52,8 +52,8 @@ while($consulta = mysqli_fetch_array($result)){
 
 
 
-$sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".
- "VALUES ('$algo1','$profilephotof', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
+$sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Meals`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".
+ "VALUES ('$algo1','$profilephotof','$meals', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
 if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
 } else {
