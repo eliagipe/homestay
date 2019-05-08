@@ -40,7 +40,7 @@ $rows2 = mysqli_fetch_array($result2);
 
 
 
-echo "estoy botando este dato". $rows2["FirstName"]."<br>";
+//echo "estoy botando este dato". $rows2["FirstName"]."<br>";
 
 $query3 = "SELECT * 
 FROM student
@@ -63,6 +63,8 @@ $rows3 = mysqli_fetch_array($result3);
             <div class="item3">
               <a href="seeProfileS.php?student=<?php echo $rows3["RegisterIdS"] ?>" class="long-button hollow">See profile</a>
             </div>
+
+
 
           </blockquote>
         <?php } ?>
