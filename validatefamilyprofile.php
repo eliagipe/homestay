@@ -48,23 +48,12 @@ while($consulta = mysqli_fetch_array($result)){
       $algo1=$consulta['RegisterId'];
 }
 
-//validando checkboxes
-if(isset($_POST['meals'])){
-$meal = $_POST['meals'];
-echo "tus comidas son </br>";
-foreach($meal as $meals){
-      echo $meal . '<br/>';
-}
-
-}
-else{
-   echo "no hay comida";   
-}
 
 
 
-$sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Price`,`Meals`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".
- "VALUES ('$algo1','$profilephotof', '$pricestay','$meals', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
+
+$sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".
+ "VALUES ('$algo1','$profilephotof', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
 if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
 } else {
