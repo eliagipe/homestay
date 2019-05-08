@@ -86,7 +86,7 @@
     </div>
 
     <div class="item3">
-        <a href="#" class="long-button hollow">Start agreement</a>
+        <a href="agreementF.php?family=<?php echo $family_id; ?>" class="long-button hollow">Start agreement</a>
     </div>
 </section>
 

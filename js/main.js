@@ -60,5 +60,6 @@ $(".navegacion-principal").slideToggle();//cuando esteen slide dog ejecutara dow
     $('body.searchF .principal-navegation a:contains("Search match")').addClass('active'); 
     $('body.searchS .principal-navegation a:contains("Search match")').addClass('active'); 
     $('body.seeProfileS .principal-navegation a:contains("Search match")').addClass('active'); 
-    $('body.seeProfileF .principal-navegation a:contains("Search match")').addClass('active'); 
+    $('body.seeProfileF .principal-navegation a:contains("Search match")').addClass('active');
+    $('body.agreement .principal-navegation a:contains("Search match")').addClass('active'); 
 })

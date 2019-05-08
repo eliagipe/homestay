@@ -596,6 +596,9 @@ p.faq {
     font-size: .9em;
     width: 70%;
 }
+p.faq p.agr{
+    width: 90%;
+}
 p.faq span {
     font-weight: bold;
 }
@@ -825,7 +828,6 @@ div.about{
     display: none !important;
     color: red !important;
 }
-
 /** SEE PROFILE **/
 .profile-grid {
     display: grid;
