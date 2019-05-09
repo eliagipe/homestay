@@ -2,7 +2,7 @@
     session_start();
     $RegisterId = $_SESSION["RegisterId"];
 
-    if(isset($_GET['family']) && $RegisterId != NULL) {
+    if(isset($_GET['family'])) {
         require_once('connectiondb.php');
         $family_id = $_GET['family'];
         
@@ -21,7 +21,10 @@
             WHERE RegisterIdF = $family_id
             AND RegisterIdS = $RegisterId
         ")->fetch_object();
-
+        
+        $familyfacilities = $db->query("
+SELECT * FROM familyfacilities WHERE FamilyIdFF = $family_id
+  ")->fetch_object();
        
     }
     
@@ -30,6 +33,7 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
 <section class="conteiner section">
+<h2> My Profile </h2>
 
     <div class="profile-grid">
         <div class="profile1">
@@ -68,8 +72,73 @@
             <p class="info"><i class="fas fa-globe"></i> <span>Language: </span> <?php echo $family->Language; ?></p>
             <p class="info"><i class="fas fa-location-arrow"></i> <span>Distance from AAU main campus: </span> <?php echo $family->Distance; ?>km</p>
         </div>
-    </div>
+
+    <div class="profile-line"></div>
+
+    <div class="profile8 profile-item">
+            <p class="info"><i class="profile-item"></i> <span>Family Facilities </p>
+            <p class="info"><i class="profile-item"></i> <span>Private Bathroom </span>
+                <?php if($family->Meals == 0) {
+                    echo "No";
+                } elseif($family->Meals == 1) {
+                    echo "All";
+                } ?> </p>
+
+           <p class="info"><i class="profile-item"></i> <span>Shared Bathroom </span>
+<?php if($familyfacilities->SharedBathroom == 0) {
+                   echo "No";
+                } elseif($familyfacilities->SharedBathroom == 1) {
+                    echo "Yes";} ?>
+            </p> 
+            <p class="info"><i class="profile-item"></i> <span>Private Bathroom </span>
+<?php if($familyfacilities->PrivateBathroom == 0) {
+                   echo "No";
+               } elseif($familyfacilities->PrivateBathroom == 1) {
+                   echo "Yes";} ?>
+
+</p>
+<p class="info"><i class="profile-item"></i> <span>Washing Machine </span>
+<?phpif($familyfacilities->WashingMachine == 0) {
+                    echo "No";
+               } elseif($familyfacilities->WashingMachine == 1) {
+                    echo "Yes";} ?>
+</p>
+<p class="info"><i class="profile-item"></i> <span>WIFI </span>
+<?php if($familyfacilities->WiFi == 0) {
+                    echo "No";
+               } elseif($familyfacilities->WiFi == 1) {
+                    echo "Yes";} ?>
+</p>
+<p class="info"><i class="profile-item"></i> <span>Bus Stop Nearby </span>
+<?php if($familyfacilities->BusStop == 0) {
+                   echo "No";
+               } elseif($familyfacilities->BusStop == 1) {
+                    echo "Yes";} ?>
+</p>
+<p class="info"><i class="profile-item"></i> <span>Single Bed </span>
+<?php if($familyfacilities->SingleBed == 0) {
+                    echo "No";
+                } elseif($familyfacilities->SingleBed == 1) {
+                  echo "Yes";} ?>
+</p>
+<p class="info"><i class="profile-item"></i> <span>Double Bed </span>
+<?php if($familyfacilities->DoubleBed == 0) {
+                   echo "No";
+                } elseif($familyfacilities->DoubleBed == 1) {
+                    echo "Yes";} ?>
+</p>
+<p class="info"><i class="profile-item"></i> <span>Bicycle available </span>
+<?php if($familyfacilities->Bike == 0) {
+echo "No";
+                } elseif($familyfacilities->Bike == 1) {
+                    echo "Yes";} ?>
+</p>
+</div>
+
+ 
 
 </section>
+
+
 
 <?php include_once 'includes/templates/footer.php'; ?>
