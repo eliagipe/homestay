@@ -125,14 +125,45 @@
         </select>
 
         <label for="facilities"> Facilities available</label> 
-        <input type="checkbox" name="facilities[]" value="1"> Private Bathroom<br>
-        <input type="checkbox" name="facilities[]" value="1"> Shared Bathroom<br>
-        <input type="checkbox" name="facilities[]" value="1"> Washing Machine<br>
-        <input type="checkbox" name="facilities[]" value="1"> WIFI<br>
-        <input type="checkbox" name="facilities[]" value="1"> Bus Stop Nearby<br>
-        <input type="checkbox" name="facilities[]" value="1"> Single Bed<br>
-        <input type="checkbox" name="facilities[]" value="1"> Double Bed<br>
-        <input type="checkbox" name="facilities[]" value="1"> Bicycle<br>
+
+        <label for= "privatebathroom"> Private Bathroom </label>
+        <input type="radio" name="privatebathroom" value="1"> YES<br>
+        <input type="radio" name="privatebathroom" value="0"> NO<br>
+
+
+        <label for= "sharedbathroom"> Shared Bathroom </label>
+        <input type="radio" name="sharedbathroom" value="1"> YES<br>
+        <input type="radio" name="sharedbathroom" value="0"> NO<br>
+
+        <label for= "washingmachine"> Washing Machine </label>
+        <input type="radio" name="washingmachine" value="1"> YES<br>
+        <input type="radio" name="washingmachine" value="0"> NO<br>
+
+
+        <label for= "wifi"> WiFi </label>
+        <input type="radio" name="wifi" value="1"> YES<br>
+        <input type="radio" name="wifi" value="0"> NO<br>
+
+
+        <label for= "busstop"> Bus Stop Nearby </label>
+        <input type="radio" name="busstop" value="1"> YES<br>
+        <input type="radio" name="busstop" value="0"> NO<br>
+
+
+        <label for= "singlebed"> Single Bed </label>
+        <input type="radio" name="singlebed" value="1"> YES<br>
+        <input type="radio" name="singlebed" value="0"> NO<br>
+
+        <label for= "doublebed"> Double Bed</label>
+        <input type="radio" name="doublebed" value="1"> YES<br>
+        <input type="radio" name="doublebed" value="0"> NO<br>
+
+
+
+        <label for= "bike"> Bicycle available </label>
+        <input type="radio" name= "bike" value="1"> YES<br>
+        <input type="radio" name= "bike" value="0"> NO<br>
+
     
 
         <div class="places">

@@ -15,7 +15,14 @@
     $startingdatef = $_POST['starting-date'];
     $endingdatef = $_POST['ending-date'];
     $languagef = $_POST['language'];
-    $facilities = $_POST['facilities'];
+    $sharedbathroom = $_POST['sharedbathroom'];
+    $privatebathroom = $_POST['privatebathroom'];
+    $washingmachine = $_POST['washingmachine'];
+    $wifi = $_POST['wifi'];
+    $busstop = $_POST['busstop'];
+    $singlebed = $_POST['singlebed'];
+    $doublebed = $_POST['doublebed'];
+    $bike = $_POST['bike'];
     $recordf = $_POST['record'];
     $aboutmef = $_POST['about-me'];
    
@@ -52,32 +59,32 @@ while($quehago = mysqli_fetch_array($resultadof)){
 
       $familyidff = $quehago['FamilyId'];
 }
-
-for ($i=0; $i<sizeof ($facilities);$i++) {  
-      $sql="INSERT INTO familyfacilities (`FamilyIdFF`,`PrivateBathroom`,`SharedBathroom`, `WashingMachine`,`WiFi`, `BusStop`,`SingleBed`,`DoubleBed`,`Bike`
-      ) VALUES ('$familyidff','".$facilities[$i]. "')";  //aui te quedaste majo
+   
+     
+     $sql = "INSERT INTO familyfacilities (`FamilyIdFF`,`PrivateBathroom`,`SharedBathroom`, `WashingMachine`,`WiFi`, `BusStop`,`SingleBed`,`DoubleBed`,`Bike`
+      )  VALUES ('$familyidff','$privatebathroom','$sharedbathroom','$washingmachine','$wifi','$busstop','$singlebed','$doublebed','$bike')";  //aui te quedaste majo
       if(mysqli_query($conn, $sql)){
             echo "yay";}
-            else { echo "error:" . $sql . "<br>" . mysqli_error($conn);  
+        else { echo "error:" . $sql . "<br>" . mysqli_error($conn);  
       }  
    
-}
+    
 
 
 $sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Meals`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)".
- "VALUES ('$algo1','$profilephotof','$meals', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
+"VALUES ('$algo1','$profilephotof','$meals', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
 if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-
-    }
+}
 
 
 catch (Exception $e){
        $error = $e->getMessage();}
+      
 
 
 //
