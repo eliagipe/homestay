@@ -78,9 +78,10 @@ if (mysqli_query($conn, $sql)) {
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+echo '<script>location.href = "myProfileF.php?student='  . $RegisterId . '"</script>';
+$sql->close();
 
 }
-
 
 catch (Exception $e){
        $error = $e->getMessage();}

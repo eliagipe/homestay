@@ -21,6 +21,8 @@
             WHERE RegisterIdF = $family_id
             AND RegisterIdS = $RegisterId
         ")->fetch_object();
+
+       
     }
     
 ?>
@@ -31,7 +33,7 @@
 
     <div class="profile-grid">
         <div class="profile1">
-            <h6><?php echo "Family " . $family->LastName; ?></h3>
+            <h6><?php echo  $family->FirstName . " " . $family->LastName; ?></h3>
         </div>
 
         <div class="profile2 profile-item">
@@ -52,7 +54,7 @@
         </div>
 
         <div class="profile6 profile-item">
-            <p class="info"><i class="fas fa-dollar-sign"></i> <span>Price: </span> <?php echo $family->Price; ?>kr</p>
+            <p class="info"><i class="fas fa-dollar-sign"></i> <span>Price: </span> <?php echo $family->Price; ?>DKK </p>
             <p class="info"><i class="fas fa-utensils"></i> <span>Meals: </span>
                 <?php if($family->Meals == 0) {
                     echo "No";
