@@ -10,17 +10,9 @@
         SELECT * FROM family 
         INNER JOIN account_register 
         ON family.RegisterIdF = account_register.RegisterId 
-        LEFT JOIN rating 
-        ON family.FamilyId = rating.RegisterIdF
-        WHERE family.RegisterIdF = $family_id;
         ")->fetch_object();
 
         $family1 = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
-
-        $rating = $db->query("
-            SELECT * FROM rating
-            WHERE RegisterIdF = $family_id AND RegisterIdS = $RegisterId;
-        ")->fetch_object();
        
         $familyfacilities = $db->query("
             SELECT * FROM familyfacilities WHERE FamilyIdFF = $family1->FamilyId;
