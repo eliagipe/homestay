@@ -12,19 +12,21 @@
         ON family.RegisterIdF = account_register.RegisterId 
         LEFT JOIN rating 
         ON family.FamilyId = rating.RegisterIdF
-        WHERE family.RegisterIdF = $family_id
+        WHERE family.RegisterIdF = $family_id;
         ")->fetch_object();
 
         $rating = $db->query("
             SELECT * FROM rating
-            WHERE RegisterIdF = $family_id
+            WHERE RegisterIdF = $family_id;
         ")->fetch_object();
         
+        $family = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
+
         $familyfacilities = $db->query("
-SELECT * FROM familyfacilities WHERE FamilyIdFF = $family_id
-  ")->fetch_object();
-       
-    }
+            SELECT * FROM familyfacilities WHERE FamilyIdFF = $family
+            ")->fetch_object();
+                
+        }
     
 ?>
 
@@ -96,7 +98,7 @@ SELECT * FROM familyfacilities WHERE FamilyIdFF = $family_id
 
 </p>
 <p class="info"><i class="profile-item"></i> <span>Washing Machine </span>
-<?phpif($familyfacilities->WashingMachine == 0) {
+<?php if($familyfacilities->WashingMachine == 0) {
                     echo "No";
                } elseif($familyfacilities->WashingMachine == 1) {
                     echo "Yes";} ?>
