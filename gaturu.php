@@ -3,7 +3,7 @@ session_start();
 $RegisterId = $_SESSION["RegisterId"];
 
 $fav=$_GET['fav'];
-echo $fav; 
+//echo $fav; 
 
 
 require_once('connectiondb.php');
