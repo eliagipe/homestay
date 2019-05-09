@@ -19,6 +19,14 @@
             AND $RegisterId = rating.RegisterIdF
             WHERE (student.RegisterIdS = $student_id) 
         ")->fetch_object();
+
+        $family = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
+
+        $agreement = $db->query("
+            SELECT * FROM agreement
+            WHERE FamilyIdAgreement = $family->FamilyId
+            AND StudentIdAgreement = $student->StudentId;
+        ")->fetch_object();
     }
     
 ?>
@@ -107,9 +115,13 @@
             </div>
     </div>
 
-    <div class="item3">
-        <a href="#" class="long-button hollow">Start agreement</a>
-    </div>
+    <?php if(!isset($agreement)) { ?>
+        <div class="item3">
+            <a href="agreementS.php?student=<?php echo $student_id; ?>" class="long-button hollow">Start agreement</a>
+        </div>
+    <?php } elseif(isset($agreement)) { ?>
+        <p>Agreement accepted</p>
+    <?php } ?>
 </section>
 
 <?php include_once 'includes/templates/footer.php'; ?>

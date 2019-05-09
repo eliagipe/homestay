@@ -246,8 +246,8 @@
         <label for="gender">Gender *</label>
         <select name="gender" id="gender" required>
           <option value="">-- select one --</option>
-          <option value="M">Male</option>
-          <option value="F">Female</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
 
         <label for="smoking">Do you smoke? *</label>
@@ -494,8 +494,9 @@
         <input type="radio" name="criminal" id="criminal" value="0" required>I don't have a Criminal Record document<br>
         
       </div>  
+      
   </div>
-
+  
   </section>
 
   <section class="section conteiner private-information">
