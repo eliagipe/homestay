@@ -91,6 +91,10 @@
             <p class="info"><i class="fas fa-globe"></i> <span>Language: </span> <?php echo $family->Language; ?></p>
             <p class="info"><i class="fas fa-location-arrow"></i> <span>Distance from AAU main campus: </span> <?php echo $family->Distance; ?>km</p>
         </div>
+
+        <div class="profile-line"></div>
+
+        
     </div>
     
     <?php if(!isset($agreement)) { ?>

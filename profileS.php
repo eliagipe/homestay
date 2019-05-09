@@ -494,8 +494,9 @@
         <input type="radio" name="criminal" id="criminal" value="0" required>I don't have a Criminal Record document<br>
         
       </div>  
+      
   </div>
-
+  
   </section>
 
   <section class="section conteiner private-information">

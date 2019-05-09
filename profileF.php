@@ -183,8 +183,9 @@
       <div class="place">
         <p> <label for="about-me">Add a profile text that describes you! Having a good descriptive profile will help you find your student match much quicker!</label><br/></p>
         <textarea name="about-me" rows="10" cols="70" id="about-me"></textarea>
-        <p><input type="submit" class="button hollow" name="submit" value="submit"></p>
+        
       </div>
+      <div class="item3"><p><input type="submit" class="button hollow" name="submit" value="save"></p></div> 
     </form>
    
 </section>
