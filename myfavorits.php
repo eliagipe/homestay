@@ -27,12 +27,13 @@ $rows = mysqli_num_rows($result);
 
             <div class="grid-item item1">
               <img src="img/Loui 23.jpg" alt="student">
-              <p class="favorite">Mark as favorite: <a href="gaturu.php?fav=<?php echo $rows->registeredid ?>"><i class="far fa-heart"></i></a> </p>
+              <p class="favorite">Marked as favorite <a href="NotFavorite.php?fav=<?php echo $rows->registeredid ?>"><i class="fas fa-heart"></i></a> </p>
             </div>
 
-         <?php   $query2 = "SELECT * 
+         <?php
+   $query2 = "SELECT * 
         FROM account_register
-        WHERE RegisterId = $rows->registeredid
+        WHERE RegisterId IN( $rows->favid)
         ";
 
 $result2 = mysqli_query($db, $query2);
@@ -44,7 +45,7 @@ $rows2 = mysqli_fetch_array($result2);
 
 $query3 = "SELECT * 
 FROM student
-WHERE RegisterIdS = $rows->registeredid
+WHERE RegisterIdS IN( $rows->favid)
 ";
 
 $result3 = mysqli_query($db, $query3);
