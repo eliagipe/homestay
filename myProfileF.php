@@ -7,19 +7,17 @@
         $family_id = $_GET['family'];
         
         $family = $db->query(" 
-            SELECT * FROM family 
-            INNER JOIN account_register 
-            ON family.RegisterIdF = account_register.RegisterId 
-            LEFT JOIN rating 
-            ON family.RegisterIdF = rating.RegisterIdF
-            AND $RegisterId = rating.RegisterIdS
-            WHERE (family.RegisterIdF = $family_id) 
+        SELECT * FROM family 
+        INNER JOIN account_register 
+        ON family.RegisterIdF = account_register.RegisterId 
+        LEFT JOIN rating 
+        ON family.FamilyId = rating.RegisterIdF
+        WHERE family.RegisterIdF = $family_id
         ")->fetch_object();
 
         $rating = $db->query("
             SELECT * FROM rating
             WHERE RegisterIdF = $family_id
-            AND RegisterIdS = $RegisterId
         ")->fetch_object();
         
         $familyfacilities = $db->query("
