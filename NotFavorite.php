@@ -15,3 +15,4 @@ $stmt->close();
 
 
 ?>
+<script>window.location="myfavorits.php" </script>
