@@ -15,15 +15,15 @@
         WHERE family.RegisterIdF = $family_id;
         ")->fetch_object();
 
+        $family1 = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
+
         $rating = $db->query("
             SELECT * FROM rating
-            WHERE RegisterIdF = $family_id;
+            WHERE RegisterIdF = $family_id AND RegisterIdS = $RegisterId;
         ")->fetch_object();
-        
-        $family = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
-
+       
         $familyfacilities = $db->query("
-            SELECT * FROM familyfacilities WHERE FamilyIdFF = $family
+            SELECT * FROM familyfacilities WHERE FamilyIdFF = $family1->FamilyId;
             ")->fetch_object();
                 
         }
@@ -78,10 +78,10 @@
     <div class="profile8 profile-item">
             <p class="info"><i class="profile-item"></i> <span>Family Facilities </p>
             <p class="info"><i class="profile-item"></i> <span>Private Bathroom </span>
-                <?php if($family->Meals == 0) {
+                <?php if($familyfacilities->PrivateBathroom == 0) {
                     echo "No";
-                } elseif($family->Meals == 1) {
-                    echo "All";
+                } elseif($familyfacilities->PrivateBathroom == 1) {
+                    echo "Yes";
                 } ?> </p>
 
            <p class="info"><i class="profile-item"></i> <span>Shared Bathroom </span>
@@ -90,13 +90,8 @@
                 } elseif($familyfacilities->SharedBathroom == 1) {
                     echo "Yes";} ?>
             </p> 
-            <p class="info"><i class="profile-item"></i> <span>Private Bathroom </span>
-<?php if($familyfacilities->PrivateBathroom == 0) {
-                   echo "No";
-               } elseif($familyfacilities->PrivateBathroom == 1) {
-                   echo "Yes";} ?>
-
-</p>
+            
+            
 <p class="info"><i class="profile-item"></i> <span>Washing Machine </span>
 <?php if($familyfacilities->WashingMachine == 0) {
                     echo "No";

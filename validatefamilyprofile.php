@@ -78,7 +78,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-echo '<script>location.href = "myProfileF.php?student='  . $RegisterId . '"</script>';
+echo '<script>location.href = "myProfileF.php?family='  . $RegisterId . '"</script>';
 $sql->close();
 
 }
