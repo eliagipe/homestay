@@ -1,13 +1,13 @@
-<?php include_once 'includes/templates/header.php'; ?>
+<?php 
 
 
 
-<section class="section conteiner">
+  
 
-    <h2>Register FAMILY results!</h2>
+  
+    session_start();
+      $RegisterId = $_SESSION["RegisterId"];
 
-    <?php if(isset($_POST['submit']));
-    
     $profilephotof = $_POST['profile_photo'];
     $meals = $_POST['meals'];
     $pricestay= $_POST['priceforstay'];
@@ -28,7 +28,7 @@
    
 
    
-
+   if(isset($_POST['submit']));
 
     try{        
 
@@ -78,9 +78,10 @@ if (mysqli_query($conn, $sql)) {
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+echo '<script>location.href = "myProfileF.php?family='  . $RegisterId . '"</script>';
+$sql->close();
 
 }
-
 
 catch (Exception $e){
        $error = $e->getMessage();}
@@ -90,11 +91,13 @@ catch (Exception $e){
 //
  
 
-   ?>
+ 
+
+?>
 
 
-</section>
-<?php include_once 'includes/templates/footer.php'; ?>
+
+
 
 
 
