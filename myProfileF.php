@@ -7,16 +7,18 @@
         $family_id = $_GET['family'];
         
         $family = $db->query(" 
-        SELECT * FROM family 
-        INNER JOIN account_register 
-        ON family.RegisterIdF = account_register.RegisterId 
+            SELECT * FROM family 
+            INNER JOIN account_register 
+            ON family.RegisterIdF = account_register.RegisterId 
+            WHERE (family.RegisterIdF = $family_id) 
         ")->fetch_object();
 
         $family1 = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
        
         $familyfacilities = $db->query("
-            SELECT * FROM familyfacilities WHERE FamilyIdFF = $family1->FamilyId;
-            ")->fetch_object();
+            SELECT * FROM familyfacilities 
+            WHERE FamilyIdFF = $family1->FamilyId;
+        ")->fetch_object();
                 
         }
     
@@ -67,62 +69,68 @@
 
     <div class="profile-line"></div>
 
-    <div class="profile8 profile-item">
-            <p class="info"><i class="profile-item"></i> <span>Family Facilities </p>
-            <p class="info"><i class="profile-item"></i> <span>Private Bathroom </span>
-                <?php if($familyfacilities->PrivateBathroom == 0) {
-                    echo "No";
-                } elseif($familyfacilities->PrivateBathroom == 1) {
-                    echo "Yes";
-                } ?> </p>
+    <div class="profile11 profile-item">
+        <h4>Facilities</h4>
+    </div>
+    <div class="profile12 profile-item">
+        <h4></h4>
+    </div>
+    <div class="profile13 profile-item">
+        <h4></h4>
+    </div>
 
-           <p class="info"><i class="profile-item"></i> <span>Shared Bathroom </span>
-<?php if($familyfacilities->SharedBathroom == 0) {
-                   echo "No";
-                } elseif($familyfacilities->SharedBathroom == 1) {
-                    echo "Yes";} ?>
-            </p> 
-            
-            
-<p class="info"><i class="profile-item"></i> <span>Washing Machine </span>
-<?php if($familyfacilities->WashingMachine == 0) {
-                    echo "No";
-               } elseif($familyfacilities->WashingMachine == 1) {
-                    echo "Yes";} ?>
-</p>
-<p class="info"><i class="profile-item"></i> <span>WIFI </span>
-<?php if($familyfacilities->WiFi == 0) {
-                    echo "No";
-               } elseif($familyfacilities->WiFi == 1) {
-                    echo "Yes";} ?>
-</p>
-<p class="info"><i class="profile-item"></i> <span>Bus Stop Nearby </span>
-<?php if($familyfacilities->BusStop == 0) {
-                   echo "No";
-               } elseif($familyfacilities->BusStop == 1) {
-                    echo "Yes";} ?>
-</p>
-<p class="info"><i class="profile-item"></i> <span>Single Bed </span>
-<?php if($familyfacilities->SingleBed == 0) {
-                    echo "No";
-                } elseif($familyfacilities->SingleBed == 1) {
-                  echo "Yes";} ?>
-</p>
-<p class="info"><i class="profile-item"></i> <span>Double Bed </span>
-<?php if($familyfacilities->DoubleBed == 0) {
-                   echo "No";
-                } elseif($familyfacilities->DoubleBed == 1) {
-                    echo "Yes";} ?>
-</p>
-<p class="info"><i class="profile-item"></i> <span>Bicycle available </span>
-<?php if($familyfacilities->Bike == 0) {
-echo "No";
-                } elseif($familyfacilities->Bike == 1) {
-                    echo "Yes";} ?>
-</p>
-</div>
+    <div class="profile14 profile-item">
+        <p class="info"><i class="fas fa-toilet-paper"></i> <span>Private Bathroom: </span>
+            <?php if($familyfacilities->PrivateBathroom == 0) {
+                echo "No";
+            } elseif($familyfacilities->PrivateBathroom == 1) {
+                echo "Yes";} ?> 
+        </p>
 
- 
+        <p class="info"><i class="fas fa-bed"></i> <span>Single Bed: </span>
+            <?php if($familyfacilities->SingleBed == 0) {
+                echo "No";
+            } elseif($familyfacilities->SingleBed == 1) {
+                echo "Yes";} ?>
+        </p>
+        <p class="info"><i class="fas fa-bed"></i> <span>Double Bed: </span>
+            <?php if($familyfacilities->DoubleBed == 0) {
+                echo "No";
+            } elseif($familyfacilities->DoubleBed == 1) {
+                echo "Yes";} ?>
+        </p>
+    </div>
+
+    <div class="profile15 profile-item">
+        <p class="info"><i class="fas fa-wifi"></i> <span>WIFI: </span>
+            <?php if($familyfacilities->WiFi == 0) {
+                echo "No";
+            } elseif($familyfacilities->WiFi == 1) {
+                echo "Yes";} ?>
+        </p>
+        <p class="info"><i class="fas fa-tshirt"></i> <span>Washing Machine: </span>
+            <?php if($familyfacilities->WashingMachine == 0) {
+                echo "No";
+            } elseif($familyfacilities->WashingMachine == 1) {
+                echo "Yes";} ?>
+        </p>
+    </div>
+
+    <div class="profile16 profile-item">
+        <p class="info"><i class="fas fa-bus"></i> <span>Bus Stop Nearby: </span>
+            <?php if($familyfacilities->BusStop == 0) {
+                echo "No";
+            } elseif($familyfacilities->BusStop == 1) {
+                echo "Yes";} ?>
+        </p>
+        
+        <p class="info"><i class="fas fa-bicycle"></i> <span>Bicycle available: </span>
+            <?php if($familyfacilities->Bike == 0) {
+                echo "No";
+            } elseif($familyfacilities->Bike == 1) {
+                echo "Yes";} ?>
+        </p>
+    </div>
 
 </section>
 

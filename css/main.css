@@ -895,7 +895,35 @@ div.about{
     grid-column-start: 2;
     grid-column-end: 4;
 }
-
+.profile10 {
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.profile11 {
+    grid-row: 3;
+    grid-colmn: 1;
+}
+.profile12 {
+    grid-row: 3;
+    grid-column: 2;
+}
+.profile13 {
+    grid-row: 3;
+    grid-column: 3;
+}
+.profile14 {
+    grid-row: 4;
+    grid-colmn: 1;
+}
+.profile15 {
+    grid-row: 4;
+    grid-column: 2;
+}
+.profile16 {
+    grid-row: 4;
+    grid-column: 3;
+}
 
 
 /*HERE FINISH HOME STAY*/
