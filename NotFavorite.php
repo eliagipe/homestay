@@ -3,6 +3,7 @@ session_start();
 $RegisterId = $_SESSION["RegisterId"];
 
 $fav=$_GET['fav'];
+$isStudent=$_GET['isStudent'];
 //echo $fav; 
 
 
@@ -15,4 +16,4 @@ $stmt->close();
 
 
 ?>
-<script>window.location="myfavorits.php" </script>
+<script>window.location="myfavorits.php?isStudent=<?php echo $isStudent ?>"</script>

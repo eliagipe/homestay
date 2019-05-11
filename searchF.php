@@ -165,7 +165,7 @@
                   <?php endif; ?>
                 </p>
                 <img src="img/Loui 23.jpg" alt="family">
-                <p class="favorite">Mark as favorite: <a href="gaturu.php?fav=<?php echo $family->RegisterIdF ?>"><i class="far fa-heart"></i></a> </p>
+                <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=false&fav=<?php echo $family->RegisterIdF ?>"><i class="far fa-heart"></i></a> </p>
             </div>
 
             <div class="grid-item item2_1"> 
