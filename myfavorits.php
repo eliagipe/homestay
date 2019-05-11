@@ -46,7 +46,18 @@ $rows2 = mysqli_fetch_array($result2);
 
 
  //student
- if( $isStudent =='true') {  ?> 
+ if( $isStudent =='true') { 
+  $query3 = "SELECT * FROM student stu, account_favs fav 
+  WHERE fav.registeredid= $RegisterId
+  AND fav.favid=stu.RegisterIdS
+";
+
+
+$result3 = mysqli_query($db, $query3);
+$rows3 = mysqli_fetch_array($result3);
+
+  
+   ?> 
   <div class="grid-item item2">
               <p class="name"><?php echo $rows2["FirstName"] . " " . $rows2["LastName"]; ?></p>
               <p class="info"><span>Nationality:</span> <?php echo $rows3["Nationality"]; ?></p>
