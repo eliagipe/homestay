@@ -3,7 +3,8 @@ session_start();
 $RegisterId = $_SESSION["RegisterId"];
 
 $fav=$_GET['fav'];
-//echo $fav; 
+$isStudent=$_GET['isStudent'];
+//echo $isStudent; 
 
 
 require_once('connectiondb.php');
@@ -15,4 +16,4 @@ $stmt->close();
 
 
 ?>
-<script>window.location="myfavorits.php" </script>
+<script>window.location="myfavorits.php?isStudent=<?php echo $isStudent ?>"</script>
