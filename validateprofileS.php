@@ -3,7 +3,7 @@
       session_start();
       $RegisterId = $_SESSION["RegisterId"];
 
-      $profilephoto = $_POST['img'];
+      //$profilephoto = $_POST['img'];
       $nationality = $_POST['nationality'];
       $age = $_POST['age'];
       $start = $_POST['start'];
@@ -17,7 +17,10 @@
       $diet = $_POST['diet'];
       $criminal = $_POST['criminal'];
       $aboutme = $_POST['about-me'];
-
+      
+      echo"saving profile...";
+      $profilephotof = addslashes(file_get_contents($_FILES['profile_photoS']['tmp_name']));
+      
  
 
 
