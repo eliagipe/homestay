@@ -23,7 +23,7 @@
     <h3> Add more information about your accomodation! </h3>
     <div class="place">
 
-      <form id="register" class="register" action="validatefamilyprofile.php"method="post">
+      <form enctype="multipart/form-data" id="register" class="register" action="validatefamilyprofile.php"method="post">
         <div id="user-data" class="register box clearix">
           <div class="place"> 
             <label class="header">Profile Photo:</label> <!--needs database, php-->
@@ -131,6 +131,10 @@
         <label for= "privatebathroom">Private Bathroom * </label>
         <input type="radio" name="privatebathroom" value="1" required>YES<br>
         <input type="radio" name="privatebathroom" value="0" required>NO<br>
+
+        <label for= "sharedbathroom">Share Bathroom * </label>
+        <input type="radio" name="sharedbathroom" value="1" required>YES<br>
+        <input type="radio" name="sharedbathroom" value="0" required>NO<br>
 
         <label for= "washingmachine">Washing Machine *</label>
         <input type="radio" name="washingmachine" value="1" required> YES<br>
