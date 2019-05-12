@@ -164,7 +164,7 @@
                       <i class="far fa-star"></i>
                   <?php endif; ?>
                 </p>
-                <img src="img/Loui 23.jpg" alt="family">
+                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $family->FamilyPhoto).'"/>';?>
                 <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=false&fav=<?php echo $family->RegisterIdF ?>"><i class="far fa-heart"></i></a> </p>
             </div>
 
