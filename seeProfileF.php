@@ -43,7 +43,7 @@
         </div>
 
         <div class="profile2 profile-item">
-            <img src="img/Loui 23.jpg" alt="student">
+        <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $family->FamilyPhoto).'"/>';?>
         </div>
         
         <div class="profile3 profile-item">

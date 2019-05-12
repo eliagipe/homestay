@@ -17,9 +17,9 @@
       $diet = $_POST['diet'];
       $criminal = $_POST['criminal'];
       $aboutme = $_POST['about-me'];
-      
+
       echo"saving profile...";
-      $profilephotof = addslashes(file_get_contents($_FILES['profile_photoS']['tmp_name']));
+      $profilephotoS = addslashes(file_get_contents($_FILES['profile_photoS']['tmp_name']));
       
  
 
@@ -29,14 +29,14 @@
     
     
       try{        
-
+//No estoy segura 
             require_once('connectiondb.php');
             $stmt = $db->prepare(" INSERT INTO student
-                                (RegisterIdS, Nationality, Age, Allergies, Gender, 
+                                (RegisterIdS, StudentPhoto, Nationality, Age, Allergies, Gender, 
                                 Smoke, Language1, Language2, Language3, Diet, 
                                 CriminalRecord, Descriptions, AvailableFrom, AvailableTo) 
                                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ");
-            $stmt->bind_param("isississssisss", $RegisterId, $nationality, $age, $allergies, $gender, 
+            $stmt->bind_param("isississssisss", $RegisterId,$profilephotoS, $nationality, $age, $allergies, $gender, 
                                                 $smoking, $language1, $language2, $language3, $diet, 
                                                 $criminal, $aboutme, $start, $end);
             $stmt->execute();
