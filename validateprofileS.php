@@ -43,10 +43,10 @@
             $stmt->close();
                   
             
-            echo '<script>location.href = "myProfileS.php?student='  . $RegisterId . '"</script>';
+          
 
             $db->close();
-
+            echo '<script>location.href = "myProfileS.php?student='  . $RegisterId . '"</script>';
       }
       catch (Exception $e){
             $error = $e->getMessage();
