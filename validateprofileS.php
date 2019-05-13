@@ -19,7 +19,7 @@
       $aboutme = $_POST['about-me'];
 
       echo"saving profile...";
-      $profilephotoS = addslashes(file_get_contents($_FILES['profile_photo']['tmp_name']));
+      $profilephotoS = addslashes(file_get_contents($_FILES['profile_photoS']['tmp_name']));
       
  
 

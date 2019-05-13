@@ -30,7 +30,7 @@
         <div id="user-data" class="register box clearix">
           <div class="form-control"> 
             <label for="img" class="header">Profile Photo: *</label>
-            <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+            <input id="image" type="file" name="profile_photoS" placeholder="Photo" required="" capture>
           </div>
           
           <label for="nationality">Nationality *</label> 
