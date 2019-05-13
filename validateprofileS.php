@@ -35,8 +35,8 @@
                                 (RegisterIdS, StudentPhoto, Nationality, Age, Allergies, Gender, 
                                 Smoke, Language1, Language2, Language3, Diet, 
                                 CriminalRecord, Descriptions, AvailableFrom, AvailableTo) 
-                                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ");
-            $stmt->bind_param("isississssisss", $RegisterId,$profilephotoS, $nationality, $age, $allergies, $gender, 
+                                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ");
+            $stmt->bind_param("ibsississssisss", $RegisterId,$profilephotoS, $nationality, $age, $allergies, $gender, 
                                                 $smoking, $language1, $language2, $language3, $diet, 
                                                 $criminal, $aboutme, $start, $end);
             $stmt->execute();
