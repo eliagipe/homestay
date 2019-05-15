@@ -25,7 +25,7 @@
     <p>Here you can add or edit  information about yourself:</p>
     
 
-    <form id="profile" class="profile" action="validateprofileS.php" method="post">
+    <form id="profile" class="profile" action="validatestudentp.php" method="post">
       <div class="place">
         <div id="user-data" class="register box clearix">
           <div class="form-control"> 
