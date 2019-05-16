@@ -17,7 +17,7 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="Create your password"required>
           <label for="password">Repeat password</label>
-          <input type="password" id="password" name="password" placeholder="Confirm your password"required>
+          <input type="password" id="password" name="passwordrepeat" placeholder="Confirm your password"required>
           <p><input type="submit" class="button hollow" name="submit" value="submit"></p>
 
         </form>

@@ -1,5 +1,5 @@
     <?php 
-    
+    var_dump($_POST);
     if(isset($_POST['submit'])) {
     
     $type = $_POST['choose'];
@@ -7,6 +7,7 @@
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+   // $passwordrepeat = $_POST['passwordrepeat'];
     $passwordEncrypted = password_hash($password, PASSWORD_BCRYPT);
 
     try{        
@@ -20,6 +21,14 @@
         $query = " SELECT * FROM account_register WHERE email = '$email' ";
         $result = mysqli_query($db, $query);
         $rows = mysqli_num_rows($result);
+        
+        
+        if ($_POST["password"] == $_POST["passwordrepeat"]) {
+            echo "success!";
+         }
+         else {
+            echo "failed"; 
+         }
 
         if ($rows > 0) {
             $user = $result->fetch_object();
@@ -30,11 +39,12 @@
             $_SESSION["type"] = $user->type;
                 
             if ($user->type == S) {
-                echo '<script>location.href = "profileS.php"</script>';
-            } elseif ($user->type == F) {
+               echo '<script>location.href = "profileS.php"</script>';
+            }elseif ($user->type == F) {
                 echo '<script>location.href = "profileF.php"</script>';
             }
         }
+
 
         $db->close();
 
