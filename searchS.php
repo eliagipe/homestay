@@ -348,7 +348,7 @@
           <blockquote class="search-result grid-container">
 
             <div class="grid-item item1">
-              <img src="img/Loui 23.jpg" alt="student">
+            <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $student->StudentPhoto).'"/>';?>
               <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=true&fav=<?php echo $student->RegisterIdS ?>"><i class="far fa-heart"></i></a> </p>
             </div>
 

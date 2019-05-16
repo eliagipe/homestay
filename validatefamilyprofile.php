@@ -36,9 +36,9 @@ if (isset($_POST['submit']));
 try {
 
       $servername = "localhost";
-      $database = "homestay";
+      $database = "homestay2.0";
       $username = "root";
-      $password = "root";
+      $password = "";
       // // Create connection
       $conn = mysqli_connect($servername, $username, $password, $database);
       // Check connection
@@ -47,9 +47,6 @@ try {
       }
 
       echo "Connected successfully";
-
-
-
 
 
       $result = mysqli_query($conn, "SELECT RegisterId FROM `account_register` ORDER BY `RegisterId` DESC LIMIT 1");
