@@ -77,7 +77,7 @@
         </div>
 
         <div class="profile6 profile-item">
-            <p class="info"><i class="fas fa-dollar-sign"></i> <span>Price: </span> <?php echo $family->Price; ?>kr</p>
+            <p class="info"><i class="fas fa-dollar-sign"></i> <span>Price/month: </span> <?php echo $family->Price; ?>kr</p>
             <p class="info"><i class="fas fa-utensils"></i> <span>Meals: </span>
                 <?php if($family->Meals == 0) {
                     echo "No";

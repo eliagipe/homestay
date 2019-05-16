@@ -34,7 +34,7 @@
           <p> <input type="radio" name="meals" value="1" required> I will provide meals for the student.<br /></p>
           <p> <input type="radio" name="meals" value="0" required> I cannot provide meals for the student.<br /></p>
               
-          <label for="priceforstay">Price for Stay *</label>
+          <label for="priceforstay">Price for month *</label>
           <input type="number" name="priceforstay" value="priceforstay" required> DKK. <br />
 
           <label for="distancetouni"> Distance to Aalborg Main Campus *</label><!--there are many campuses around aalborg, i just chose the one we go to xD-->

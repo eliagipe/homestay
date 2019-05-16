@@ -245,8 +245,8 @@
         <label for="gender">Gender *</label>
         <select name="gender" id="gender" required>
           <option value="">-- select one --</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
         </select>
 
         <label for="smoking">Do you smoke? *</label>
@@ -255,7 +255,7 @@
 
         <label for="language1">Languages *</label><!--it can be changed to a text if you want-->
         <select name="language1" id="language1" required> <!--To add more languages, its done with JS-->
-          <option value="select">-- Select one --</option>
+          <option value="">-- Select one --</option>
           <option value="Afrikanns">Afrikanns</option>
           <option value="Albanian">Albanian</option>
           <option value="Arabic">Arabic</option>
@@ -332,7 +332,7 @@
 
         <label for="language2"></label><!--it can be changed to a text if you want-->
         <select name="language2" id="language2"> <!--To add more languages, its done with JS-->
-          <option value="select">-- Optional --</option>
+          <option value="">-- Optional --</option>
           <option value="Afrikanns">Afrikanns</option>
           <option value="Albanian">Albanian</option>
           <option value="Arabic">Arabic</option>
@@ -409,7 +409,7 @@
 
         <label for="language3"></label><!--it can be changed to a text if you want-->
         <select name="language3" id="language3"> <!--To add more languages, its done with JS-->
-          <option value="select">-- Optional --</option>
+          <option value="">-- Optional --</option>
           <option value="Afrikanns">Afrikanns</option>
           <option value="Albanian">Albanian</option>
           <option value="Arabic">Arabic</option>
