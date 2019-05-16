@@ -29,9 +29,9 @@ if (isset($_POST['submit']));
 try {
 
       $servername = "localhost";
-      $database = "homestay2.0";
+      $database = "homestay";
       $username = "root";
-      $password = "";
+      $password = "root";
       // // Create connection
       $conn = mysqli_connect($servername, $username, $password, $database);
       // Check connection
