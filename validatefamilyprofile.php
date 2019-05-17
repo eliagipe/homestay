@@ -35,10 +35,10 @@ if (isset($_POST['submit']));
 
 try {
 
-      $servername = "localhost";
-      $database = "homestay";
+      $servername = "localhost:3308";
+      $database = "homestay2.0";
       $username = "root";
-      $password = "root";
+      $password = "";
       // // Create connection
       $conn = mysqli_connect($servername, $username, $password, $database);
       // Check connection
@@ -52,14 +52,27 @@ try {
       $result = mysqli_query($conn, "SELECT RegisterId FROM `account_register` ORDER BY `RegisterId` DESC LIMIT 1");
       while ($consulta = mysqli_fetch_array($result)) {
 
-            $algo1 = $consulta['RegisterId'];
+            $algo1 = $consulta['RegisterId']; //registeridF en la base de datos
       }
-      $resultadof = mysqli_query($conn, "SELECT FamilyId FROM `family` ORDER BY `FamilyId` DESC LIMIT 1");
+
+     
+
+      
+
+
+      $sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Meals`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)" .
+      "VALUES ('$algo1','$profilephotof','$meals', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
+if (mysqli_query($conn, $sql)) {
+      echo "New record created successfully";
+} else {
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+$resultadof = mysqli_query($conn, "SELECT FamilyId FROM `family` ORDER BY `FamilyId` DESC LIMIT 1");
       while ($quehago = mysqli_fetch_array($resultadof)) {
 
-            $familyidff = $quehago['FamilyId'];
+            $familyidff = $quehago['FamilyId']; //familyidff
       }
-
 
       $sql = "INSERT INTO familyfacilities (`FamilyIdFF`,`PrivateBathroom`,`SharedBathroom`, `WashingMachine`,`WiFi`, `BusStop`,`SingleBed`,`DoubleBed`,`Bike`
       )  VALUES ('$familyidff','$privatebathroom','$sharedbathroom','$washingmachine','$wifi','$busstop','$singlebed','$doublebed','$bike')";  //aui te quedaste majo
@@ -71,16 +84,7 @@ try {
 
 
 
-
-      $sql = "INSERT INTO family (`RegisterIdF`,`FamilyPhoto`,`Meals`,`Price`, `Distance`, `Language`, `CriminalRecord`, `Description`, `AvailableFrom`, `AvailableTo`)" .
-            "VALUES ('$algo1','$profilephotof','$meals', '$pricestay', '$distanceuni', '$languagef', '$recordf', '$aboutmef', '$startingdatef', '$endingdatef')";
-      if (mysqli_query($conn, $sql)) {
-            echo "New record created successfully";
-      } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-      }
- 
-      $conn->close();
+   $conn->close();
       echo '<script>location.href = "myProfileF.php?family='  . $RegisterId . '"</script>';
 } catch (Exception $e) {
       $error = $e->getMessage();

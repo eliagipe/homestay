@@ -6,8 +6,7 @@ if (isset($_GET['family'])) {
     require_once('connectiondb.php');
     $family_id = $_GET['family'];
 
-    $family = $db->query(" 
-            SELECT * FROM family 
+    $family = $db->query("  SELECT * FROM family 
             INNER JOIN account_register 
             ON family.RegisterIdF = account_register.RegisterId 
             WHERE (family.RegisterIdF = $family_id) 
@@ -15,8 +14,7 @@ if (isset($_GET['family'])) {
 
     $family1 = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
 
-    $familyfacilities = $db->query("
-            SELECT * FROM familyfacilities 
+    $familyfacilities = $db->query("SELECT * FROM familyfacilities 
             WHERE FamilyIdFF = $family1->FamilyId;
         ")->fetch_object();
 }
