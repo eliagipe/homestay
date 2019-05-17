@@ -27,8 +27,8 @@
     //student
     if ($_SESSION["type"] == 'F') {
       $query3 = "SELECT * FROM  student stu, account_favs fav 
-                 WHERE fav.registeredid= $RegisterId 
-                 AND fav.favid=stu.RegisterIdS
+                 WHERE fav.registeredid = $RegisterId 
+                 AND fav.favid = stu.RegisterIdS
                 ";
       $result3 = mysqli_query($db, $query3);
       $rows3 = mysqli_fetch_array($result3);
@@ -38,7 +38,7 @@
         <div class="profile">      
           <blockquote class="search-result grid-container">
             <div class="grid-item item1">
-              <img src="img/Loui 23.jpg" alt="student">
+            <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($student->StudentPhoto).'"/>';//que variable seria??>
               <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
             </div>
 
@@ -72,12 +72,12 @@
         <div class="profile">      
           <blockquote class="search-result grid-container">
             <div class="grid-item item1">
-              <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $student->StudentPhoto).'"/>';//que variable seria??>
+              <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($student->StudentPhoto).'"/>';//que variable seria??>
               <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
             </div>
   
             <div class="grid-item item2">
-              <p class="name"><?php echo $rows2["FirstName"] . " " . $rows2["LastName"]; ?></p>
+              <p class="name"><?php echo "Family " . $rows2["LastName"]; ?></p>
               <p class="info"><span>Distance:</span> <?php echo $rows4["Distance"]; ?></p>
               <p class="info"><span>Meals included:</span>
                 <?php if($rows4["Meals"] == 0) {
