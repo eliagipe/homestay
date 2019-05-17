@@ -47,7 +47,7 @@ $rows = mysqli_num_rows($result);
 
 
           //student
-          if ($isStudent == 'true') {
+        if ($isStudent == 'true' || $_SESSION["type"] == 'S') {
             $query3 = "SELECT * FROM student stu, account_favs fav 
   WHERE fav.registeredid= $RegisterId
   AND fav.favid=stu.RegisterIdS
@@ -73,7 +73,7 @@ $rows = mysqli_num_rows($result);
 
           <?php }
         //family
-        if ($isStudent != 'true') {
+        if ($isStudent != 'true' || $_SESSION["type"] == 'F') {
           $query4 = "SELECT * FROM family fam, account_favs fav 
   WHERE fav.registeredid= $RegisterId
   AND fav.favid=fam.RegisterIdF
