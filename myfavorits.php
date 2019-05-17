@@ -23,18 +23,7 @@ $rows = mysqli_num_rows($result);
 <section class="section conteiner">
   <h2>My favorites</h2>
 
-  <div class="profiles conteiner clearfix">
-    <div class="profile">
-
-      <?php while ($rows = $result->fetch_object()) { ?>
-        <blockquote class="search-result grid-container">
-
-          <div class="grid-item item1">
-            <img src="img/Loui 23.jpg" alt="student">
-            <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"><i class="fas fa-heart"></i></a> </p>
-          </div>
-
-          <?php
+      <?php while ($rows = $result->fetch_object()) { 
 
           $query2 = "SELECT * 
         FROM account_register
@@ -43,8 +32,6 @@ $rows = mysqli_num_rows($result);
 
           $result2 = mysqli_query($db, $query2);
           $rows2 = mysqli_fetch_array($result2);
-
-
 
           //student
           if ($isStudent == 'true') {
@@ -59,6 +46,18 @@ $rows = mysqli_num_rows($result);
 
 
             ?>
+
+
+            <div class="profiles conteiner clearfix">
+    <div class="profile">      
+  <blockquote class="search-result grid-container">
+  <div class="grid-item item1">
+    <img src="img/Loui 23.jpg" alt="student">
+    <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+  </div>
+    
+
+
             <div class="grid-item item2">
               <p class="name"><?php echo $rows2["FirstName"] . " " . $rows2["LastName"]; ?></p>
               <p class="info"><span>Nationality:</span> <?php echo $rows3["Nationality"]; ?></p>
@@ -85,7 +84,14 @@ $rows = mysqli_num_rows($result);
 
 
           ?>
-
+     <div class="profiles conteiner clearfix">
+    <div class="profile">      
+  <blockquote class="search-result grid-container">
+  <div class="grid-item item1">
+    <img src="img/Loui 23.jpg" alt="student">
+    <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+  </div>
+  
             <div class="grid-item item2">
               <p class="name"><?php echo $rows2["FirstName"] . " " . $rows2["LastName"]; ?></p>
               <p class="info"><span>Distance:</span> <?php echo $rows4["Distance"]; ?></p>
@@ -106,14 +112,16 @@ $rows = mysqli_num_rows($result);
         </blockquote>
       <?php } ?>
 
+   
 
-    </div>
-  </div>
-
-
+         
 
 
 
+
+ 
+    
+   
 
 
 </section>

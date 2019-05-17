@@ -23,12 +23,7 @@ $rows = mysqli_num_rows($result);
       <div class="profile">
      
         <?php while($rows=$result->fetch_object()) { ?>
-          <blockquote class="search-result grid-container">
-
-            <div class="grid-item item1">
-              <img src="img/Loui 23.jpg" alt="student">
-              <p class="favorite">Mark as favorite: <a href="gaturu.php?fav=<?php echo $rows->registeredid ?>"><i class="far fa-heart"></i></a> </p>
-            </div>
+        
 
          <?php   $query2 = "SELECT * 
         FROM account_register
