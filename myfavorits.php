@@ -37,7 +37,7 @@ $rows = mysqli_num_rows($result);
         if ($_SESSION["type"] == 'F') {
             $query3 = "SELECT * FROM  student stu, account_favs fav 
   WHERE fav.registeredid= $RegisterId 
- AND fav.favid= stu.RegisterIdS
+ AND fav.favid=stu.RegisterIdS
 ";
 
 
