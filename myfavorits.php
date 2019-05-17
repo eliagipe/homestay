@@ -88,7 +88,7 @@ $rows = mysqli_num_rows($result);
     <div class="profile">      
   <blockquote class="search-result grid-container">
   <div class="grid-item item1">
-    <img src="img/Loui 23.jpg" alt="student">
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $student->StudentPhoto).'"/>';//que variable seria??>
     <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
   </div>
   

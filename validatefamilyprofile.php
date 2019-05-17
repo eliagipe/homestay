@@ -35,7 +35,7 @@ if (isset($_POST['submit']));
 
 try {
 
-      $servername = "localhost:3308";
+      $servername = "localhost:3306";
       $database = "homestay2.0";
       $username = "root";
       $password = "";
