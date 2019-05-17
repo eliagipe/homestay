@@ -5,8 +5,8 @@ require_once('connectiondb.php'); ?>
 <?php include_once 'includes/templates/header.php';
 $RegisterId = $_SESSION["RegisterId"];
 $isStudent = $_GET['isStudent'];
-echo $isStudent == 'true';
-echo $isStudent == true;
+$isStudent == 'true';
+$isStudent == true;
 
 
 
