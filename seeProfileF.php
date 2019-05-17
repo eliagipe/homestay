@@ -39,7 +39,7 @@
 
     <div class="profile-grid">
         <div class="profile1">
-            <h6><?php echo "Family " . $family->LastName; ?></h3>
+            <h6><?php echo  $family->FirstName. " " . $family->LastName; ?></h3>
         </div>
 
         <div class="profile2 profile-item">
