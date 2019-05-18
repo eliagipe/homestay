@@ -19,7 +19,10 @@
               AS rating
               FROM family 
               INNER JOIN account_register
-              ON family.RegisterIdF = account_register.RegisterId ";
+              ON family.RegisterIdF = account_register.RegisterId
+              LEFT JOIN account_favs
+              ON family.RegisterIdF = account_favs.favid
+              AND account_favs.registeredid = $RegisterId ";
 
       $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
 
@@ -165,7 +168,12 @@
                   <?php endif; ?>
                 </p>
                 <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $family->FamilyPhoto).'"/>';?>
-                <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=false&fav=<?php echo $family->RegisterIdF ?>"><i class="far fa-heart"></i></a> </p>
+                <?php if($family->favid == NULL) { ?>
+                  <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=false&fav=<?php echo $family->RegisterIdF ?>"><i class="far fa-heart"></i></a> </p>
+                <?php } else { ?>
+                  <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=<?php echo $family->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+                <?php } ?>
+                
             </div>
 
             <div class="grid-item item2_1"> 

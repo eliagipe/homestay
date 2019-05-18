@@ -23,7 +23,10 @@
             AS rating
             FROM student 
             INNER JOIN account_register
-            ON student.RegisterIdS = account_register.RegisterId ";
+            ON student.RegisterIdS = account_register.RegisterId
+            LEFT JOIN account_favs
+            ON student.RegisterIdS = account_favs.favid
+            AND account_favs.registeredid = $RegisterId ";
 
     $query = $query . " WHERE ('$start' >= AvailableFrom AND '$end' <= AvailableTo) ";
 
@@ -349,7 +352,11 @@
 
             <div class="grid-item item1">
             <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $student->StudentPhoto).'"/>';?>
+            <?php if($student->favid == NULL) { ?>
               <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=true&fav=<?php echo $student->RegisterIdS ?>"><i class="far fa-heart"></i></a> </p>
+            <?php } else { ?>
+              <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=true&fav=<?php echo $student->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+            <?php } ?>
             </div>
 
             <div class="grid-item item2">

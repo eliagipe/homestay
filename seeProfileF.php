@@ -13,6 +13,9 @@
             LEFT JOIN rating 
             ON family.RegisterIdF = rating.RegisterIdF
             AND $RegisterId = rating.RegisterIdS
+            LEFT JOIN account_favs
+            ON family.RegisterIdF = account_favs.favid
+            AND account_favs.registeredid = $RegisterId
             WHERE (family.RegisterIdF = $family_id) 
         ")->fetch_object();
 
@@ -66,7 +69,12 @@
                         <?php } ?>
                     <?php endforeach; ?>
             <?php } ?>
-            <p class="favorite"><span>Mark as favorite:</span> <a href="#"><i class="far fa-heart"></i></a> </p>
+            
+            <?php if($family->favid == NULL) { ?>
+                  <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=false&fav=<?php echo $family->RegisterId ?>"><i class="far fa-heart"></i></a> </p>
+                <?php } else { ?>
+                  <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=<?php echo $family->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+                <?php } ?>
         </div>
     </div>
 

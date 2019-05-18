@@ -5,8 +5,8 @@
   $RegisterId = $_SESSION["RegisterId"];
 
   $query = " SELECT * FROM account_favs WHERE registeredid = $RegisterId ";
-  $result = mysqli_query($db, $query);
-  $rows = mysqli_num_rows($result);
+  $favorites = mysqli_query($db, $query);
+  //$rows = mysqli_num_rows($result);
 
 ?>
 
@@ -15,20 +15,25 @@
 <section class="section conteiner">
   <h2>My favorites</h2>
 
-  <?php while ($rows = $result->fetch_object()) { 
+  
 
-    $query2 = " SELECT * FROM account_register WHERE RegisterId IN( $rows->favid) ";
+  <?php while ($favorite = $favorites->fetch_object()) { 
+    
+
+    $query2 = " SELECT * FROM account_register WHERE RegisterId = $favorite->favid ";
     $result2 = mysqli_query($db, $query2);
-    $rows2 = mysqli_fetch_array($result2);
+    $fav_account = $result2->fetch_object();
+    
 
     //student
-    if ($_SESSION["type"] == 'F') {
-      $query3 = "SELECT * FROM  student stu, account_favs fav 
-                 WHERE fav.registeredid = $RegisterId 
-                 AND fav.favid = stu.RegisterIdS
-                ";
+    if ($_SESSION["type"] == 'F' ) {
+      $query3 = " SELECT * FROM  account_register
+                 INNER JOIN student 
+                 ON account_register.RegisterId = student.RegisterIdS
+                 WHERE account_register.RegisterId = $favorite->favid ";
       $result3 = mysqli_query($db, $query3);
-      $rows3 = mysqli_fetch_array($result3);
+      $student = $result3->fetch_object();
+      
   ?>
 
       <div class="profiles conteiner clearfix">
@@ -36,19 +41,19 @@
           <blockquote class="search-result grid-container">
             <div class="grid-item item1">
             <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($student->StudentPhoto).'"/>';//que variable seria??>
-              <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+              <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=true&fav=<?php echo $favorite->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
             </div>
 
             <div class="grid-item item2">
-              <p class="name"><?php echo $rows2["FirstName"] . " " . $rows2["LastName"]; ?></p>
-              <p class="info"><span>Nationality:</span> <?php echo $rows3["Nationality"]; ?></p>
-              <p class="info"><span>Age:</span> <?php echo $rows3["Age"]; ?> years old</p>
-              <p class="info"><span>From:</span> <?php echo $rows3["AvailableFrom"]; ?></p>
-              <p class="info"><span>To:</span> <?php echo $rows3["AvailableTo"]; ?></p>
+              <p class="name"><?php echo $fav_account->FirstName . " " . $fav_account->LastName; ?></p>
+              <p class="info"><span>Nationality:</span> <?php echo $student->Nationality; ?></p>
+              <p class="info"><span>Age:</span> <?php echo $student->Age; ?> years old</p>
+              <p class="info"><span>From:</span> <?php echo $student->AvailableFrom; ?></p>
+              <p class="info"><span>To:</span> <?php echo $student->AvailableTo; ?></p>
             </div>
 
             <div class="item3">
-              <a href="seeProfileS.php?student=<?php echo $rows3["RegisterIdS"] ?>" class="long-button hollow">See profile</a>
+              <a href="seeProfileS.php?student=<?php echo $student->RegisterIdS ?>" class="long-button hollow">See profile</a>
             </div>
           </blockquote>
         </div>
@@ -57,38 +62,38 @@
   <?php }
     //family
     if ($_SESSION["type"] == 'S' ) {
-      $query4 = "SELECT * FROM family fam, account_favs fav 
-                WHERE fav.registeredid= $RegisterId
-                AND fav.favid=fam.RegisterIdF
-                ";
+      $query4 = " SELECT * FROM  account_register
+                 INNER JOIN family
+                 ON account_register.RegisterId = family.RegisterIdF
+                 WHERE account_register.RegisterId = $favorite->favid ";
       $result4 = mysqli_query($db, $query4);
-      $rows4 = mysqli_fetch_array($result4);
+      $family = $result4->fetch_object();
   ?>
 
       <div class="profiles conteiner clearfix">
         <div class="profile">      
           <blockquote class="search-result grid-container">
             <div class="grid-item item1">
-              <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($student->StudentPhoto).'"/>';//que variable seria??>
-              <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=<?php echo $isStudent ?>&fav=<?php echo $rows->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+              <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($family->FamilyPhoto).'"/>';//que variable seria??>
+              <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=<?php echo $favorite->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
             </div>
   
             <div class="grid-item item2">
-              <p class="name"><?php echo "Family " . $rows2["LastName"]; ?></p>
-              <p class="info"><span>Distance:</span> <?php echo $rows4["Distance"]; ?></p>
+              <p class="name"><?php echo "Family " . $fav_account->LastName; ?></p>
+              <p class="info"><span>Distance:</span> <?php echo $family->Distance; ?></p>
               <p class="info"><span>Meals included:</span>
-                <?php if($rows4["Meals"] == 0) {
+                <?php if($family->Meals == 0) {
                   echo "No";
-                } elseif($rows4["Meals"] == 1) {
+                } elseif($family->Meals == 1) {
                   echo "Yes";
                 } ?>
               </p>
-              <p class="info"><span>From:</span> <?php echo $rows4["AvailableFrom"]; ?></p>
-              <p class="info"><span>To:</span> <?php echo $rows4["AvailableTo"]; ?></p>
+              <p class="info"><span>From:</span> <?php echo $family->AvailableFrom; ?></p>
+              <p class="info"><span>To:</span> <?php echo $family->AvailableTo; ?></p>
             </div>
 
             <div class="item3">
-              <a href="seeProfileF.php?family=<?php echo $rows4["RegisterIdF"] ?>" class="long-button hollow">See profile</a>
+              <a href="seeProfileF.php?family=<?php echo $family->RegisterIdF ?>" class="long-button hollow">See profile</a>
             </div>
           </blockquote>
         </div>
