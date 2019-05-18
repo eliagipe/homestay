@@ -3,9 +3,6 @@
   require_once('connectiondb.php');
 
   $RegisterId = $_SESSION["RegisterId"];
-  $isStudent = $_GET['isStudent'];
-  $isStudent == 'true';
-  $isStudent == true;
 
   $query = " SELECT * FROM account_favs WHERE registeredid = $RegisterId ";
   $result = mysqli_query($db, $query);
