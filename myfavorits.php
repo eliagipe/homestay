@@ -81,6 +81,8 @@
             <div class="grid-item item2">
               <p class="name"><?php echo "Family " . $fav_account->LastName; ?></p>
               <p class="info"><span>Distance:</span> <?php echo $family->Distance; ?></p>
+              <p class="info"><span>From:</span> <?php echo $family->AvailableFrom; ?></p>
+              <p class="info"><span>To:</span> <?php echo $family->AvailableTo; ?></p>
               <p class="info"><span>Meals included:</span>
                 <?php if($family->Meals == 0) {
                   echo "No";
@@ -88,8 +90,6 @@
                   echo "Yes";
                 } ?>
               </p>
-              <p class="info"><span>From:</span> <?php echo $family->AvailableFrom; ?></p>
-              <p class="info"><span>To:</span> <?php echo $family->AvailableTo; ?></p>
             </div>
 
             <div class="item3">

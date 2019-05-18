@@ -134,7 +134,7 @@
   <?php } ?>
 
     <div class="profiles conteiner clearfix">
-      <div class="profile">
+      <div class="profile"> 
         <?php if(isset($result)) { ?>
         <?php while($family = $result->fetch_object()) { ?>
           <blockquote class="search-result grid-container">
@@ -181,6 +181,13 @@
               <p class="info"><span>From:</span> <?php echo $family->AvailableFrom; ?></p>
               <p class="info"><span>To:</span> <?php echo $family->AvailableTo; ?></p>
               <p class="info"><span>Price/month:</span> <?php echo $family->Price; ?>kr</p>
+              <p class="info"><span>Meals included:</span>
+                <?php if($family->Meals == 0) {
+                  echo "No";
+                } elseif($family->Meals == 1) {
+                  echo "Yes";
+                } ?>
+              </p>
             </div>
 
             <div class="item3">
