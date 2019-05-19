@@ -10,7 +10,7 @@
             SELECT * FROM family 
             INNER JOIN account_register 
             ON family.RegisterIdF = account_register.RegisterId 
-            LEFT JOIN rating 
+            LEFT JOIN rating
             ON family.RegisterIdF = rating.RegisterIdF
             AND $RegisterId = rating.RegisterIdS
             LEFT JOIN account_favs
@@ -19,11 +19,19 @@
             WHERE (family.RegisterIdF = $family_id) 
         ")->fetch_object();
 
+  //$familia = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
+        
+  // $familyfacilities = $db->query("SELECT * FROM familyfacilities 
+   // WHERE FamilyIdFF = $familia->FamilyId;")->fetch_object();
+   // las querys de arriba no funcionan, ni idea por que, Juli tampoco pudo S.O.S!!!
+
         $rating = $db->query("
             SELECT * FROM rating
             WHERE RegisterIdF = $family_id
             AND RegisterIdS = $RegisterId
         ")->fetch_object();
+
+       
 
         $student = $db->query(" SELECT StudentId FROM student WHERE RegisterIdS = $RegisterId ")->fetch_object();
 
@@ -114,7 +122,9 @@
 
     <div class="profile14 profile-item">
         <p class="info"><i class="fas fa-toilet-paper"></i> <span>Private Bathroom: </span>
-            <?php if($familyfacilities->PrivateBathroom == 0) {
+            <?php 
+            
+            if($familyfacilities->PrivateBathroom == 0) {
                 echo "No";
             } elseif($familyfacilities->PrivateBathroom == 1) {
                 echo "Yes";} ?> 
