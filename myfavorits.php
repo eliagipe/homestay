@@ -62,7 +62,13 @@
   <?php }
     //family
     if ($_SESSION["type"] == 'S' ) {
-      $query4 = " SELECT * FROM  account_register
+      $query4 = " SELECT * 
+                , (SELECT AVG(rating.Rating)  
+                  FROM rating
+                  WHERE RegisterIdF = family.RegisterIdF
+                  GROUP BY RegisterIdF)
+                  AS rating
+                  FROM  account_register
                  INNER JOIN family
                  ON account_register.RegisterId = family.RegisterIdF
                  WHERE account_register.RegisterId = $favorite->favid ";

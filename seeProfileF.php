@@ -18,12 +18,10 @@
             AND account_favs.registeredid = $RegisterId
             WHERE (family.RegisterIdF = $family_id) 
         ")->fetch_object();
-
-  //$familia = $db->query(" SELECT FamilyId FROM family WHERE RegisterIdF = $RegisterId ")->fetch_object();
         
-  // $familyfacilities = $db->query("SELECT * FROM familyfacilities 
-   // WHERE FamilyIdFF = $familia->FamilyId;")->fetch_object();
-   // las querys de arriba no funcionan, ni idea por que, Juli tampoco pudo S.O.S!!!
+        $familyfacilities = $db->query("SELECT * FROM familyfacilities 
+        WHERE FamilyIdFF = $family->FamilyId;")->fetch_object();
+   
 
         $rating = $db->query("
             SELECT * FROM rating
