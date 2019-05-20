@@ -21,7 +21,7 @@
 
       echo"saving profile...";
       
-     // $profilephotoS = addslashes(file_get_contents($_FILES['profile_photoS']['tmp_name']));
+      $profilephotoS = addslashes(file_get_contents($_FILES['profile_photoS']['tmp_name']));
 
       try {
 
