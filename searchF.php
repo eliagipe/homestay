@@ -12,7 +12,7 @@
     $price = $_POST['price'];
 
     $query = " SELECT * 
-      , (SELECT AVG(rating.Rating) 
+              , (SELECT AVG(rating.Rating)  
               FROM rating
               WHERE RegisterIdF = family.RegisterIdF
               GROUP BY RegisterIdF)

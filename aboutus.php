@@ -12,7 +12,9 @@
 <br> which is located in the main campus close to the new University Hospital. <br>
 <br> There are several ways to come in contact with us:<br>
 <br>If you have any questions you are welcome to come visit us in the Computer Science department.<br>
-<br> you can alsp call us or write us an email. <br>
+<br> you can also call us or write us an email. <br>
+<br><br> If you need to change information on your profile or delete your account, you can contact us <br>
+<br>and we will help you with it.
 
 <div class ="about">
 Phone number:</div>

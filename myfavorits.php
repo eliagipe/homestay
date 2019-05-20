@@ -62,7 +62,13 @@
   <?php }
     //family
     if ($_SESSION["type"] == 'S' ) {
-      $query4 = " SELECT * FROM  account_register
+      $query4 = " SELECT * 
+                , (SELECT AVG(rating.Rating)  
+                  FROM rating
+                  WHERE RegisterIdF = family.RegisterIdF
+                  GROUP BY RegisterIdF)
+                  AS rating
+                  FROM  account_register
                  INNER JOIN family
                  ON account_register.RegisterId = family.RegisterIdF
                  WHERE account_register.RegisterId = $favorite->favid ";
@@ -73,7 +79,35 @@
       <div class="profiles conteiner clearfix">
         <div class="profile">      
           <blockquote class="search-result grid-container">
+          
             <div class="grid-item item1">
+              <p class="rating">Rating score: 
+                <?php if($family->rating >= 1): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($family->rating >= 2): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($family->rating >= 3): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($family->rating >= 4): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+                <?php if($family->rating >= 5): ?>
+                    <i class="fas fa-star"></i>
+                <?php else : ?>
+                    <i class="far fa-star"></i>
+                <?php endif; ?>
+              </p>
               <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($family->FamilyPhoto).'"/>';//que variable seria??>
               <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=<?php echo $favorite->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
             </div>
