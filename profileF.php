@@ -167,8 +167,8 @@
 
         <div class="places">
           <p><h4>Having a criminal record makes it a lot easier to find a match! *</h4></p>
-          <p> <input type="radio" name="record" value="0" required> I don't have a criminal record<br></p>
-          <p> <input type="radio" name="record" value="1" required> I can provide a criminal record<br></p>
+          <p> <input type="radio" name="record" value="0" required> I can't provide a criminal record document<br></p>
+          <p> <input type="radio" name="record" value="1" required> I can provide a criminal record document<br></p>
         </div>
       
         

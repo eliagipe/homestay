@@ -489,8 +489,8 @@
         <input type="text" id="diet" name="diet" placeholder="Optional">
 
         <label for="criminal">Criminal record *</label>
-        <input type="radio" name="criminal" id="criminal" value="1" required>I have a Criminal Record document<br>
-        <input type="radio" name="criminal" id="criminal" value="0" required>I don't have a Criminal Record document<br>
+        <input type="radio" name="criminal" id="criminal" value="1" required>I can provide Criminal Record document<br>
+        <input type="radio" name="criminal" id="criminal" value="0" required>I can't provide a Criminal Record document<br>
         
       </div>  
       

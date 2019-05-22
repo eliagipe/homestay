@@ -32,7 +32,7 @@
   <h2>You are about to make an agreement with <?php echo $student->FirstName . " " . $student->LastName; ?></h2>
   <div class="form">
     <div class="place">
-      <p class="faq">You are about to make an agreement with family <?php echo $student->FirstName . " " . $student->LastName; ?>.</p>
+      <p class="faq">You are about to make an agreement with <?php echo $student->FirstName . " " . $student->LastName; ?>.</p>
       <p class="faq"><span>We suggest you to follow the next instructions:</span></p>
       <p class="faq">Write a document where both parts agree on the duration of the stay, the mutual rules
       the price and the expectations of this experience.</p> 
