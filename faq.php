@@ -32,14 +32,11 @@
 <div class="question">
   <h4> 3. WHO CAN REGISTER AND CREATE A PROFILE IN HOMESTAY?</h4>
   <p class="faq">Currently, this service is only directed to prospect AAU exchange students only. Anyone can create a family profile.<p>
-</div>
-
-<div class="question">
-  <h4> 3. WHO CAN I EDIT MY PROFILE?</h4>
-  <p class="faq">To edit information in your profile or delete your account, you have to contact us and specify what are the changes you want to do. You can find 
-  our contact information in the <a href="aboutus.php">About us</a> page.<p>
-</div>
-    
+  </div>
+  <div class="question">
+  <h4> 3. I MADE A MISTAKE IN MY PROFILE OR I WANT TO DELETE MY PROFILE?</h4>
+  <p class="faq">Unfortunately, you are unable to delete or edit your own profile currently, however, you can give us a call or send us an email with the information you wish to edit or asking us to delete your profile, and we will gladly do it for you!<p>
+  </div>
 </section>
 
-<?php include_once 'includes/templates/footer.php'; ?>
+<?php include_once 'includes/templates/footer.php'; 
