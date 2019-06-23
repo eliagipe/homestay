@@ -1,16 +1,16 @@
     <?php 
   
-    if(isset($_POST['submit'])) {
+   
     
     $type = $_POST['choose'];
     $firstname = $_POST['name'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-   // $passwordrepeat = $_POST['passwordrepeat'];
+   $passwordrepeat = $_POST['passwordrepeat'];
     $passwordEncrypted = password_hash($password, PASSWORD_BCRYPT);
 
-    try{        
+           
 
         require_once('connectiondb.php');
         $stmt = $db->prepare(" INSERT INTO account_register (FirstName, LastName, email, Password, type) VALUES (?,?,?,?,?) ");
@@ -22,13 +22,8 @@
         $result = mysqli_query($db, $query);
         $rows = mysqli_num_rows($result);
         
+      
         
-        if ($_POST["password"] == $_POST["passwordrepeat"]) {
-            echo "success!";
-         }
-         else {
-            echo "failed"; 
-         }
 
         if ($rows > 0) {
             $user = $result->fetch_object();
@@ -37,23 +32,31 @@
             $_SESSION["RegisterId"] = $user->RegisterId;
             $_SESSION["email"] = $user->email;
             $_SESSION["type"] = $user->type;
-                
-            if ($user->type == S) {
-               echo '<script>location.href = "profileS.php"</script>';
-            }elseif ($user->type == F) {
+  
+            if ($_POST["password"] == $_POST["passwordrepeat"]) {
+             
+            if ($user->type == "S") {
+              echo '<script>location.href = "profileS.php"</script>';
+           }elseif ($user->type == "F") {
                 echo '<script>location.href = "profileF.php"</script>';
-            }
-        }
-
-
-        $db->close();
-
+     }   
+             }
+             else {
+                echo '<span>Passwords do not match.</span>'; 
+             }
+            
     }
-    catch (Exception $e){
-        $error = $e->getMessage();
+    else {
+        echo '<span>Try again.</span>'; 
     }
 
-    }
+  mysqli_free_result($result);
+ $db->close();
+
+    
+  
+
+    
     
    ?>
 

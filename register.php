@@ -18,9 +18,22 @@
           <input type="password" id="password" name="password" placeholder="Create your password"required>
           <label for="password">Repeat password</label>
           <input type="password" id="password" name="passwordrepeat" placeholder="Confirm your password"required>
-          <p><input type="submit" class="button hollow" name="submit" value="submit"></p>
-
+          <p><button class="button hollow" onclick="validatep(document.getElementById('password').value, document.getElementById('passwordrepeat').value;">Register</button></p> 
+         
         </form>
+        <script>
+        function validatep(password, passwordrepeat)
+        {
+            $.ajax({
+                url: "validateregister.php",
+                type: "POST",
+                data: "password="+password+"&passwordrepeat="+passwordrepeat,
+                success: function(resp){
+                $('#result').html(resp)
+                }       
+            });
+        }
+        </script>
       </div>
     </div>
   </section>

@@ -94,8 +94,7 @@
             <option value="select">-- Select one --</option>
             <option value="1">Yes</option>
             <option value="0">No</option>
-          </select>
-      </div>
+          </select>      </div>
 
       <div class="search4">
         <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
@@ -139,7 +138,7 @@
         <?php while($family = $result->fetch_object()) { ?>
           <blockquote class="search-result grid-container">
 
-            <div class="grid-item item1">
+          <div class="grid-item item1">
               <p class="rating">Rating score: 
                   <?php if($family->rating >= 1): ?>
                       <i class="fas fa-star"></i>
@@ -169,12 +168,15 @@
                 </p>
                 <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $family->FamilyPhoto).'"/>';?>
                 <?php if($family->favid == NULL) { ?>
-                  <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=false&fav=<?php echo $family->RegisterIdF ?>"><i class="far fa-heart"></i></a> </p>
+                  <p class="favorite">Mark as favorite: <a href="favorite.php?isStudent=false&fav=<?php 
+                    echo $family->RegisterIdF ?>"><i class="far fa-heart"></i></a> </p>
                 <?php } else { ?>
-                  <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=<?php echo $family->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+                  <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=
+                  <?php echo $family->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
                 <?php } ?>
                 
             </div>
+
 
             <div class="grid-item item2_1"> 
               <p class="name">Family <?php echo $family->LastName; ?></p>

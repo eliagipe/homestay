@@ -40,7 +40,7 @@
         <div class="profile">      
           <blockquote class="search-result grid-container">
             <div class="grid-item item1">
-            <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($student->StudentPhoto).'"/>';//que variable seria??>
+            <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($student->StudentPhoto).'"/>';?>
               <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=true&fav=<?php echo $favorite->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
             </div>
 
@@ -108,8 +108,9 @@
                     <i class="far fa-star"></i>
                 <?php endif; ?>
               </p>
-              <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($family->FamilyPhoto).'"/>';//que variable seria??>
-              <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=<?php echo $favorite->favid ?>"title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
+              <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($family->FamilyPhoto).'"/>';?>
+              <p class="favorite">Marked as favorite <a href="NotFavorite.php?isStudent=false&fav=<?php echo $favorite->favid ?>
+              "title="unsave profile from your favorites"><i class="fas fa-heart"></i></a> </p>
             </div>
   
             <div class="grid-item item2">
