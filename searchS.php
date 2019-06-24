@@ -75,19 +75,19 @@
     <div class="search-grid">
 
       <div class="search1">
-        <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
+        <label for="starting-date"><i class="far fa-calendar-check"></i> From:*</label>
         <input type="date" name="starting-date" id="starting-date" placeholder="yy/mm/dd" value="<?php echo $start; ?>" required>
       </div>
 
       <div class="search4">
-        <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
+        <label for="ending-date"><i class="far fa-calendar-check"></i> To:*</label>
         <input type="date" name="ending-date" id="ending-date" placeholder="yy/mm/dd" value="<?php echo $end; ?>" required>
       </div>
 
       <div class="search5">
         <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
         <select name="gender" id="gender"> 
-          <option value="select">-- Select one --</option>
+          <option value="select">-- Optional --</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
           <option value="all">All</option>
@@ -97,7 +97,7 @@
       <div class="search2">
         <label for="age"><i class="fas fa-male"></i> Age:</label>
         <select name="age" id="age">
-          <option value="select">-- Select one --</option>
+          <option value="select">-- Optional --</option>
           <option value="18-20">18-20</option>
           <option value="20-25">20-25</option>
           <option value="all">All</option>
@@ -107,7 +107,7 @@
       <div class="search7">
         <label for="nationality"><i class="fas fa-map-marker-alt"></i> Nationality:</label> 
         <select name="nationality">
-          <option value="select">-- Select one --</option>
+          <option value="select">-- Optional --</option>
           <option value="all">All</option>
           <option value="afghan">Afghan</option>
           <option value="albanian">Albanian</option>
@@ -307,7 +307,7 @@
       <div class="search3">
         <label for="smoking"><i class="fas fa-smoking"></i> Smoking:</label>
         <select name="smoking" id="smoking">
-          <option value="select">-- Select one --</option>
+          <option value="select">-- Optional --</option>
           <option name="smoking" value="yes"> Yes</option>
           <option name="smoking" value="no"> No</option>
         </select>
@@ -316,7 +316,7 @@
       <div class="search6">
         <label for="criminal-record"><i class="far fa-file-alt"></i> Criminal record:</label>
         <select name="criminal-record" id="criminal-record">
-          <option value="select">-- Select one --</option>
+          <option value="select">-- Optional --</option>
           <option name="criminal-record" value="important" >Important</option>
           <option name="criminal-record" value="not-important" >Not important</option>
         </select>
