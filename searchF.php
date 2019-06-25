@@ -71,14 +71,14 @@
   <form id="search" class="search" action="searchF.php" method="post">
     <div class="search-grid">
       <div class="searchS1">
-        <label for="starting-date"><i class="far fa-calendar-check"></i> From:</label>
+        <label for="starting-date"><i class="far fa-calendar-check"></i> From:*</label>
         <input id="starting-date" type="date" name="starting-date" placeholder="yy/mm/dd" required>
       </div>
 
       <div class="search2">
         <label for="distance"><i class="fas fa-location-arrow"></i> Distance</label>
           <select name="distance" id="distance">
-            <option value="select">-- Select one --</option>
+            <option value="select">-- Optional --</option>
             <option value="0km-3km">0km-3km from Aalborg Univesity's main campus</option>
             <option value="3km-6km">3km-6km from Aalborg Univesity's main campus</option>
             <option value="6km-15km">6km-15km from Aalborg Univesity's main campus</option>
@@ -91,20 +91,20 @@
       <div class="search3">
         <label for="meals"><i class="fas fa-utensils"></i> Includes meals</label>
           <select name="meals" id="meals">
-            <option value="select">-- Select one --</option>
+            <option value="select">-- Optional --</option>
             <option value="1">Yes</option>
             <option value="0">No</option>
           </select>      </div>
 
       <div class="search4">
-        <label for="ending-date"><i class="far fa-calendar-check"></i> To:</label>
+        <label for="ending-date"><i class="far fa-calendar-check"></i> To:*</label>
         <input type="date" name="ending-date" id="ending-date" placeholder="yy/mm/dd" required>
       </div>
      
       <div class="search5">
         <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label> 
         <select name="price" id="price">
-          <option value="">-- Select one --</option>
+          <option value="">-- Optional --</option>
           <option value="1500">Less than 1500 a month</option>
           <option value="1500-2500">1500-2500 a month</option>
           <option value="2500-3000">2500-3000 a month</option>
