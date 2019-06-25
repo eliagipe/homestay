@@ -37,9 +37,9 @@
   
             
              
-              if ($user->type == "S") {
+              if ($user->type == S) {
                 echo '<script>location.href = "profileS.php"</script>';
-              }elseif ($user->type == "F") {
+              }elseif ($user->type == F) {
                 echo '<script>location.href = "profileF.php"</script>';
               }   
 
