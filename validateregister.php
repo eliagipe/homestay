@@ -1,8 +1,7 @@
-    <?php 
+<?php 
   
-   
-    
-    $type = $_POST['choose'];
+  
+  $type = $_POST['choose'];
     $firstname = $_POST['name'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
@@ -13,7 +12,8 @@
       if ($_POST["password"] != $_POST["passwordrepeat"]) {
         echo '<span>Passwords do not match.</span>'; 
       } else {
-
+  
+    
         require_once('connectiondb.php');
         $stmt = $db->prepare(" INSERT INTO account_register (FirstName, LastName, email, Password, type) VALUES (?,?,?,?,?) ");
         $stmt->bind_param("sssss", $firstname, $lastname, $email, $passwordEncrypted, $type);
@@ -35,13 +35,13 @@
             $_SESSION["email"] = $user->email;
             $_SESSION["type"] = $user->type;
   
-            
-             
-              if ($user->type == S) {
+              if ($user->type == 'S') {
                 echo '<script>location.href = "profileS.php"</script>';
-              }elseif ($user->type == F) {
+              }elseif ($user->type == 'F') {
                 echo '<script>location.href = "profileF.php"</script>';
               }   
+             
+            
 
   mysqli_free_result($result);
  $db->close();
